@@ -160,3 +160,5 @@ APPEND_SLASH = True
 #         },
 #     },
 # }
+
+django_heroku.settings(locals())
