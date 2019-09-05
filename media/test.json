@@ -1,0 +1,55 @@
+{
+   "DATA":{
+      "userID":594,
+      "firstName":"Miguna",
+      "lastName":"Miguna",
+      "MSISDN":"254724090774",
+      "clientID":2681,
+      "emailAddress":"miguna@rhyta.com",
+      "clientName":"MIGUNA ",
+      "clientCode":"MIGDEV7778",
+      "userActive":1,
+      "defaultCurrencyCode":"KES",
+      "businessCountryCode":"KE",
+      "contactMsisdn":"254724090774",
+      "contactEmail":"miguna@rhyta.com",
+      "contactPerson":"Miguna Miguna",
+      "clientActive":1,
+      "serviceDetails":{
+         "MIGDEV8414":{
+            "serviceName":"migmig",
+            "serviceID":"3373",
+            "active":"1"
+         },
+         "XMIDEV5137":{
+            "serviceName":"xmiguna",
+            "serviceID":"2606",
+            "active":"1"
+         },
+         "MIGDEV6699":{
+            "serviceName":"MIGUNA SLIPPERS",
+            "serviceID":"2197",
+            "active":"1"
+         }
+      },
+      "clientAccessKeys":{
+         "$2a$08$Qs4unIvA0gqWvEwtyz9DfOWLb16gR.P5dUwOneEELNDypMJaGI08S":{
+            "ivKey":"FH3Jr2qxp7kRWf6v",
+            "secretKey":"rcn2y9PpN8jtWYxC"
+         }
+      },
+      "oauthKeyDetails":{
+         "e51cb7c0-d08b-4055-8923-fcf5bdc10e66":{
+            "clientSecret":"iwpTNpSJFjg584KKLNrEiMpyUeepyx2iU9UuxhZS",
+            "clientName":"MIGDEV7778"
+         }
+      },
+      "authorizationToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjIzNTA5NTEsImp0aSI6IkUySURrYTkrUUlHdmdBdThDaEY0cmszWW4rSTlsZWtOZUVQS3ZMQkZMbGM9IiwiaXNzIjoibXVsYUNoZWNrb3V0IiwibmJmIjoxNTYyMzUwOTUxLCJleHAiOjE1NjIzNTQ1NTEsImRhdGEiOnsidXNlcklEIjo1OTQsImNsaWVudENvZGUiOiJNSUdERVY3Nzc4IiwidXNlck5hbWUiOiJtaWd1bmFAcmh5dGEuY29tIiwiZW1haWxBZGRyZXNzIjoibWlndW5hQHJoeXRhLmNvbSJ9fQ.zell646tVm2nudjxKUWv_7q86wR44SFmXAg9160GIJ5_79lygVggsFHpdolxV573qEIOSr5siFQbeAT16bsJmw"
+   },
+   "REASON":"Authenticated and fetched user details successfully",
+   "SUCCESS":true,
+   "STATCODE":1
+}
+
+
+

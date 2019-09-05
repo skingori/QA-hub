@@ -1,0 +1,137 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content-wrapper %}
+    {% block home-message %}
+
+        {% block home-banner %}
+            {% include 'partials/_banner.html' %}
+        {% endblock home-banner %}
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-description">
+                            Keep your keys secret
+                        </p>
+                        <form class="forms-sample">
+                            <div class="form-group">
+                                <label for="access_key">Access Key</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"
+                                           value="{% for key in accessKey %}{{ key }}{% endfor %}"
+                                           id="access_key"
+                                           placeholder="Name" readonly>
+                                    <div class="input-group-append">
+                                        <button onclick="GetAccessKey()" class="btn btn-sm btn-outline-google" type="button">
+                                            <i class="mdi mdi-content-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="service_code">Service Code</label>
+                            <div class="input-group">
+                                <input type="text" id="service_code" class="form-control" placeholder="" aria-label=""
+                                       value="{% if serviceCode %}{{ serviceCode }}{% endif %}"
+                                       readonly>
+{#                                <select id="service_code" class="form-control" readonly="">#}
+{#                                    {% for i in serviceDetails %}#}
+{#                                    <option value="{{ i }}">{{ i }}</option>#}
+{#                                    {% endfor %}#}
+{#                                </select>#}
+                                <div class="input-group-append">
+                                    <button onclick="GetServiceCode()" class="btn btn-sm btn-outline-google" type="button">
+                                        <i class="mdi mdi-content-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="iv_key">IV Key</label>
+                            <div class="input-group">
+                                <input type="text" id="iv_key" class="form-control" placeholder="" aria-label=""
+                                       value="{% for value in accessKey.values %}{{ value.ivKey }}{% endfor %}"
+                                       readonly>
+                                <div class="input-group-append">
+                                    <button onclick="GetIvKey()" class="btn btn-sm btn-outline-google" type="button">
+                                        <i class="mdi mdi-content-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="secret_key">Secret Key</label>
+                            <div class="input-group">
+                                <input id="secret_key" type="text" class="form-control" placeholder="" aria-label=""
+                                       value="{% for key, value in accessKey.items %}{{ value.secretKey }}{% endfor %}"
+                                       readonly>
+                                <div class="input-group-append">
+                                    <button onclick="GetSecretKey()" class="btn btn-sm btn-outline-google" type="button">
+                                        <i class="mdi mdi-content-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="client_id">Client ID</label>
+                            <div class="input-group">
+                                <input id="client_id" type="text" class="form-control" placeholder="" aria-label=""
+                                       value="{% for i in clientDetails %}{% if forloop.first %}{{ i }}{% endif %}{% endfor %}" readonly>
+                                <div class="input-group-append">
+                                    <button onclick="ClientId()" class="btn btn-sm btn-outline-google" type="button">
+                                        <i class="mdi mdi-content-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="client_secret">Client Secret</label>
+                            <div class="input-group">
+                                <input id="client_secret" type="text"
+                                       class="form-control" placeholder="" aria-label=""
+                                       value="{% for key, value in clientDetails.items %}{% if forloop.first %}{{ value.clientSecret }}{% endif %}{% endfor %}"
+                                       readonly>
+
+                                <div class="input-group-append">
+                                    <button onclick="ClientSecret()" class="btn btn-sm btn-outline-google" type="button">
+                                        <i class="mdi mdi-content-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="client_code">Client Code</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="client_code" placeholder=""
+                                       aria-label=""
+                                       value="{% for key in clientCode %}{{ key }}{% endfor %}"
+                                       readonly>
+                                <div class="input-group-append">
+                                    <button onclick="ClientCode()" class="btn btn-sm btn-outline-google" type="button">
+                                        <i class="mdi mdi-content-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock home-message %}
+
+{% endblock content-wrapper %}

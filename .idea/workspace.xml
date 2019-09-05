@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6803b9c-0d68-48cf-849b-ccffd3b1e5de" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="QAhomeSession" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTTP Request" />
+        <option value="package.json" />
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1NbpgE2NK092NSOZhxyZYGPmbfW" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/autoapp_mula/static/images" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/autoapp_mula/static/images" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/static/images/faces" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/static" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/static/vendors" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/static/bower_components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/autoapp_mula/static/images" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/templates/partials" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/templates/errors" />
+      <recent name="$PROJECT_DIR$/autoapp_mula" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/snippets" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Django server.QAhome">
+    <configuration name="data_test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/QAhomeSession/data_test.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="test_html.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/QAhomeSession/autoapp_mula/static/test_html.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="post_payment" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="QAhomeSession" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/autoapp_mula" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/autoapp_mula/post_payment.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="QAhomeSession" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testy (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="QAhomeSession" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="QAhome" type="Python.DjangoServer" factoryName="Django server">
+      <module name="QAhomeSession" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="QAhome.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.QAhome" />
+      <item itemvalue="JavaScript Debug.data_test.html" />
+      <item itemvalue="JavaScript Debug.test_html.html" />
+      <item itemvalue="Python.tests (1)" />
+      <item itemvalue="Python.testy (1)" />
+      <item itemvalue="Python.post_payment" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.post_payment" />
+        <item itemvalue="Python.testy (1)" />
+        <item itemvalue="JavaScript Debug.test_html.html" />
+        <item itemvalue="JavaScript Debug.data_test.html" />
+        <item itemvalue="Python.tests (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6803b9c-0d68-48cf-849b-ccffd3b1e5de" name="Default Changelist" comment="" />
+      <created>1561006971389</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561006971389</updated>
+      <workItem from="1561006975869" duration="32761000" />
+      <workItem from="1561132342987" duration="40123000" />
+      <workItem from="1561357174938" duration="5574000" />
+      <workItem from="1561388970388" duration="725000" />
+      <workItem from="1561462085124" duration="2180000" />
+      <workItem from="1561464870376" duration="379000" />
+      <workItem from="1561479962930" duration="304000" />
+      <workItem from="1561712105974" duration="7072000" />
+      <workItem from="1561720174060" duration="36082000" />
+      <workItem from="1562139620499" duration="868000" />
+      <workItem from="1562222548227" duration="1736000" />
+      <workItem from="1562232968005" duration="318000" />
+      <workItem from="1562355944190" duration="170000" />
+      <workItem from="1562356418569" duration="18000" />
+      <workItem from="1562356562753" duration="62000" />
+      <workItem from="1562357339992" duration="40000" />
+      <workItem from="1562359770877" duration="24332000" />
+      <workItem from="1562743698041" duration="298000" />
+      <workItem from="1562746483133" duration="209000" />
+      <workItem from="1562748771528" duration="173000" />
+      <workItem from="1562763536461" duration="23292000" />
+      <workItem from="1562838144186" duration="72505000" />
+      <workItem from="1563623801305" duration="12850000" />
+      <workItem from="1564085720880" duration="5828000" />
+      <workItem from="1564350518035" duration="982000" />
+      <workItem from="1564411070157" duration="164000" />
+      <workItem from="1564411311067" duration="19151000" />
+      <workItem from="1565080704353" duration="7303000" />
+      <workItem from="1565098147215" duration="155000" />
+      <workItem from="1565098416455" duration="19764000" />
+      <workItem from="1565267337359" duration="27238000" />
+      <workItem from="1565724989609" duration="49000" />
+      <workItem from="1565725071459" duration="7255000" />
+      <workItem from="1565774858982" duration="38938000" />
+      <workItem from="1566214914164" duration="15028000" />
+      <workItem from="1566287836894" duration="27099000" />
+      <workItem from="1566454462447" duration="5194000" />
+      <workItem from="1566823730625" duration="34489000" />
+      <workItem from="1567166251842" duration="46038000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/QAhome$playground.coverage" NAME="playground Coverage Results" MODIFIED="1561115492849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autoapp" />
+    <SUITE FILE_PATH="coverage/QAhome$manage.coverage" NAME="manage Coverage Results" MODIFIED="1561204384281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/QAhome$services.coverage" NAME="services Coverage Results" MODIFIED="1561115291671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autoapp" />
+    <SUITE FILE_PATH="coverage/QAhome$tests.coverage" NAME="tests Coverage Results" MODIFIED="1561115404691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autoapp" />
+    <SUITE FILE_PATH="coverage/QAhomeSession$post_payment.coverage" NAME="post_payment Coverage Results" MODIFIED="1566477357225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autoapp_mula" />
+    <SUITE FILE_PATH="coverage/QAhomeAPI$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1562683386163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/QAhome$testy.coverage" NAME="testy Coverage Results" MODIFIED="1561257876680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autoapp" />
+    <SUITE FILE_PATH="coverage/QAhomeSession$testy__1_.coverage" NAME="testy (1) Coverage Results" MODIFIED="1565771747713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

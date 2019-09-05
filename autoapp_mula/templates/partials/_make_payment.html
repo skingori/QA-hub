@@ -1,0 +1,52 @@
+<div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby=""
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">New Payment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" id="simulate_pay_form">
+                {% csrf_token %}
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="account_number">Account Number:</label>
+                        <input type="text" name="account_number" class="form-control form-control-sm"
+                               id="account_number">
+                    </div>
+                    <div class="form-group">
+                        <label for="msisdn">Mobile Number:</label>
+                        <input type="text" name="msisdn" value="{{ MSISDN }}" class="form-control form-control-sm"
+                               id="msisdn">
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="text" name="amount" value="1000" class="form-control form-control-sm" id="amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">Currency:</label>
+                        <input type="text" name="currency" value="KES" class="form-control form-control-sm" id="currency">
+                    </div>
+                    <div class="form-group">
+                        <label for="payerClient">Payment Option:</label>
+                        <select class="form-control form-control-sm" name="payerClient" id="payerClient">
+                            {% for country, value in payerClients.items %}
+                                {% for key, value in value.items %}
+                                    <option value='{"clientCode":"{{ key }}","country":"{{ country }}"}'>{{ value.payerClientName }}</option>
+                                {% endfor %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-sm btn-outline-cellulant">Send</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content-wrapper %}
+    {% block home-message %}
+
+        {% block home-banner %}
+            {% include 'partials/_banner.html' %}
+        {% endblock home-banner %}
+        {#     contect#}
+        {% include 'partials/_requests_table.html' %}
+        {% include "partials/_requests_modal.html" %}
+        {% include "partials/_json_requests.html" %}
+        {% include "partials/_make_payment.html" %}
+        {% include "partials/_pay_message_modal.html" %}
+    {% endblock home-message %}
+    <script src="{% static 'js/checkout_functions.js' %}"></script>
+{% endblock %}

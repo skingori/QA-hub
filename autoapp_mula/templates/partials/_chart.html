@@ -1,0 +1,185 @@
+{% load static %}
+{% block chart %}
+    {#    {% for key , value in requests.items%}{{ key }},{% endfor %}#}
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Active Requests</h4>
+                    <canvas id="requests"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Requests</h4>
+                    <canvas id="all_req"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Active Payments</h4>
+                    <canvas id="payments"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Payments</h4>
+                    <canvas id="all_payments"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'vendors/chart.js/dist/Chart.bundle.js' %}"></script>
+    <script src="{% static 'js/checkout_charts.js' %}"></script>
+    <script>
+        var ctx = document.getElementById('requests').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: [{% for key , value in requests.items%}"{{ key }}",{% endfor %}],
+                datasets: [{
+                    label: '{{total_requests}} Requests',
+                    backgroundColor: 'rgb(0,169,224)',
+                    borderColor: 'rgb(0,169,224)',
+                    data: [{% for key , value in requests.items%}{{ value }}{% if not forloop.last %}, {% endif %}{% endfor %}]
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
+        });
+    </script>
+
+    <script>
+        // get barc chart
+        var ctxL = document.getElementById("all_req").getContext('2d');
+        var myLineChart = new Chart(ctxL, {
+            type: 'line',
+            data: {
+                labels: [{% for key , value in requests.items%}"{{ key }}"{% if not forloop.last %}, {% endif %}{% endfor %}],
+                datasets: [{
+                    label: "Accepted",
+                    data: [{% for key , value in accepted_requests.items%}{{ value }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                    backgroundColor: [
+                        'rgba(0,169,224,0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(0,169,224,0.7)',
+                    ],
+                    borderWidth: 2
+                },
+                    {
+                        label: "Rejected",
+                        data: [{% for key , value in rejected_requests.items%}{{ value }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                        backgroundColor: [
+                            'rgba(255,160,47,0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255,160,47,0.7)',
+                        ],
+                        borderWidth: 2
+                    },
+                    {
+                        label: "Expired",
+                        data: [{% for key , value in expired_requests.items%}{{ value }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                        backgroundColor: [
+                            'rgba(224,0,52,0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(224,0,52,0.7)',
+                        ],
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+
+{#    FOR PAYMENTS #}
+    <script>
+        var ctx = document.getElementById('payments').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: [{% for key , value in payments.items%}"{{ key }}",{% endfor %}],
+                datasets: [{
+                    label: '{{total_payments}} Payments',
+                    backgroundColor: 'rgb(0,169,224)',
+                    borderColor: 'rgb(0,169,224)',
+                    data: [{% for key , value in payments.items%}{{ value }}{% if not forloop.last %}, {% endif %}{% endfor %}]
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
+        });
+    </script>
+
+    <script>
+        // get barc chart
+        var ctxL = document.getElementById("all_payments").getContext('2d');
+        var myLineChart = new Chart(ctxL, {
+            type: 'line',
+            data: {
+                labels: [{% for key , value in payments.items%}"{{ key }}"{% if not forloop.last %}, {% endif %}{% endfor %}],
+                datasets: [{
+                    label: "Accepted",
+                    data: [{% for key , value in accepted_payments.items%}{{ value }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                    backgroundColor: [
+                        'rgba(0,169,224,0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(0,169,224,0.7)',
+                    ],
+                    borderWidth: 2
+                },
+                    {
+                        label: "Rejected",
+                        data: [{% for key , value in rejected_payments.items%}{{ value }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                        backgroundColor: [
+                            'rgba(255,160,47,0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255,160,47,0.7)',
+                        ],
+                        borderWidth: 2
+                    },
+                    {
+                        label: "Active",
+                        data: [{% for key , value in payments.items%}{{ value }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+                        backgroundColor: [
+                            'rgba(224,0,52,0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(224,0,52,0.7)',
+                        ],
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+
+
+
+{% endblock chart %}

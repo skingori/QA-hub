@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between flex-wrap card-title">
+            <div class="d-flex align-items-end flex-wrap">
+                <div class="mr-md-3 mr-xl-5">
+                    Checkout Requests
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-end flex-wrap">
+                <button type="button" class="btn btn-sm btn-outline-cellulant mr-3 mt-2 mt-xl-0" data-toggle="modal"
+                        data-target="#json_modal">
+                    {..}
+                </button>
+                <button class="btn btn-sm btn-outline-cellulant mt-2 mt-xl-0" data-toggle="modal"
+                        data-target="#exampleModal">Simulate
+                </button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="checkout_requests" class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Amount</th>
+                    <th>Mobile number</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in checkout_requests %}
+                    <tr>
+                        <td>{{ i.checkoutRequestID }}</td>
+                        <td>{{ i.originalCurrencyCode }}:{{ i.requestAmount }}</td>
+                        <td>{{ i.MSISDN }}</td>
+                        <td>{{ i.overallStatus }}:{{ i.statusCodeDesc }}
+                                {% if i.overallStatus == 130 or i.overallStatus == 177 %}
+                                    <label href="#" data-toggle="modal" data-target="#payment"
+                                           data-id="{{ i.accountNumber }}"
+                                           class="badge badge badge-warning float-right" id="simulate_pay">Pay
+                                        now</label>{% else %}{% endif %}
+                        </td>
+                        <td>{{ i.dateCreated }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+
+
+
+

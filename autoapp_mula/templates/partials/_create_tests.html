@@ -1,0 +1,116 @@
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create New Test Case</h4>
+            <p class="card-description">
+                This is a test system that is still under development.
+            </p>
+            <div class="alert {% if message %} alert-warning{% else %}alert-success{% endif %} alert-dismissible fade show"
+                id="test_case_msg" role="alert">
+                <strong>{% if message %}Error creating cases!{% else %}Welcome back!{% endif %}</strong>
+                {% if message %}{{ message }}{% else %}{{ username }}{% endif %}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" action="{% url 'qa_app:new_test' %}">
+                {% csrf_token %}
+
+                <div class="row">
+                    {#                        <div class="col-md-6">#}
+                    {#                            <div class="form-group row">#}
+                    {#                                <div class="col-sm-12">#}
+                    {#                                    <label for="project">Project ID</label>#}
+                    {#                                    <input type="text" name="project" id="project" class="form-control form-control-sm" required>#}
+                    {#                                    <span class="text text-danger">{% if form.errors %}{{ form.project.errors }}{% endif %}</span>#}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label for="test_case">Test Case <span class="text-info"> Note: use *case* to include
+                                        test field</span></label>
+                                <input type="text" name="qa_test_case" id="test_case"
+                                    class="form-control form-control-sm">
+                                <span class="text text-danger">{% if form.errors %}
+                                    {{ form.qa_test_case.errors }}{% endif %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {#                        <div class="col-md-6">#}
+                    {#                            <div class="form-group row">#}
+                    {#                                <div class="col-sm-12">#}
+                    {#                                    <label for="suit_id">Suit ID</label>#}
+                    {#                                    <input type="number" name="suit_id" id="suit_id" class="form-control form-control-sm"/>#}
+                    {#                                    <span class="text text-danger">{% if form.errors %}{{ form.suit_id.errors }}{% endif %}</span>#}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label for="section_id">Section ID</label>
+                                <input type="number" name="section_id" id="section_id"
+                                    class="form-control form-control-sm">
+                                <span class="text text-danger">{% if form.errors %}
+                                    {{ form.section_id.errors }}{% endif %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label for="pre_conditions">Pre-Conditions</label>
+                                <textarea class="form-control" name="pre_conditions" id="pre_conditions"
+                                    rows="4"></textarea>
+                                <span class="text text-danger">{% if form.error %}
+                                    {{ form.pre_conditions.errors }}{% endif %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label for="steps">Steps</label>
+                                <textarea class="form-control" name="steps" id="steps" rows="4"></textarea>
+                                <span class="text text-danger">{% if form.error %}
+                                    {{ form.steps.errors }}{% endif %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label for="expected_result">Expected Result</label>
+                                <textarea class="form-control" name="expected_result" id="expected_result"
+                                    rows="10"></textarea>
+                                <span class="text text-danger">{% if form.error %}
+                                    {{ form.expected_result.errors }}{% endif %}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label for="big_data">Big Data <span class="text-info"> Note: separate all the fields
+                                        with a comma ","</span></label>
+                                <textarea class="form-control" name="big_data" id="big_data" rows="10"
+                                    placeholder="Test,Test"></textarea>
+                                <span class="text text-danger">{% if form.error %}
+                                    {{ form.big_data.errors }}{% endif %}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button type="reset" class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $("#test_case_msg").fadeTo(10000, 500).slideUp(500, function () {
+        $("#test_case_msg").slideUp(500);
+    });
+</script>

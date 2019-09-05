@@ -1,0 +1,79 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'qa_app:home' %}">
+                <i class="mdi mdi-home menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="mdi mdi-anchor menu-icon"></i>
+                <span class="menu-title">Qa Tests</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'qa_app:tests' %}">Test Cases</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Test Runs</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:checkout' %}">
+                <i class="mdi mdi-email menu-icon"></i>
+                <span class="menu-title">Express Tests</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="mdi mdi-view-headline menu-icon"></i>
+                <span class="menu-title">Custom Tests</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="mdi mdi-calculator menu-icon"></i>
+                <span class="menu-title">Payments</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="mdi mdi-cash-refund menu-icon"></i>
+                <span class="menu-title">Refunds</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'main_app:user_keys' %}">
+                <i class="mdi mdi-lock menu-icon"></i>
+                <span class="menu-title">Security Keys</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin:index' %}">
+                <i class="mdi mdi-cogs menu-icon"></i>
+                <span class="menu-title">Settings</span>
+            </a>
+        </li>
+
+        {#    <li class="nav-item">#}
+        {#      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">#}
+        {#        <i class="mdi mdi-settings menu-icon"></i>#}
+        {#        <span class="menu-title">Settings</span>#}
+        {#        <i class="menu-arrow"></i>#}
+        {#      </a>#}
+        {#      <div class="collapse" id="auth">#}
+        {#        <ul class="nav flex-column sub-menu">#}
+        {#          <li class="nav-item"><a class="nav-link" href=""> Manage API </a></li>#}
+        {#          <li class="nav-item"><a class="nav-link" href="{% url 'qa_app:user_keys' %}"> User Keys </a></li>#}
+        {#        </ul>#}
+        {#      </div>#}
+        {#    </li>#}
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                <span class="menu-title">Documentation</span>
+            </a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,61 @@
+{% load static %}
+<div class="row">
+    <div class="col-md-7 grid-margin stretch-card">
+        <div class="card">
+            <!-- Profile Image -->
+            <ul class="list-group list-group-unbordered">
+                <li class="list-group-item list-group-item-secondary">
+                    {#                                      <img class="profile-user-img img-responsive img-circle" src="{% static 'images/faces/user-image.png' %}" alt="User profile picture">#}
+
+                    <h3 class="profile-username text-center">{{ username }}</h3>
+
+                    <p class="text-muted text-center">{{ clientName }}</p>
+                </li>
+                <li class="list-group-item">
+                    <b>First Name: </b> <a>{{ firstName }}</a>
+                </li>
+                <li class="list-group-item">
+                    <b>Last Name: </b> <a>{{ lastName }}</a>
+                </li>
+                <li class="list-group-item">
+                    <b>Email: </b> <a>{{ username }}</a>
+                </li>
+                <li class="list-group-item">
+                    <b>Key: </b> <a>{% for key, value in accessKey.items %}{{ key }}{% endfor %}</a>
+                </li>
+                <li class="list-group-item">
+                    <b>Iv Key: </b> <a>
+                        {% for key, value in accessKey.items %}{{ value.ivKey }}{% endfor %}</a>
+                </li>
+                <li class="list-group-item">
+                    <b>Secret Key: </b> <a>
+                        {% for key, value in accessKey.items %}{{ value.secretKey }}{% endfor %}</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-5 grid-margin stretch-card">
+        <div class="card">
+            <!-- Profile Image -->
+            {#                                      <img class="profile-user-img img-responsive img-circle" src="{% static 'images/faces/user-image.png' %}" alt="User profile picture">#}
+
+            <ul class="list-group list-group-unbordered">
+                {% for key, value in serviceDetails.items %}
+                <li class="list-group-item list-group-item-secondary">
+                    <b>Service Code: </b> <a>{{ key }}</a>
+                    <span class="float-right">{% if serviceCode == key %}<a
+                            class="badge badge-success">Default</a>{% else %} <a
+                            href="{% url 'main_app:set_code' key %}"
+                            class="badge badge-outline-danger">Activate</a>{% endif %}</span>
+                </li>
+                <li class="list-group-item">
+                    <b>Service Name: </b> <a>{{ value.serviceName }}</a>
+                    <p><b>Service ID: </b> <a>{{ value.serviceID }}</a></p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>

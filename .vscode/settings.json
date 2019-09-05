@@ -1,0 +1,9 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.pythonPath": "/Users/king/globalenv/bin/python3"
+}
+
+// {
+//     "python.linting.pylintEnabled": true,
+//     "python.pythonPath": "/Users/king/globalenv/bin/python3"
+// }

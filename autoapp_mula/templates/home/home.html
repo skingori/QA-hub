@@ -1,0 +1,18 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content-wrapper %}
+    {% include 'partials/_message.html' %}
+    {% block home-message %}
+
+        {% block home-banner %}
+            {% include 'partials/_banner.html' %}
+        {% endblock home-banner %}
+     {% include 'partials/_chart.html' %}
+    {% endblock home-message %}
+{#<script>#}
+{#window.setTimeout(function () {#}
+{#    location.href = "/";#}
+{#}, 40000); // refresh/redirect after 5 seconds.#}
+{##}
+{#</script>#}
+{% endblock %}
