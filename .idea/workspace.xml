@@ -4,6 +4,7 @@
     <list default="true" id="a6803b9c-0d68-48cf-849b-ccffd3b1e5de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -255,7 +256,7 @@
       <workItem from="1566454462447" duration="5194000" />
       <workItem from="1566823730625" duration="34489000" />
       <workItem from="1567166251842" duration="46038000" />
-      <workItem from="1567691401836" duration="4819000" />
+      <workItem from="1567691401836" duration="5217000" />
     </task>
     <servers />
   </component>
