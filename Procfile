@@ -1,1 +1,1 @@
-web: gunicorn autoapp_mula.wsgi --log-file -
+web: gunicorn QAhome.wsgi --log-file -
