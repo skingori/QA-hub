@@ -5,3 +5,7 @@ urllib3
 pycryptodome
 djangorestframework
 pygments
+gunicorn
+psycopg2
+pytz
+whitenoise
