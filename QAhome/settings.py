@@ -25,7 +25,7 @@ SECRET_KEY = '-_lc1sl%0lwh_so2vjn0^@ltgl2uorx*&elkt+ybelw83ptmt_TEST%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["cellulantqa.herokuapp"]
+ALLOWED_HOSTS = ["*"]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

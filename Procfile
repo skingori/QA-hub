@@ -1,1 +1,1 @@
-web: gunicorn cellulantqa.wsgi --log-file -
+web: gunicorn autoapp_mula.wsgi --log-file -
