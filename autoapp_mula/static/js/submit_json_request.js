@@ -9,17 +9,18 @@ $(function () {
     function simulate_json() {
         console.log("Making payment!"); // sanity check
         let container = document.getElementById('json_data').innerText;
+        let container_data = container.replace(/\\/g, '');
         $.ajax({
             url: "/simulate_json/", // the endpoint
             type: "POST", // http method
             data: {
-                json_data: jQuery.parseJSON(JSON.stringify(container))
+                json_data: JSON.parse(container_data)
             }, // data sent with the post request
             success: function (response) {
                 window.location.href = response["redirect_url"];
             },
             error: function (json) {
-                alert(json)
+                alert(json.responseText)
             }
         });
         $('#json_modal').modal('hide')
