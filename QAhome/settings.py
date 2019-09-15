@@ -39,13 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'autoapp_mula.apps.AutoappConfig',
     'rest_framework',
-    'corsheaders',
     'widget_tweaks'
 ]
 
 MIDDLEWARE = [
-
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -137,19 +134,6 @@ LOGOUT_REDIRECT_URL = '/'
 # DLL_FILE = '/Users/king/logs/debug.log'
 
 APPEND_SLASH = True
-CORS_ORIGIN_ALLOW_ALL = True
-
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
 
 # LOGGING = {
 #     'version': 1,
