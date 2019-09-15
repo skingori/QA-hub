@@ -1,7 +1,0 @@
-checkoutRequestID,
-invoiceNumber,
-merchantTransactionID,
-cpgTransactionID,
-MSISDN,
-accountNumber,
-requestAmount,

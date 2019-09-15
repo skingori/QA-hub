@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between flex-wrap card-title">
+            <div class="d-flex align-items-end flex-wrap">
+                <div class="mr-md-3 mr-xl-5">
+                    Checkout Payments
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-end flex-wrap">
+                <button class="btn btn-primary btn-icon mt-2 mt-xl-0" data-toggle="modal"
+                        data-target="#payment">
+                    <i class="mdi mdi-plus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="checkout_requests" class="table">
+                <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Amount</th>
+                    <th>Mobile number</th>
+                    <th>Account</th>
+                    <th>CPG ID</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in payments %}
+                    <tr>
+                        <td>{{ i.checkoutRequestID }}</td>
+                        <td>{{ i.currencyCode }}:{{ i.amountPaid }}</td>
+                        <td>{{ i.MSISDN }}</td>
+                        <td>{{ i.accountNumber }}</td>
+                        <td>{{ i.cpgTransactionID }}</td>
+                        <td>{{ i.dateCreated}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+{% include 'partials/_make_payment.html' %}
+{% include 'partials/_pay_message_modal.html' %}
+
+

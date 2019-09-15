@@ -18,6 +18,7 @@ urlpatterns = [
     path('new_test/', views.TestCreate.as_view(), name='new_test'),
     path('simulate/', views.SimulateTest.as_view(), name='simulate'),
     path('simulatePay/', views.SimulatePay.as_view(), name='simulatePay'),
+    path('payments/', views.AllPayments.as_view(), name='payments'),
     path('call/', views.APICallBack.as_view(), name='call'),
     path('simulate_json/', views.SimulateJson.as_view(), name='simulate_json'),
     re_path(r'^code/(?P<pk>[\w-]+)/$', views.SetDefaultCode.as_view(), name='set_code'),

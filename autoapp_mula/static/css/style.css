@@ -11271,19 +11271,19 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-    color: #4d83ff;
-    border-color: #4d83ff;
+    color: #6CD1EF;
+    border-color: #5D538B;
 }
 
 .btn-outline-cellulant {
-    color: #00A9E0;
-    border-color: #FFA02F;
+    color: #6CD1EF;
+    border-color: #FFC915;
 }
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #4d83ff;
-    border-color: #4d83ff;
+    background-color: #6CD1EF;
+    border-color: #6CD1EF;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {
@@ -19032,32 +19032,6 @@ textarea {
 
 }
 
-pre.pretty_print_cellulant, code.pretty_print_cellulant {
-    background-color: #44475a;
-    border-radius: 1px;
-}
-
-pre.pretty_print_cellulant {
-    width: 100%;
-    margin: 1em auto;
-    padding: 1em;
-    white-space: pre-wrap;
-}
-
-
-.checkout_json_textarea {
-    background-color: #44475a;
-    border-radius: 1px;
-    overflow: auto;
-    height: auto;
-    min-height: 400px;
-    width: 100%;
-    margin: 1em auto;
-    padding: 1em;
-    white-space: pre-wrap;
-
-}
-
 .btn,
 .btn-group.open .dropdown-toggle,
 .btn:active,
@@ -21192,7 +21166,7 @@ code {
 }
 
 .form-control, .dataTables_wrapper select {
-    border: 1px solid #FFA02F;
+    border: 1px solid #FFC915;
     font-weight: 400;
     font-size: 0.875rem;
 }
@@ -21200,7 +21174,7 @@ code {
 select.form-control, .dataTables_wrapper select {
     padding: .4375rem .75rem;
     border: 0;
-    outline: 1px solid #FFA02F;
+    outline: 1px solid #FFC915;
     color: #c9c8c8;
 }
 
@@ -21989,7 +21963,6 @@ dl li {
 
 .tingg-checkout-content-wrapper {
     background: linear-gradient(45deg, #5D538B, #F65058);
-    /*background-image: linear-gradient(to bottom right,#5D538B,#F984CA);*/
     padding: 2.1rem 1.04rem;
     width: 100%;
     -webkit-flex-grow: 1;
@@ -22006,7 +21979,8 @@ dl li {
 /* Sidebar */
 .sidebar {
     min-height: calc(100vh - 60px);
-    background: linear-gradient(45deg, #5D538B, #5D538B);
+    /*background: linear-gradient(45deg,#6CD1EF, #5D538B);*/
+    background-image: linear-gradient(rgb(93, 83, 139), rgb(246, 80, 88));
     /*background: #5D538B;*/
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -22226,6 +22200,14 @@ dl li {
         right: 0;
     }
 }
+
+.checkout_pre {
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+         }
 
 /* Navbar */
 .navbar {

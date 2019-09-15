@@ -38,10 +38,9 @@
                         <label for="experience">Experience <span class="text text-success"><a
                                 href="{% url 'admin:index' %}">Add More</a> </span></label>
                         <select class="form-control form-control-sm" id="experience" name="experience">
-                            <option value="fastjet">FastJet</option>
-                            <option value="ethiopian-airlines">Ethiopian Airline</option>
-                            <option value="express">Default Express</option>
-                            <option value="modal">Modal</option>
+                            {% for i in request_data %}
+                            <option value="{{ i.unique_name }}">{{ i.display_name }}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <div class="form-group">
@@ -58,7 +57,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-sm btn-outline-cellulant btn-icon-text">Launch</button>
+                    <button type="submit" class="btn btn-sm btn-primary btn-icon-text">Launch</button>
                 </div>
             </form>
 

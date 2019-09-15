@@ -9,16 +9,18 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-anchor menu-icon"></i>
-                <span class="menu-title">Qa Tests</span>
+                <span class="menu-title">QA Resources</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="{% url 'qa_app:tests' %}">Test Cases</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Test Runs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Test Tools</a></li>
                 </ul>
             </div>
         </li>
+
         <li class="nav-item">
             <a class="nav-link" href="{% url 'main_app:checkout' %}">
                 <i class="mdi mdi-email menu-icon"></i>
@@ -37,8 +39,22 @@
                 <span class="menu-title">View Logs</span>
             </a>
         </li>
+         <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#dev-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="mdi mdi-json menu-icon"></i>
+                <span class="menu-title">Dev Resources</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="dev-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="">Encryption</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Endpoints</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Status Codes</a></li>
+                </ul>
+            </div>
+        </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{% url 'main_app:payments' %}">
                 <i class="mdi mdi-calculator menu-icon"></i>
                 <span class="menu-title">Payments</span>
             </a>

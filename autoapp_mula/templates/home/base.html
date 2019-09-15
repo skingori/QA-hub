@@ -19,9 +19,9 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="{% static "images/tinggfavicon.ico" %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css"></script>
 </head>
-<body>
+<body onload="PR.prettyPrint()">
 <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     {% include 'partials/_navbar.html' %}
@@ -65,8 +65,10 @@
 <script src="{% static 'js/jquery.dataTables.js' %}"></script>
 <script src="{% static 'js/unused/dataTables.bootstrap4.js' %}"></script>
 <!-- for copy -->
-<script src={% static "js/checkout_copy.js" %}></script>
+<script src='{% static "js/checkout_copy.js" %}'></script>
 <!-- end for copy -->
+<script src="{% static 'js/checkout_functions.js' %}"></script>
+<script src="{% static 'js/submit_json_request.js' %}"></script>
 </body>
 
 </html>

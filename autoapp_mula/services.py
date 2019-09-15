@@ -10,6 +10,8 @@ import hashlib
 import random
 import sys
 from Crypto.Cipher import AES
+# hoping db will work
+from .models import APISettings, WebHook
 
 
 class QaOperations(object):
@@ -49,7 +51,7 @@ class QaOperations(object):
             context['accepted_requests'] = service_['DATA']['acceptedRequests']['data'][0]['data']
             context['all_requests'] = service_['DATA']['allRequests']['data'][0]['data']
             context['expired_requests'] = service_['DATA']['expiredRequests']['data'][0]['data']
-
+            #
             context['total_payments'] = payments['DATA']['activePayments']['currentTotal']
             context['payments'] = payments['DATA']['activePayments']['data'][0]['data']
             context['rejected_payments'] = payments['DATA']['rejectedPayments']['data'][0]['data']
@@ -63,25 +65,8 @@ class QaOperations(object):
         except TypeError:
             return {"username": username}
 
-    # @staticmethod
-    # def create_pay_context(service_, username):
-    #     try:
-    #         context = ({})
-    #         context['total_payments'] = service_['DATA']['activePayments']['currentTotal']
-    #         context['payments'] = service_['DATA']['activePayments']['data'][0]['data']
-    #         context['rejected_payments'] = service_['DATA']['rejectedPayments']['data'][0]['data']
-    #         context['accepted_payments'] = service_['DATA']['acceptedPayments']['data'][0]['data']
-    #
-    #         context['username'] = username
-    #         return context
-    #
-    #     except ConnectionError:
-    #         return False
-    #     except TypeError as error:
-    #         return error
-
     @staticmethod
-    def create_all_req_context(service_code, data, service_, username):
+    def create_all_req_context(service_code, data, request_data, service_, username):
         try:
             context = ({})
             context['checkout_requests'] = service_['DATA']['checkoutRequests']
@@ -89,6 +74,7 @@ class QaOperations(object):
             context['username'] = username
             context['s_code'] = service_code
             context['MSISDN'] = data['DATA']['MSISDN']
+            context['request_data'] = request_data
             context['payerClients'] = service_['DATA']['metaData']['payerClients']
 
             return context
@@ -164,6 +150,15 @@ class QaOperations(object):
 
         return response_data
 
+    @staticmethod
+    def create_payment_context(payments, username):
+        context = ({})
+        context['username'] = username
+        context['payments'] = payments['DATA']['payments']
+        context['payerClients'] = payments['DATA']['metaData']['payerClients']
+
+        return context
+
     def get_checkout_requests(self, _port, _service_code, _token):
         try:
             header = {
@@ -177,8 +172,9 @@ class QaOperations(object):
                         "max": self.max_date  # 1562597513
                     }
                     }
-            url = f'https://beep2.cellulant.com:{_port}'
-            path = '/checkout/v2/portal-proxy/api/engine/fetchCheckoutRequests'
+            get_request_url = APISettings.objects.get(unique_name="fetchCheckoutRequests")
+            url = f"{get_request_url.url+':'+_port}"
+            path = f"{get_request_url.path}"
             response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
 
             all_req_response = json.loads(response.text)
@@ -209,8 +205,9 @@ class QaOperations(object):
                         "max": self.max_date  # 1562597513
                     }
                     }
-            url = f'https://beep2.cellulant.com:{_port}'
-            path = '/checkout/v2/portal-proxy/api/engine/fetchCheckoutRequestTotals'
+            requests_totals = APISettings.objects.get(unique_name="fetchCheckoutRequestTotals")
+            url = f"{requests_totals.url+':'+_port}"
+            path = f"{requests_totals.path}"
             response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
 
             req_response = json.loads(response.text)
@@ -230,6 +227,41 @@ class QaOperations(object):
 
     def create_payments(self, _port, _service_code, _token):
         try:
+            content_type = {
+                'Content-Type': 'application/json',
+                'Authorization': f'Bearer {_token}'
+            }
+            data = {"serviceCode": f"{_service_code}",
+                    "date": {
+                        "type": "dateBetween",
+                        "min": self.min_date,  # 1561906314
+                        "max": self.max_date  # 1562597513
+                    }
+                    }
+            payments_totals = APISettings.objects.get(unique_name="fetchPaymentTotals")
+            url = f"{payments_totals.url + ':' + _port}"
+            path = f"{payments_totals.path}"
+
+            response = requests.post(
+                url=f"{url + path}", data=json.dumps(data), headers=content_type)
+
+            pay_response = json.loads(response.text)
+            # self._write_requests(pay_response)
+            return pay_response
+
+        except KeyError:
+            print(KeyError)
+        except TypeError:
+            print(TypeError, __name__)
+        except ConnectionResetError:
+            print(ConnectionResetError, __name__)
+        except ConnectionError:
+            print(ConnectionError, __name__)
+        except Exception as error:
+            print(error)
+
+    def fetch_payments(self, _port, _service_code, _token):
+        try:
             header = {
                 'Content-Type': 'application/json',
                 'Authorization': f'Bearer {_token}'
@@ -242,17 +274,18 @@ class QaOperations(object):
                     }
                     }
 
-            endpoint = f'https://beep2.cellulant.com:{_port}'
-            path = '/checkout/v2/portal-proxy/api/engine/fetchPaymentTotals'
+            fetchPayments = APISettings.objects.get(unique_name="fetchPayments")
+            endpoint = f"{fetchPayments.url + ':' + _port}"
+            path = f"{fetchPayments.path}"
             response = requests.post(
                 url=f"{endpoint + path}", data=json.dumps(data), headers=header)
 
-            pay_response = json.loads(response.text)
-            # self._write_requests(pay_response)
-            return pay_response
+            all_payments = json.loads(response.text)
+            self._write_requests(all_payments)
+            return all_payments
 
         except KeyError:
-            print(KeyError)
+            raise KeyError('Json Error')
         except TypeError:
             print(TypeError, __name__)
         except ConnectionResetError:
@@ -285,8 +318,9 @@ class QaOperations(object):
                 "payerClientCode": f"{clientCode}"
             }
 
-            endpoint = f"https://beep2.cellulant.com:{port}"
-            path = "/checkout/v2/portal-proxy/api/engine/simulatePayment"
+            simulate_payment = APISettings.objects.get(unique_name="simulatePayment")
+            endpoint = f"{simulate_payment.url+':'+port}"
+            path = f"{simulate_payment.path}"
 
             simulate = requests.post(url=endpoint+path, data=json.dumps(data), headers=header)
 
@@ -314,9 +348,10 @@ class QaOperations(object):
             header = {
                 'Content-Type': 'application/json',
             }
-
-            end_point = f"https://beep2.cellulant.com:{_port}/checkout/v2/portal-proxy/api/engine/login"
-            response = requests.post(url=end_point, headers=header, data=json.dumps(data))
+            login = APISettings.objects.get(unique_name="login")
+            end_point = f"{login.url+':'+_port}"
+            path = f"{login.path}"
+            response = requests.post(url=f"{end_point+path}", headers=header, data=json.dumps(data))
             compare = json.loads(response.text)
             return compare
 
@@ -343,7 +378,7 @@ class QaOperations(object):
             payer_client,
             country_code
     ):
-
+        get_webHook = WebHook.objects.get(status=1)
         now = datetime.datetime.utcnow()
         me = now + datetime.timedelta(days=0, hours=0, minutes=int(minutes), seconds=0)
 
@@ -368,7 +403,7 @@ class QaOperations(object):
                 "languageCode": "en",
                 "successRedirectUrl": "",
                 "failRedirectUrl": "",
-                "paymentWebhookUrl": "https://beep2.cellulant.com:9001/checkout/v2/portal-proxy/api/webhook/callback"
+                "paymentWebhookUrl": f"{get_webHook.url}"
             }
 
             return json.dumps(params)
@@ -440,7 +475,7 @@ class QaServices(object):
                             post = requests.post(url=f"https://41.84.155.54:9401/testrail{uri_add}",
                                                  auth=(username, password), headers=data, data=payload, verify=False)
                             if post.status_code is not 200:
-                                return json.loads(post.text)["error"]
+                                return json.loads(post.text).get("error", "null")
                             else:
                                 pass
                         else:

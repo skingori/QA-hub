@@ -31,16 +31,19 @@ $(function () {
             // handle a successful response
             success: function (json) {
                 let data = JSON.stringify(json);
-                $('#pay_message_modal').modal({show:true});
-                $('#pay_modal_content').html(data,null, 2 );
+                alert(json["REASON"]);
+                // $('#pay_message_modal').modal({show:true});
+                // $('#pay_modal_content').html(data,null, 2 );
             },
             // handle a non-successful response
-            error: function (xhr, errmsg, err) {
-                $('#pay_message_modal').modal({show:true});
-                 $('#pay_modal_content').html(data, null, 2);
+            error: function (json) {
+                let data = JSON.stringify(json);
+                alert(json["REASON"]);
+                // $('#pay_message_modal').modal({show:true});
+                //  $('#pay_modal_content').html(data, "Error making payment!!!");
                 // $('#pay_modal_content').html("<div class='alert-box alert radius' data-alert>" + errmsg +
                 //     "</div>"); // add the error to the dom
-                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                console.log(json.status + ": " + json.statusText); // provide a bit more info about the error to the console
             }
         });
         $('#payment').modal('hide')

@@ -7,6 +7,5 @@ djangorestframework
 pygments
 gunicorn
 psycopg2
-django_heroku
-pytz
 whitenoise
+django_heroku

@@ -8,15 +8,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" action="{% url 'main_app:simulate_json' %}">
+            <form method="post" id="simulate_json_form">
                 {% csrf_token %}
                 <div class="modal-body">
                         <label for="json_data"></label>
-                        <textarea name="json_data" class="checkout_json_textarea card card-description text-light" id="json_data"></textarea>
+                        <pre class="prettyprint" contenteditable="true" id="json_data"></pre>
                 </div>
                 <div class="modal-footer">
                     <div class="form-group col-md-12 text-center">
-                        <button type="submit" class="btn btn-outline-cellulant">Send</button>
+                        <button type="submit" class="btn btn-primary">Simulate Request</button>
                     </div>
                 </div>
             </form>
@@ -24,8 +24,8 @@
     </div>
 </div>
 <script>
-    var random = Math.random();
-    var data = {
+    const random = Math.random();
+    const data = {
         "merchantTransactionID": random,
         "customerFirstName": "Samson",
         "customerLastName": "Mwangi",

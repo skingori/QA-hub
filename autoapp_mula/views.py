@@ -8,13 +8,16 @@ from django.urls import reverse_lazy
 from .forms import RegistrationForm, LoginForm, TestForm, SimulateForm, SimulateJsonForm, SimulatePayment
 from django.views import View
 from django.http import HttpResponseRedirect, HttpResponse
-
+# import db
+from .models import APISettings, WebHook, UISettings, EnvironmentPorts
+# end import db
 import json
-
+from django.http import JsonResponse
 #
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from .services import QaServices, QaOperations, Encryption
 from .serializers import CheckoutCallSerial, ResponseCallSerial
 from rest_framework.views import APIView
@@ -40,6 +43,7 @@ class HomeView(View):
                 date_min_to_sec = QaOperations.unix_time_millis(future_date)
                 date_max_to_sec = QaOperations.unix_time_millis(QaOperations.get_date_now())
                 auth_token = QaOperations.login_auth_and_code(data)['auth_token']
+
                 service_code = request.session['session_code']
                 service = QaOperations.create_requests(QaOperations(
                     date_max=date_max_to_sec, date_min=date_min_to_sec), _service_code=service_code, _token=auth_token,
@@ -126,6 +130,7 @@ class SignUp(generic.CreateView):
     template_name = 'registration/register.html'
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 @method_decorator(never_cache, name='dispatch')
 class Checkout(ListView):
     template_name = 'home/create_checkout.html'
@@ -146,9 +151,11 @@ class Checkout(ListView):
 
                 success = service['SUCCESS']
                 stat_code = service['STATCODE']
+                queryset = UISettings.objects.all()
 
                 if success is True and stat_code == 1:
-                    requests = QaOperations.create_all_req_context(service_code=service_code, data=data,
+                    requests = QaOperations.create_all_req_context(service_code=service_code,
+                                                                   request_data=queryset, data=data,
                                                                    service_=service, username=username)
                     return render(request, self.template_name, context=requests)
                 elif "Token has expired" in service.get("REASON"):
@@ -228,9 +235,11 @@ class MakeLogin(generic.TemplateView):
 
             try:
                 if environment is True:
-                    request.session['port'] = 9212
+                    sandbox_port = EnvironmentPorts.objects.get(unique_name="sandbox")
+                    request.session['port'] = sandbox_port.port
                 elif environment is False:
-                    request.session['port'] = 9001
+                    staging_port = EnvironmentPorts.objects.get(unique_name="staging")
+                    request.session['port'] = staging_port.port
                 else:
                     raise TypeError
 
@@ -387,7 +396,7 @@ class SimulateTest(TemplateView):
 
 
 @method_decorator(never_cache, name='dispatch')
-class SimulateJson(TemplateView):
+class SimulateJson(View):
     form_class = SimulateJsonForm
 
     def post(self, request):
@@ -396,6 +405,7 @@ class SimulateJson(TemplateView):
 
             # <process form cleaned data>
             json_data = request.POST.get("json_data")
+
             data_to_json = json.loads(json_data)
             country = data_to_json.get('countryCode')
             data = request.session['data']
@@ -406,8 +416,12 @@ class SimulateJson(TemplateView):
             secret_key = QaServices.get_user_profile_and_keys(data)["secret_key"]
             access_key = QaServices.get_user_profile_and_keys(data)["accessKey"]
             encrypted_params = Encryption(iv_=iv_key, key=secret_key).encrypt(json_data)
-            return HttpResponseRedirect(
-                f"https://beep2.cellulant.com:{port}/checkout/v2/{experience}/?params={encrypted_params}&accessKey={access_key}&countryCode={country}")
+            url = f"https://beep2.cellulant.com:{port}/checkout/v2/{experience}/?params={encrypted_params}&accessKey={access_key}&countryCode={country}"
+            redirect = {
+                "redirect_url": url
+            }
+
+            return JsonResponse(redirect)
         else:
             return HttpResponseRedirect('/')
 
@@ -449,11 +463,34 @@ class SimulatePay(View):
             )
 
 
+class AllPayments(View):
+    template_name = "home/payments.html"
+
+    @classmethod
+    def get(cls, request):
+        try:
+            port = request.session['port']
+            service_code = request.session['session_code']
+            data = request.session['data']
+            username = request.session['username']
+            token = QaOperations.login_auth_and_code(data)['auth_token']
+            payment_response = QaOperations().fetch_payments(_port=port, _service_code=service_code, _token=token)
+            context = QaOperations.create_payment_context(payment_response, username)
+            return render(request, template_name=cls.template_name, context=context)
+        except KeyError:
+            return HttpResponseRedirect('/')
+        except TypeError:
+            return HttpResponseRedirect('/')
+        except:
+            return HttpResponseRedirect('/')
+
+
 class APICallBack(APIView):
     @staticmethod
     def post(request):
         serializer = CheckoutCallSerial(data=request.data)
         if serializer.is_valid():
+            db = WebHook.objects.get(status=1)
             merchant_id = request.data.get('merchantTransactionID')
             checkout_id = request.data.get('checkoutRequestID')
 
@@ -461,8 +498,8 @@ class APICallBack(APIView):
                 "merchantTransactionID": f"{merchant_id}",
                 "checkoutRequestID": f"{checkout_id}",
                 "receiptNumber": f"{merchant_id}",
-                "statusCode": 183,
-                "statusDescription": "Payment Accepted by QA man"
+                "statusCode": db.status_code,
+                "statusDescription": f"{db.description}"
             }]
             results = ResponseCallSerial(call_response, many=True).data
             return Response(results, status=status.HTTP_200_OK)
