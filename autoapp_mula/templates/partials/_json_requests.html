@@ -10,7 +10,7 @@
             </div>
             <form method="post" id="simulate_json_form">
                 {% csrf_token %}
-                <pre class="prettyprint" contenteditable="true" id="json_data"></pre>
+                <pre class="prettyprint" contenteditable="true"><code id="json_data"></code></pre>
 
                 <div class="modal-footer">
                     <div class="d-flex justify-content-between flex-wrap">
@@ -25,7 +25,7 @@
                             <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
                                 <i class="mdi mdi-plus text-muted"></i>
                             </button>
-                            <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <button type="button" onclick="getJson()" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
                                 <i class="mdi mdi-json text-muted"></i>
                             </button>
                             <button type="submit" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
@@ -38,19 +38,40 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=doxy"></script>
 <script>
-    const random = Math.random();
+    $(function ()  {
+        PR.prettyPrint();
+    });
+    function pad(n) {
+        return n < 10 ? '0' + n : n
+    }
+    function getJson(){
+        alert("This method is not implemented!")
+    }
+    let now = new Date();
+    let timestamp = now.getTime();
+    let year = now.getFullYear();
+    let month = (now.getMonth() + 1);
+    let date = (now.getDate() + 1);
+    let hour = "0" + now.getHours();
+    let min = "0" + now.getMinutes();
+    let sec = "0" + now.getSeconds();
+    let time = pad(year) + '-' + pad(month) + '-' + pad(date)
+        + ' ' + hour.slice(-2)
+        + ':' + min.slice(-2)
+        + ':' + sec.slice(-2);
     const data = {
-        "merchantTransactionID": random,
+        "merchantTransactionID": timestamp,
         "customerFirstName": "Samson",
         "customerLastName": "Mwangi",
         "MSISDN": "{{ MSISDN }}",
         "customerEmail": "samson.mwangi@cellulant.com",
-        "amount": "100",
+        "amount": "1000",
         "currencyCode": "KES",
-        "accountNumber": random,
+        "accountNumber": timestamp,
         "serviceCode": '{{ s_code }}',
-        "dueDate": "2019-08-19 12:14:00",
+        "dueDate": time,
         "serviceDescription": "Getting service/good x",
         "countryCode": 'KE',
         "languageCode": "en",
@@ -58,7 +79,6 @@
         "failRedirectUrl": "",
         "paymentWebhookUrl": ""
     };
-
     document.getElementById("json_data").innerHTML = JSON.stringify(data, undefined, 2);
 
 </script>

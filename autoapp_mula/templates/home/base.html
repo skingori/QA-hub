@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{% static "images/tinggfavicon.ico" %}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=desert"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body onload="PR.prettyPrint()">
 <div class="container-scroller">
@@ -33,7 +32,6 @@
         <div class="main-panel">
             <div class="content-wrapper">
                 {% block content-wrapper %}
-
 
                 {% endblock content-wrapper %}
             </div>
@@ -69,6 +67,7 @@
 <!-- end for copy -->
 <script src="{% static 'js/checkout_functions.js' %}"></script>
 <script src="{% static 'js/submit_json_request.js' %}"></script>
+<script src="{% static 'js/submit_refunds_json.js' %}"></script>
 </body>
 
 </html>

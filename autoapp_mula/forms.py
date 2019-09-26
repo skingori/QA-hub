@@ -58,6 +58,10 @@ class SimulateJsonForm(forms.Form):
     json_data = forms.Textarea()
 
 
+class RefundJsonForm(forms.Form):
+    refund = forms.Textarea()
+
+
 class SimulatePayment(forms.Form):
     amount = forms.CharField(max_length=6)
     account_number = forms.CharField(max_length=200)

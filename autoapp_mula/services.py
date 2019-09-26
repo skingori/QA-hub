@@ -120,8 +120,10 @@ class QaOperations(object):
             code = data['DATA']['serviceDetails']
             # for s_code in code:
             #     return s_code
-            for key in code:
-                return key
+            key = next(iter(code))
+            # for key in code:
+            #     return key
+            return key
         except KeyError:
             print(KeyError)
         except TypeError:
@@ -151,6 +153,67 @@ class QaOperations(object):
         return response_data
 
     @staticmethod
+    def get_client_keys(data):
+        client_keys = data['DATA']['oauthKeyDetails']
+        for key, value in client_keys.items():
+            client_id = key
+            client_secret = value.get("clientSecret")
+            keys = {"client_id": client_id, "client_secret": client_secret}
+            return keys
+
+    @staticmethod
+    def get_oauth_token(client_keys, _port):
+        try:
+            header = {
+                'Content-Type': 'application/json',
+            }
+            data = {
+                "grant_type": "client_credentials",
+                "client_id": f'{client_keys.get("client_id")}',
+                "client_secret": f'{client_keys.get("client_secret")}'
+            }
+
+            get_request_url = APISettings.objects.get(unique_name="token")
+            url = f"{get_request_url.url + ':' + _port}"
+            path = f"{get_request_url.path}"
+            response = requests.post(url=f"{url+path}",
+                                     data=json.dumps(data), headers=header)
+            if response.status_code == 200:
+                return response
+            else:
+                raise KeyError
+        except KeyError as error:
+            # Output expected KeyErrors.
+            print(error)
+        except Exception as exception:
+            # Output unexpected Exceptions.
+            print(exception, False)
+
+    @staticmethod
+    def initiate_refund(data, token, _port):
+        try:
+            headers = {
+                'authorization': "Bearer " + token,
+                'content-type': "application/json",
+            }
+            get_request_url = APISettings.objects.get(unique_name="initiate-refund")
+            url = f"{get_request_url.url + ':' + _port}"
+            path = f"{get_request_url.path}"
+            response = requests.post(url=f"{url + path}",
+                                     data=json.dumps(data), headers=headers)
+            return json.dumps(response.json())
+        except KeyError:
+            print(KeyError)
+        except TypeError:
+            print(TypeError, __name__)
+        except ConnectionResetError:
+            print(ConnectionResetError, __name__)
+        except ConnectionError:
+            print(ConnectionError, __name__)
+        except Exception as error:
+            print(error)
+
+    @staticmethod
     def create_payment_context(payments, username):
         context = ({})
         context['username'] = username
@@ -173,7 +236,7 @@ class QaOperations(object):
                     }
                     }
             get_request_url = APISettings.objects.get(unique_name="fetchCheckoutRequests")
-            url = f"{get_request_url.url+':'+_port}"
+            url = f"{get_request_url.url + ':' + _port}"
             path = f"{get_request_url.path}"
             response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
 
@@ -206,7 +269,7 @@ class QaOperations(object):
                     }
                     }
             requests_totals = APISettings.objects.get(unique_name="fetchCheckoutRequestTotals")
-            url = f"{requests_totals.url+':'+_port}"
+            url = f"{requests_totals.url + ':' + _port}"
             path = f"{requests_totals.path}"
             response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
 
@@ -225,9 +288,9 @@ class QaOperations(object):
         except Exception as error:
             print(error)
 
-    def create_payments(self, _port, _service_code, _token):
+    def fetch_payment_totals(self, _port, _service_code, _token):
         try:
-            content_type = {
+            content_header = {
                 'Content-Type': 'application/json',
                 'Authorization': f'Bearer {_token}'
             }
@@ -243,7 +306,7 @@ class QaOperations(object):
             path = f"{payments_totals.path}"
 
             response = requests.post(
-                url=f"{url + path}", data=json.dumps(data), headers=content_type)
+                url=f"{url + path}", data=json.dumps(data), headers=content_header)
 
             pay_response = json.loads(response.text)
             # self._write_requests(pay_response)
@@ -319,10 +382,10 @@ class QaOperations(object):
             }
 
             simulate_payment = APISettings.objects.get(unique_name="simulatePayment")
-            endpoint = f"{simulate_payment.url+':'+port}"
+            endpoint = f"{simulate_payment.url + ':' + port}"
             path = f"{simulate_payment.path}"
 
-            simulate = requests.post(url=endpoint+path, data=json.dumps(data), headers=header)
+            simulate = requests.post(url=endpoint + path, data=json.dumps(data), headers=header)
 
             return json.loads(simulate.text)
 
@@ -349,9 +412,9 @@ class QaOperations(object):
                 'Content-Type': 'application/json',
             }
             login = APISettings.objects.get(unique_name="login")
-            end_point = f"{login.url+':'+_port}"
+            end_point = f"{login.url + ':' + _port}"
             path = f"{login.path}"
-            response = requests.post(url=f"{end_point+path}", headers=header, data=json.dumps(data))
+            response = requests.post(url=f"{end_point + path}", headers=header, data=json.dumps(data))
             compare = json.loads(response.text)
             return compare
 
@@ -401,8 +464,8 @@ class QaOperations(object):
                 "countryCode": f"{country_code}",
                 "payerClientCode": payer_client,
                 "languageCode": "en",
-                "successRedirectUrl": "",
-                "failRedirectUrl": "",
+                "successRedirectUrl": f"{get_webHook.fail_url}",
+                "failRedirectUrl": f"{get_webHook.success_url}",
                 "paymentWebhookUrl": f"{get_webHook.url}"
             }
 

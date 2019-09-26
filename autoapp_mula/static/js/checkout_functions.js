@@ -31,9 +31,11 @@ $(function () {
             // handle a successful response
             success: function (json) {
                 let data = JSON.stringify(json);
-                alert(json["REASON"]);
-                // $('#pay_message_modal').modal({show:true});
-                // $('#pay_modal_content').html(data,null, 2 );
+                $(document).ready(function () {
+                    alert(json["REASON"]);
+                    // $('.toast').toast('show');
+                    // $('.toast-body').html(data);
+                });
             },
             // handle a non-successful response
             error: function (json) {

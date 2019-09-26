@@ -10,7 +10,7 @@
                 <button type="button" class="btn btn-primary btn-icon mr-3 mt-2 mt-xl-0" data-toggle="modal"
                         data-target="#json_modal">
                     <i class="mdi mdi-json"></i>
-                  </button>
+                </button>
                 <button class="btn btn-primary btn-icon mt-2 mt-xl-0" data-toggle="modal"
                         data-target="#exampleModal">
                     <i class="mdi mdi-plus"></i>
@@ -35,11 +35,13 @@
                         <td>{{ i.originalCurrencyCode }}:{{ i.requestAmount }}</td>
                         <td>{{ i.MSISDN }}</td>
                         <td>{{ i.overallStatus }}:{{ i.statusCodeDesc }}
-                                {% if i.overallStatus == 130 or i.overallStatus == 177 %}
-                                    <label href="#" data-toggle="modal" data-target="#payment"
-                                           data-id="{{ i.accountNumber }}"
-                                           class="badge badge badge-pill badge-warning float-right" id="simulate_pay">Pay
-                                        now</label>{% else %}{% endif %}
+                            {% if i.overallStatus == 130 or i.overallStatus == 177 %}
+                                <a href="#" data-toggle="modal" data-target="#payment"
+                                   data-id="{{ i.accountNumber }}"
+                                   class="badge badge badge-pill badge-warning float-right" id="simulate_pay">Pay
+                                    now</a>{% elif i.overallStatus == 183 or i.overallStatus == 179 or i.overallStatus == 178 %}
+                                <a href="{% url 'main_app:refunds' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID amount=i.requestAmount %}"
+                                   class="badge badge badge-pill badge-success float-right">Refund</a>{% else %}{% endif %}
                         </td>
                         <td>{{ i.dateCreated }}</td>
                     </tr>
@@ -49,8 +51,6 @@
         </div>
     </div>
 </div>
-<!-- Modal -->
-
 
 
 

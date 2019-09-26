@@ -22,7 +22,7 @@ class WebHookAdmin(admin.ModelAdmin):
 
     # columns to be displayed on listing view
 
-    list_display = ('status_code', 'url', 'status', 'description')
+    list_display = ('status', 'status_code', 'url', 'description')
 
 
 class UISettingsAdmin(admin.ModelAdmin):

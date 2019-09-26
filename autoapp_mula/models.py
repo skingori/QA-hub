@@ -8,9 +8,9 @@ from django.shortcuts import reverse
 class APISettings(models.Model):
     display_name = models.CharField(max_length=30)
     unique_name = models.CharField(max_length=50, unique=True)
-    url = models.CharField(max_length=200)
+    url = models.URLField()
     path = models.CharField(max_length=200)
-    description = models.TextField(max_length=200)
+    description = models.TextField()
 
     def __str__(self):
         return self.display_name
@@ -33,7 +33,9 @@ class WebHook(models.Model):
                               default=REJECT,
                               )
     status_code = models.CharField(max_length=3)
-    url = models.CharField(max_length=100)
+    url = models.URLField()
+    fail_url = models.URLField()
+    success_url = models.URLField()
     description = models.TextField()
 
     def __str__(self):
@@ -46,10 +48,10 @@ class WebHook(models.Model):
 
 
 class UISettings(models.Model):
-    display_name = models.CharField(max_length=30)
-    unique_name = models.CharField(max_length=20, unique=True)
-    encoded_url = models.CharField(max_length=200)
-    url = models.CharField(max_length=200)
+    display_name = models.CharField(max_length=50)
+    unique_name = models.CharField(max_length=50, unique=True)
+    encoded_url = models.URLField()
+    url = models.URLField()
     description = models.TextField()
 
     def __str__(self):

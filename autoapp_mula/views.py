@@ -5,7 +5,8 @@ from django.views.generic import TemplateView, ListView
 from django.views import generic
 #
 from django.urls import reverse_lazy
-from .forms import RegistrationForm, LoginForm, TestForm, SimulateForm, SimulateJsonForm, SimulatePayment
+from .forms import RegistrationForm, LoginForm, TestForm, SimulateForm, SimulateJsonForm, SimulatePayment, \
+    RefundJsonForm
 from django.views import View
 from django.http import HttpResponseRedirect, HttpResponse
 # import db
@@ -38,7 +39,7 @@ class HomeView(View):
                 data = request.session['data']
                 port = request.session['port']
 
-                future_date = QaOperations.create_future_date(days=-5, today=QaOperations.get_date_now())
+                future_date = QaOperations.create_future_date(days=-15, today=QaOperations.get_date_now())
 
                 date_min_to_sec = QaOperations.unix_time_millis(future_date)
                 date_max_to_sec = QaOperations.unix_time_millis(QaOperations.get_date_now())
@@ -48,7 +49,7 @@ class HomeView(View):
                 service = QaOperations.create_requests(QaOperations(
                     date_max=date_max_to_sec, date_min=date_min_to_sec), _service_code=service_code, _token=auth_token,
                     _port=port)
-                payments = QaOperations.create_payments(QaOperations(
+                payments = QaOperations.fetch_payment_totals(QaOperations(
                     date_max=date_max_to_sec, date_min=date_min_to_sec), _service_code=service_code, _token=auth_token,
                     _port=port)
 
@@ -132,8 +133,12 @@ class SignUp(generic.CreateView):
 
 @method_decorator(csrf_exempt, name='dispatch')
 @method_decorator(never_cache, name='dispatch')
-class Checkout(ListView):
+class Checkout(generic.TemplateView):
     template_name = 'home/create_checkout.html'
+
+    @staticmethod
+    def post(*args, **kwargs):
+        return HttpResponseRedirect('/')
 
     def get(self, request, *args, **kwargs):
         try:
@@ -256,10 +261,9 @@ class MakeLogin(generic.TemplateView):
                 if success is True and stat_code == 1:
 
                     request.session['username'] = username
-                    username = request.session['username']
                     data = request.session['data'] = compare
 
-                    future_date = QaOperations.create_future_date(days=-5, today=QaOperations.get_date_now())
+                    future_date = QaOperations.create_future_date(days=-15, today=QaOperations.get_date_now())
                     date_min = QaOperations.unix_time_millis(future_date)
                     date_max = QaOperations.unix_time_millis(QaOperations.get_date_now())
                     auth_token = QaOperations.login_auth_and_code(data)['auth_token']
@@ -268,7 +272,7 @@ class MakeLogin(generic.TemplateView):
                     service = QaOperations.create_requests(QaOperations(
                         date_max=date_max, date_min=date_min), _service_code=service_code, _token=auth_token,
                         _port=port)
-                    payments = QaOperations.create_payments(QaOperations(
+                    payments = QaOperations.fetch_payment_totals(QaOperations(
                         date_max=date_max, date_min=date_min), _service_code=service_code,
                         _token=auth_token, _port=port)
                     context = QaOperations.create_req_context(payments, service, username)
@@ -360,38 +364,45 @@ class SimulateTest(TemplateView):
     form_class = SimulateForm
 
     def post(self, request):
-        form = self.form_class(request.POST)
-        if form.is_valid() and request.session['username']:
-            # <process form cleaned data>
-            msisdn = request.POST.get("msisdn")
-            amount = request.POST.get("amount")
-            country = request.POST.get("country")
-            currency = form.cleaned_data.get("currency")
-            minutes = form.cleaned_data.get("timer")
-            experience = request.POST.get("experience")
-            payer_client = request.POST.get("payer_client")
-            s_code = request.session['session_code']
-            username = request.session['username']
-            data = request.session['data']
-            port = request.session['port']
+        try:
+            form = self.form_class(request.POST)
+            if form.is_valid() and request.session['username']:
+                # <process form cleaned data>
+                msisdn = request.POST.get("msisdn")
+                amount = request.POST.get("amount")
+                country = request.POST.get("country")
+                currency = form.cleaned_data.get("currency")
+                minutes = form.cleaned_data.get("timer")
+                experience = request.POST.get("experience")
+                payer_client = request.POST.get("payer_client")
+                s_code = request.session['session_code']
+                username = request.session['username']
+                data = request.session['data']
+                port = request.session['port']
 
-            iv_key = QaServices.get_user_profile_and_keys(data)["iv_key"]
-            secret_key = QaServices.get_user_profile_and_keys(data)["secret_key"]
-            access_key = QaServices.get_user_profile_and_keys(data)["accessKey"]
-            encrypted_params = Encryption(iv_=iv_key, key=secret_key).encrypt(QaOperations.create_encryption(
-                msisdn=msisdn,
-                email=username,
-                amount=amount,
-                currency=currency,
-                s_code=s_code,
-                minutes=minutes,
-                access_key=access_key,
-                country_code=country,
-                payer_client=payer_client))
-            return HttpResponseRedirect(
-                f"https://beep2.cellulant.com:{port}/checkout/v2/{experience}"
-                f"/?params={encrypted_params}&accessKey={access_key}&countryCode={country}")
-        else:
+                iv_key = QaServices.get_user_profile_and_keys(data)["iv_key"]
+                secret_key = QaServices.get_user_profile_and_keys(data)["secret_key"]
+                access_key = QaServices.get_user_profile_and_keys(data)["accessKey"]
+                encrypted_params = Encryption(iv_=iv_key, key=secret_key).encrypt(QaOperations.create_encryption(
+                    msisdn=msisdn,
+                    email=username,
+                    amount=amount,
+                    currency=currency,
+                    s_code=s_code,
+                    minutes=minutes,
+                    access_key=access_key,
+                    country_code=country,
+                    payer_client=payer_client))
+                return HttpResponseRedirect(
+                    f"https://beep2.cellulant.com:{port}/checkout/v2/{experience}"
+                    f"/?params={encrypted_params}&accessKey={access_key}&countryCode={country}")
+            else:
+                return HttpResponseRedirect('/')
+        except KeyError:
+            return HttpResponseRedirect('/')
+        except TypeError:
+            return HttpResponseRedirect('/')
+        except:
             return HttpResponseRedirect('/')
 
 
@@ -400,29 +411,80 @@ class SimulateJson(View):
     form_class = SimulateJsonForm
 
     def post(self, request):
-        form = self.form_class(request.POST)
-        if form.is_valid() and request.session['username']:
+        try:
+            form = self.form_class(request.POST)
+            if form.is_valid() and request.session['username']:
 
-            # <process form cleaned data>
-            json_data = request.POST.get("json_data")
-            data_to_json = json.loads(json_data)
-            country = data_to_json.get('countryCode')
-            data = request.session['data']
-            port = request.session['port']
+                # <process form cleaned data>
+                json_data = request.POST.get("json_data")
+                data_to_json = json.loads(json_data)
+                country = data_to_json.get('countryCode')
+                data = request.session['data']
+                port = request.session['port']
 
-            experience = "express"
-            iv_key = QaServices.get_user_profile_and_keys(data)["iv_key"]
-            secret_key = QaServices.get_user_profile_and_keys(data)["secret_key"]
-            access_key = QaServices.get_user_profile_and_keys(data)["accessKey"]
-            encrypted_params = Encryption(iv_=iv_key, key=secret_key).encrypt(json_data)
-            url = f"https://beep2.cellulant.com:{port}/checkout/v2/{experience}/?params={encrypted_params}&accessKey={access_key}&countryCode={country}"
-            redirect = {
-                "redirect_url": url
-            }
+                experience = "express"
+                iv_key = QaServices.get_user_profile_and_keys(data)["iv_key"]
+                secret_key = QaServices.get_user_profile_and_keys(data)["secret_key"]
+                access_key = QaServices.get_user_profile_and_keys(data)["accessKey"]
+                encrypted_params = Encryption(iv_=iv_key, key=secret_key).encrypt(json_data)
+                url = f"https://beep2.cellulant.com:{port}/checkout/v2/{experience}/?params={encrypted_params}&accessKey={access_key}&countryCode={country}"
+                redirect = {
+                    "redirect_url": url
+                }
 
-            return JsonResponse(redirect)
+                return JsonResponse(redirect)
+            else:
+                return HttpResponseRedirect('/')
+        except KeyError:
+            return HttpResponseRedirect('/')
+        except TypeError:
+            return HttpResponseRedirect('/')
+        except:
+            return HttpResponseRedirect('/')
+
+@method_decorator(never_cache, name='dispatch')
+class Refunds(generic.TemplateView):
+    template_name = 'home/refunds.html'
+    form_class = RefundJsonForm
+
+    def get(self, request, *args, **kwargs):
+        if request.session['username']:
+            merchant_transaction = kwargs.get("merchant_id")
+            checkout_request_id = kwargs.get("checkout_id")
+            amount = kwargs.get("amount")
+            data = request.session["data"]
+            port = request.session["port"]
+            client_keys = QaOperations.get_client_keys(data)
+            get_token = QaOperations.get_oauth_token(client_keys=client_keys, _port=port)
+            token = json.loads(get_token.text).get("access_token")
+            username = request.session['username']
+            response = {"username": username, "merchantTransactionID": merchant_transaction,
+                        "checkoutRequestID": checkout_request_id, "refundAmount": amount, "token": token}
+
+            return render(request, self.template_name, context=response, status=status.HTTP_200_OK)
         else:
             return HttpResponseRedirect('/')
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid() and request.session['username']:
+            # <process form cleaned data>
+            refund_data = request.POST.get("refund")
+            cleaned_data = json.loads(refund_data)
+            data = request.session["data"]
+            port = request.session["port"]
+            client_keys = QaOperations.get_client_keys(data)
+            get_token = QaOperations.get_oauth_token(client_keys=client_keys, _port=port)
+            if get_token.status_code == 200:
+                token = json.loads(get_token.text).get("access_token")
+                initiate_refund = QaOperations.initiate_refund(data=cleaned_data, token=token, _port=port)
+                return HttpResponse(initiate_refund,
+                                    content_type="application/json", status=status.HTTP_200_OK
+                                    )
+            else:
+                return HttpResponse(json.loads(get_token.json()),
+                                    content_type="application/json", status=status.HTTP_200_OK
+                                    )
 
 
 @method_decorator(never_cache, name='dispatch')
