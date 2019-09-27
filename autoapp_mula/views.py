@@ -14,6 +14,7 @@ from .models import APISettings, WebHook, UISettings, EnvironmentPorts
 # end import db
 import json
 from django.http import JsonResponse
+
 #
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -441,6 +442,7 @@ class SimulateJson(View):
             return HttpResponseRedirect('/')
         except:
             return HttpResponseRedirect('/')
+
 
 @method_decorator(never_cache, name='dispatch')
 class Refunds(generic.TemplateView):

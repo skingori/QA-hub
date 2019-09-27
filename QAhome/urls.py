@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 
 # for accounts
-
+from django.conf.urls import url
 from django.urls import reverse_lazy
 
 from django.views.generic.base import TemplateView
 
 
 urlpatterns = [
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
 
     path('accounts/', include('autoapp_mula.urls')),

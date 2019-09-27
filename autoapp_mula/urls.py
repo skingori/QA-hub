@@ -1,10 +1,11 @@
 from django.conf.urls import url
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from . import views
 from django.http import Http404
 from django.views.decorators.cache import never_cache
 
 app_name = "qa_app"
+
 
 urlpatterns = [
 
@@ -19,7 +20,8 @@ urlpatterns = [
     path('simulate/', views.SimulateTest.as_view(), name='simulate'),
     path('simulatePay/', views.SimulatePay.as_view(), name='simulatePay'),
     path('payments/', views.AllPayments.as_view(), name='payments'),
-    url(r'^refunds/(?P<checkout_id>\w+)/(?P<merchant_id>[\w-]+)/(?P<amount>[\w-]+)/$', views.Refunds.as_view(), name='refunds'),
+    url(r'^refunds/(?P<checkout_id>\w+)/(?P<merchant_id>[\w-]+)/(?P<amount>[\w-]+)/$', views.Refunds.as_view(),
+        name='refunds'),
     path('post_refunds/', views.Refunds.as_view(), name='post_refunds'),
     path('call/', views.APICallBack.as_view(), name='call'),
     path('simulate_json/', views.SimulateJson.as_view(), name='simulate_json'),

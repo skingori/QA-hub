@@ -39,7 +39,7 @@
                                 href="{% url 'admin:index' %}">Add More</a> </span></label>
                         <select class="form-control form-control-sm" id="experience" name="experience">
                             {% for i in request_data %}
-                            <option value="{{ i.unique_name }}">{{ i.display_name }}</option>
+                                <option value="{{ i.unique_name }}">{{ i.display_name }}</option>
                             {% endfor %}
                         </select>
                     </div>
