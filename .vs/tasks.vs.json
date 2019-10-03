@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-tests",
+      "appliesTo": "autoapp_mula/tests.py",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-services",
+      "appliesTo": "autoapp_mula/services.py",
+      "type": "launch"
+    }
+  ]
+}
