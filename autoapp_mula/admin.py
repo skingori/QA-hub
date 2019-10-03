@@ -14,7 +14,7 @@ class APISettingsAdmin(admin.ModelAdmin):
 
     # columns to be displayed on listing view
 
-    list_display = ('display_name', 'unique_name', 'url', 'path', 'description',)
+    list_display = ('display_name', 'unique_name', 'url', 'port', 'path', 'description',)
 
 
 class WebHookAdmin(admin.ModelAdmin):

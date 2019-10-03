@@ -9,6 +9,7 @@ class APISettings(models.Model):
     display_name = models.CharField(max_length=30)
     unique_name = models.CharField(max_length=50, unique=True)
     url = models.URLField()
+    port = models.IntegerField()
     path = models.CharField(max_length=200)
     description = models.TextField()
 

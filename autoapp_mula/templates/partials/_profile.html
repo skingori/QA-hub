@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <div class="row">
     <div class="col-md-7 grid-margin stretch-card">
         <div class="card">
@@ -12,23 +12,23 @@
                     <p class="text-muted text-center">{{ clientName }}</p>
                 </li>
                 <li class="list-group-item">
-                    <b>First Name: </b> <a>{{ firstName }}</a>
+                    <b>{% trans 'First Name:' %} </b> <a>{{ firstName }}</a>
                 </li>
                 <li class="list-group-item">
-                    <b>Last Name: </b> <a>{{ lastName }}</a>
+                    <b>{% trans 'Last Name:' %} </b> <a>{{ lastName }}</a>
                 </li>
                 <li class="list-group-item">
-                    <b>Email: </b> <a>{{ username }}</a>
+                    <b>{% trans 'Email:' %} </b> <a>{{ username }}</a>
                 </li>
                 <li class="list-group-item">
-                    <b>Key: </b> <a>{% for key, value in accessKey.items %}{{ key }}{% endfor %}</a>
+                    <b>{% trans 'Key:' %} </b> <a>{% for key, value in accessKey.items %}{{ key }}{% endfor %}</a>
                 </li>
                 <li class="list-group-item">
-                    <b>Iv Key: </b> <a>
+                    <b>{% trans 'Iv Key:' %} </b> <a>
                         {% for key, value in accessKey.items %}{{ value.ivKey }}{% endfor %}</a>
                 </li>
                 <li class="list-group-item">
-                    <b>Secret Key: </b> <a>
+                    <b>{% trans 'Secret Key:' %} </b> <a>
                         {% for key, value in accessKey.items %}{{ value.secretKey }}{% endfor %}</a>
                 </li>
 
@@ -43,15 +43,15 @@
             <ul class="list-group list-group-unbordered">
                 {% for key, value in serviceDetails.items %}
                 <li class="list-group-item list-group-item-secondary">
-                    <b>Service Code: </b> <a>{{ key }}</a>
+                    <b>{% trans 'Service Code:' %} </b> <a>{{ key }}</a>
                     <span class="float-right">{% if serviceCode == key %}<a
-                            class="badge badge-success">Default</a>{% else %} <a
+                            class="badge badge-success">{% trans 'Default' %}</a>{% else %} <a
                             href="{% url 'main_app:set_code' key %}"
-                            class="badge badge-outline-danger">Activate</a>{% endif %}</span>
+                            class="badge badge-outline-danger">{% trans 'Activate' %}</a>{% endif %}</span>
                 </li>
                 <li class="list-group-item">
-                    <b>Service Name: </b> <a>{{ value.serviceName }}</a>
-                    <p><b>Service ID: </b> <a>{{ value.serviceID }}</a></p>
+                    <b>{% trans 'Service Name:' %} </b> <a>{{ value.serviceName }}</a>
+                    <p><b>{% trans 'Service ID:' %} </b> <a>{{ value.serviceID }}</a></p>
                 </li>
                 {% endfor %}
             </ul>

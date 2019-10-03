@@ -42,21 +42,24 @@ class QaOperations(object):
         return int(date_mill)
 
     @staticmethod
-    def create_req_context(payments, service_, username):
+    def create_req_context(payments, create_req_, username, first_name, last_name):
         try:
             context = ({})
-            context['total_requests'] = service_['DATA']['activeRequests']['currentTotal']
-            context['requests'] = service_['DATA']['activeRequests']['data'][0]['data']
-            context['rejected_requests'] = service_['DATA']['rejectedRequests']['data'][0]['data']
-            context['accepted_requests'] = service_['DATA']['acceptedRequests']['data'][0]['data']
-            context['all_requests'] = service_['DATA']['allRequests']['data'][0]['data']
-            context['expired_requests'] = service_['DATA']['expiredRequests']['data'][0]['data']
+            context['total_requests'] = create_req_['DATA']['activeRequests']['currentTotal']
+            context['requests'] = create_req_['DATA']['activeRequests']['data'][0]['data']
+            context['rejected_requests'] = create_req_['DATA']['rejectedRequests']['data'][0]['data']
+            context['accepted_requests'] = create_req_['DATA']['acceptedRequests']['data'][0]['data']
+            context['all_requests'] = create_req_['DATA']['allRequests']['data'][0]['data']
+            context['expired_requests'] = create_req_['DATA']['expiredRequests']['data'][0]['data']
+            #
+            context['first_name'] = first_name
+            context['last_name'] = last_name
+            context['username'] = username
             #
             context['total_payments'] = payments['DATA']['activePayments']['currentTotal']
             context['payments'] = payments['DATA']['activePayments']['data'][0]['data']
             context['rejected_payments'] = payments['DATA']['rejectedPayments']['data'][0]['data']
             context['accepted_payments'] = payments['DATA']['acceptedPayments']['data'][0]['data']
-            context['username'] = username
 
             return context
 

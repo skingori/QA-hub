@@ -31,7 +31,8 @@ from rest_framework.response import Response
 class HomeView(View):
     template_name = 'registration/login.html'
 
-    def get(self, request):
+    @staticmethod
+    def get(request):
         try:
             if request.session['username'] and request.session['session_code'] and request.session['port']:
                 # if request.session['username']:
@@ -47,19 +48,22 @@ class HomeView(View):
                 auth_token = QaOperations.login_auth_and_code(data)['auth_token']
 
                 service_code = request.session['session_code']
-                service = QaOperations.create_requests(QaOperations(
+                create_req = QaOperations.create_requests(QaOperations(
                     date_max=date_max_to_sec, date_min=date_min_to_sec), _service_code=service_code, _token=auth_token,
                     _port=port)
                 payments = QaOperations.fetch_payment_totals(QaOperations(
                     date_max=date_max_to_sec, date_min=date_min_to_sec), _service_code=service_code, _token=auth_token,
                     _port=port)
 
-                success = service['SUCCESS']
-                stat_code = service['STATCODE']
+                success = create_req['SUCCESS']
+                stat_code = create_req['STATCODE']
+
+                first_name = data['DATA']['firstName']
+                last_name = data['DATA']['lastName']
 
                 if success is True and stat_code == 1:
 
-                    requests = QaOperations.create_req_context(payments, service, username)
+                    requests = QaOperations.create_req_context(payments, create_req, username, first_name,last_name)
 
                     return render(request, 'home/home.html', context=requests)
                 else:
@@ -68,8 +72,10 @@ class HomeView(View):
                 return HttpResponseRedirect('/logout/')
         except KeyError:
             return HttpResponseRedirect('/logout/')
-        except Exception:
+        except ValueError:
             return HttpResponseRedirect('/logout/')
+        except Exception as ex:
+            print(ex)
 
 
 @method_decorator(never_cache, name='dispatch')
@@ -172,11 +178,11 @@ class Checkout(generic.TemplateView):
             else:
                 return HttpResponseRedirect('/')
         except KeyError:
-            return HttpResponseRedirect('/logout/')
+            return HttpResponseRedirect('/')
         except TypeError:
-            return HttpResponseRedirect('/logout/')
+            return HttpResponseRedirect('/')
         except Exception:
-            return HttpResponseRedirect('/logout/')
+            return HttpResponseRedirect('/')
 
 
 @method_decorator(never_cache, name='dispatch')
@@ -270,13 +276,15 @@ class MakeLogin(generic.TemplateView):
                     auth_token = QaOperations.login_auth_and_code(data)['auth_token']
                     service_code = QaOperations.login_auth_and_code(data)['service_code']
                     request.session['session_code'] = service_code
-                    service = QaOperations.create_requests(QaOperations(
+                    first_name = data['DATA']['firstName']
+                    last_name = data['DATA']['lastName']
+                    create_req = QaOperations.create_requests(QaOperations(
                         date_max=date_max, date_min=date_min), _service_code=service_code, _token=auth_token,
                         _port=port)
                     payments = QaOperations.fetch_payment_totals(QaOperations(
                         date_max=date_max, date_min=date_min), _service_code=service_code,
                         _token=auth_token, _port=port)
-                    context = QaOperations.create_req_context(payments, service, username)
+                    context = QaOperations.create_req_context(payments, create_req, username, first_name, last_name)
                     return render(request, 'home/home.html', context=context)
                 elif success is False and stat_code == 0:
                     return render(request, self.template_name, {"error": reason})
@@ -450,43 +458,55 @@ class Refunds(generic.TemplateView):
     form_class = RefundJsonForm
 
     def get(self, request, *args, **kwargs):
-        if request.session['username']:
-            merchant_transaction = kwargs.get("merchant_id")
-            checkout_request_id = kwargs.get("checkout_id")
-            amount = kwargs.get("amount")
-            data = request.session["data"]
-            port = request.session["port"]
-            client_keys = QaOperations.get_client_keys(data)
-            get_token = QaOperations.get_oauth_token(client_keys=client_keys, _port=port)
-            token = json.loads(get_token.text).get("access_token")
-            username = request.session['username']
-            response = {"username": username, "merchantTransactionID": merchant_transaction,
-                        "checkoutRequestID": checkout_request_id, "refundAmount": amount, "token": token}
+        try:
+            if request.session['username']:
+                merchant_transaction = kwargs.get("merchant_id")
+                checkout_request_id = kwargs.get("checkout_id")
+                amount = kwargs.get("amount")
+                data = request.session["data"]
+                port = request.session["port"]
+                client_keys = QaOperations.get_client_keys(data)
+                get_token = QaOperations.get_oauth_token(client_keys=client_keys, _port=port)
+                token = json.loads(get_token.text).get("access_token")
+                username = request.session['username']
+                response = {"username": username, "merchantTransactionID": merchant_transaction,
+                            "checkoutRequestID": checkout_request_id, "refundAmount": amount, "token": token}
 
-            return render(request, self.template_name, context=response, status=status.HTTP_200_OK)
-        else:
+                return render(request, self.template_name, context=response, status=status.HTTP_200_OK)
+            else:
+                return HttpResponseRedirect('/')
+        except KeyError:
+            return HttpResponseRedirect('/')
+        except ValueError:
             return HttpResponseRedirect('/')
 
     def post(self, request):
-        form = self.form_class(request.POST)
-        if form.is_valid() and request.session['username']:
-            # <process form cleaned data>
-            refund_data = request.POST.get("refund")
-            cleaned_data = json.loads(refund_data)
-            data = request.session["data"]
-            port = request.session["port"]
-            client_keys = QaOperations.get_client_keys(data)
-            get_token = QaOperations.get_oauth_token(client_keys=client_keys, _port=port)
-            if get_token.status_code == 200:
-                token = json.loads(get_token.text).get("access_token")
-                initiate_refund = QaOperations.initiate_refund(data=cleaned_data, token=token, _port=port)
-                return HttpResponse(initiate_refund,
-                                    content_type="application/json", status=status.HTTP_200_OK
-                                    )
-            else:
-                return HttpResponse(json.loads(get_token.json()),
-                                    content_type="application/json", status=status.HTTP_200_OK
-                                    )
+        try:
+            form = self.form_class(request.POST)
+            if form.is_valid() and request.session['username']:
+                # <process form cleaned data>
+                refund_data = request.POST.get("refund")
+                cleaned_data = json.loads(refund_data)
+                data = request.session["data"]
+                port = request.session["port"]
+                client_keys = QaOperations.get_client_keys(data)
+                get_token = QaOperations.get_oauth_token(client_keys=client_keys, _port=port)
+                if get_token.status_code == 200:
+                    token = json.loads(get_token.text).get("access_token")
+                    initiate_refund = QaOperations.initiate_refund(data=cleaned_data, token=token, _port=port)
+                    return HttpResponse(initiate_refund,
+                                        content_type="application/json", status=status.HTTP_200_OK
+                                        )
+                else:
+                    return HttpResponse(json.loads(get_token.json()),
+                                        content_type="application/json", status=status.HTTP_200_OK
+                                        )
+        except KeyError:
+            return HttpResponseRedirect('/')
+        except ValueError:
+            return HttpResponseRedirect('/')
+        except Exception as ex:
+            print(ex)
 
 
 @method_decorator(never_cache, name='dispatch')

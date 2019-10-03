@@ -1,9 +1,10 @@
+{% load i18n %}
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Create New Test Case</h4>
             <p class="card-description">
-                This is a test system that is still under development.
+                {% blocktrans %} This is a test system that is still under development.{% endblocktrans %}
             </p>
             <div class="alert {% if message %} alert-warning{% else %}alert-success{% endif %} alert-dismissible fade show"
                 id="test_case_msg" role="alert">

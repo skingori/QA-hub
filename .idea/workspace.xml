@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6803b9c-0d68-48cf-849b-ccffd3b1e5de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/autoapp_mula/static/js/language_change.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_language_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/QAhomeSession.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/QAhomeSession.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a6803b9c-0d68-48cf-849b-ccffd3b1e5de" name="Default Changelist" comment="added more data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QAhome/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/QAhome/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QAhome/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/QAhome/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/home/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_json_requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_json_requests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_banner.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_banner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_create_tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_create_tests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_language_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_language_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_message.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_refunds.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_refunds.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_mula/templates/user_keys/user_keys.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/templates/user_keys/user_keys.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoapp_mula/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoapp_mula/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_mula/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/media/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/media/requests.json" beforeDir="false" afterPath="$PROJECT_DIR$/media/requests.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,31 +78,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_refunds.html">
+        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-682">
-              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/QAhome/settings.py">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="157" column="15" selection-start-line="157" selection-start-column="15" selection-end-line="157" selection-end-column="15" />
-              <folding>
-                <element signature="e#307#316#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/autoapp_mula/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="445" selection-start-line="445" selection-end-line="445" />
+            <state relative-caret-position="-224">
+              <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -108,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autoapp_mula/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="204">
+              <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -118,56 +120,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/refunds.html">
+        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_refunds.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+            <state relative-caret-position="17">
+              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/QAhome/urls.py">
+        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="209">
+              <caret line="49" column="28" lean-forward="true" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/autoapp_mula/services.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
               <folding>
-                <element signature="e#630#662#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_language_form.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+            <state relative-caret-position="102">
+              <caret line="6" column="127" selection-start-line="6" selection-start-column="127" selection-end-line="6" selection-end-column="127" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_make_payment.html">
+        <entry file="file://$PROJECT_DIR$/autoapp_mula/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-376" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_footer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="98" selection-start-line="3" selection-start-column="98" selection-end-line="3" selection-end-column="98" />
+            <state relative-caret-position="102">
+              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_navbar.html">
+        <entry file="file://$PROJECT_DIR$/autoapp_mula/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="272">
+              <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,29 +195,64 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ack</find>
+      <find>APICallBack</find>
+      <find>ph</find>
+      <find>Country Code</find>
+      <find>login</find>
+      <find>Login</find>
+      <find>toke</find>
+      <find>simulate_</find>
+      <find>checkou</find>
+    </findStrings>
+    <dirStrings>
+      <dir>D:\CELLULANT\Automated_Tests\qatestertool</dir>
+    </dirStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/autoapp_mula/services.py" />
-        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_modal.html" />
         <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_json_requests.html" />
         <option value="$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po" />
-        <option value="$PROJECT_DIR$/autoapp_mula/urls.py" />
         <option value="$PROJECT_DIR$/autoapp_mula/static/js/language_change.js" />
         <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_refunds.html" />
-        <option value="$PROJECT_DIR$/autoapp_mula/views.py" />
         <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_language_pannel.html" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_footer.html" />
+        <option value="$PROJECT_DIR$/tests.py" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_language_form.html" />
+        <option value="$PROJECT_DIR$/QAhome/urls.py" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/user_keys/user_keys.html" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_banner.html" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_create_tests.html" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_navbar.html" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_profile.html" />
         <option value="$PROJECT_DIR$/autoapp_mula/templates/home/base.html" />
         <option value="$PROJECT_DIR$/QAhome/settings.py" />
-        <option value="$PROJECT_DIR$/QAhome/urls.py" />
-        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_footer.html" />
-        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_navbar.html" />
-        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_language_form.html" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/home/home.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_modal.html" />
+        <option value="$PROJECT_DIR$/locale/sw/LC_MESSAGES/django.po" />
+        <option value="$PROJECT_DIR$/autoapp_mula/models.py" />
+        <option value="$PROJECT_DIR$/autoapp_mula/admin.py" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_message.html" />
+        <option value="$PROJECT_DIR$/autoapp_mula/services.py" />
+        <option value="$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_table.html" />
+        <option value="$PROJECT_DIR$/autoapp_mula/urls.py" />
+        <option value="$PROJECT_DIR$/autoapp_mula/views.py" />
       </list>
     </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="611" />
@@ -222,6 +267,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,13 +291,6 @@
               <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
               <item name="autoapp_mula" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
-              <item name="autoapp_mula" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -263,25 +302,21 @@
               <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
               <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
               <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="fr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
-              <item name="locale" type="462c0819:PsiDirectoryNode" />
-              <item name="fr" type="462c0819:PsiDirectoryNode" />
-              <item name="LC_MESSAGES" type="462c0819:PsiDirectoryNode" />
+              <item name="sw" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
               <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
               <item name="QAhome" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,22 +333,22 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CELLULANT\Automated_Tests\qatestertool" />
+      <recent name="D:\CELLULANT\Automated_Tests\qatestertool\QAhome" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/static/css" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/static/images" />
+      <recent name="$PROJECT_DIR$/autoapp_mula/templates/partials" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/autoapp_mula/static" />
       <recent name="$PROJECT_DIR$/autoapp_mula/static/js" />
       <recent name="$PROJECT_DIR$/autoapp_mula/static/vendors" />
       <recent name="$PROJECT_DIR$/autoapp_mula/static/images" />
       <recent name="$PROJECT_DIR$/autoapp_mula/static/images/faces" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/autoapp_mula/static/css" />
-      <recent name="$PROJECT_DIR$/autoapp_mula/static/images" />
-      <recent name="$PROJECT_DIR$/autoapp_mula/templates/partials" />
-      <recent name="$PROJECT_DIR$/autoapp_mula/templates/errors" />
-      <recent name="$PROJECT_DIR$/autoapp_mula" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -435,11 +470,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tests (1)" />
         <item itemvalue="Python.post_payment" />
         <item itemvalue="Python.testy (1)" />
         <item itemvalue="JavaScript Debug.test_html.html" />
         <item itemvalue="JavaScript Debug.data_test.html" />
-        <item itemvalue="Python.tests (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -520,6 +555,12 @@
       <workItem from="1569574314722" duration="9957000" />
       <workItem from="1569588391963" duration="6859000" />
       <workItem from="1569612811340" duration="4141000" />
+      <workItem from="1569784516961" duration="274000" />
+      <workItem from="1569784836860" duration="1143000" />
+      <workItem from="1569786731671" duration="17759000" />
+      <workItem from="1569930946149" duration="14043000" />
+      <workItem from="1570007050341" duration="6722000" />
+      <workItem from="1570092069890" duration="12712000" />
     </task>
     <task id="LOCAL-00001" summary="added more data">
       <created>1568546002757</created>
@@ -546,33 +587,42 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23402000" />
+    <option name="totallyTimeSpent" value="76055000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22012103" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17397882" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.27332243" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.2569558" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.11292962" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" weight="0.30769232" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.27168575" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49848714" weight="0.3289689" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Graphics" order="4" weight="0.32980332" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" id="Database" order="6" />
     </layout>
@@ -623,6 +673,7 @@
     <SUITE FILE_PATH="coverage/QAhome$playground.coverage" NAME="playground Coverage Results" MODIFIED="1561115492849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autoapp" />
     <SUITE FILE_PATH="coverage/QAhome$manage.coverage" NAME="manage Coverage Results" MODIFIED="1561204384281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/QAhomeSession$testy__1_.coverage" NAME="testy (1) Coverage Results" MODIFIED="1565771747713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/qatestertool$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1569832245298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/QAhome$tests.coverage" NAME="tests Coverage Results" MODIFIED="1561115404691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autoapp" />
     <SUITE FILE_PATH="coverage/QAhome$services.coverage" NAME="services Coverage Results" MODIFIED="1561115291671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autoapp" />
     <SUITE FILE_PATH="coverage/QAhome$testy.coverage" NAME="testy Coverage Results" MODIFIED="1561257876680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autoapp" />
@@ -635,16 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="116" selection-start-line="40" selection-start-column="116" selection-end-line="40" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/services.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5848">
-          <caret line="357" column="34" selection-start-line="357" selection-start-column="34" selection-end-line="357" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -662,78 +703,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po">
+    <entry file="file://$PROJECT_DIR$/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        <state relative-caret-position="306">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_message.html">
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        <state relative-caret-position="408">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_modal.html">
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/refunds.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="65" column="58" lean-forward="true" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="445" selection-start-line="445" selection-end-line="445" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QAhome/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="157" column="15" selection-start-line="157" selection-start-column="15" selection-end-line="157" selection-end-column="15" />
-          <folding>
-            <element signature="e#307#316#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QAhome/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#630#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_refunds.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-682">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        <state relative-caret-position="170">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -744,29 +731,274 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/refunds.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/errors/error404.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_make_payment.html">
+    <entry file="file://C:/GLOBALVENV/Lib/site-packages/django/views/templates/technical_404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-376" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        <state relative-caret-position="237">
+          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_language_form.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QAhome/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/user_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vscode/settings.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vscode/launch.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360148" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/static/js/checkout_functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/registration/register.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locale/fr/LC_MESSAGES/django.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/user_keys/user_keys.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_create_tests.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/payments.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/create_test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/create_checkout.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_banner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_payments_table.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_settings-panel.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_sidebar.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-918">
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/migrations/0002_auto_20190730_1335.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/migrations/0018_auto_20190916_1446.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/migrations/0019_auto_20190918_0809.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QAhome/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding>
+            <element signature="e#307#316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_make_payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="46" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locale/sw/LC_MESSAGES/django.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="192" column="54" selection-start-line="192" selection-start-column="54" selection-end-line="192" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="127" selection-start-line="6" selection-start-column="127" selection-end-line="6" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/GLOBALVENV/Lib/site-packages/django/db/models/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="164" selection-start-line="164" selection-end-line="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/services.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_refunds.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/templates/partials/_requests_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="49" column="28" lean-forward="true" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoapp_mula/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-224">
+          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

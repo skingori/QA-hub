@@ -1,8 +1,7 @@
 {% extends 'home/base.html' %}
-{% load static %}
+{% load static i18n %}
 {% block content-wrapper %}
     {% block home-message %}
-
         {% block home-banner %}
             {% include 'partials/_banner.html' %}
         {% endblock home-banner %}
@@ -11,7 +10,7 @@
                 <div class="card">
                     <div class="card-body">
                         <p class="card-description">
-                            Keep your keys secret
+                            {% trans 'Keep your keys secret' %}
                         </p>
                         <form class="forms-sample">
                             <div class="form-group">

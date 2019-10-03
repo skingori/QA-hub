@@ -105,8 +105,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-# LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'fr'
+LANGUAGES = (
+    ('en', _('English')),
+    ('fr', _('French')),
+    ('sw', _('Swahili')),
+)
+
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -152,11 +157,7 @@ APPEND_SLASH = True
 #     },
 # }
 # Provide a lists of languages which your site supports.
-LANGUAGES = (
-    ('en', _('English')),
-    ('fr', _('French')),
-    ('sw', _('Swahili')),
-)
+
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
