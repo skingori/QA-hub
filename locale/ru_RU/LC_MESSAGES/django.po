@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-07 08:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: QAhome/settings.py:109
+msgid "English"
+msgstr ""
+
+#: QAhome/settings.py:110
+msgid "French"
+msgstr ""
+
+#: QAhome/settings.py:111
+msgid "Swahili"
+msgstr ""
+
+#: QAhome/settings.py:112
+msgid "Polish"
+msgstr ""
+
+#: QAhome/settings.py:113
+msgid "Dutch"
+msgstr ""
+
+#: QAhome/settings.py:114
+msgid "Slovak"
+msgstr ""
+
+#: QAhome/settings.py:115
+msgid "Russian"
+msgstr ""
+
+#: QAhome/settings.py:116
+msgid "Finnish"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_banner.html:8
+msgid " This is a test system, don't use it for live products. "
+msgstr ""
+
+#: autoapp_mula/templates/partials/_create_tests.html:7
+msgid " This is a test system that is still under development."
+msgstr ""
+
+#: autoapp_mula/templates/partials/_language_form.html:5
+msgid "Select your language"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_message.html:7
+msgid "Welcome back,"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_message.html:8
+msgid "Get the smart way to test."
+msgstr ""
+
+#: autoapp_mula/templates/partials/_navbar.html:54
+msgid "Profile"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_navbar.html:58
+msgid "Logout"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:15
+msgid "First Name:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:18
+msgid "Last Name:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:21
+msgid "Email:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:24
+msgid "Key:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:27
+msgid "Iv Key:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:31
+msgid "Secret Key:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:46
+msgid "Service Code:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:48
+msgid "Default"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:50
+msgid "Activate"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:53
+msgid "Service Name:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_profile.html:54
+msgid "Service ID:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_refunds.html:6
+msgid "Initiate refund"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_refunds.html:7
+msgid "This is part is required to be on the header"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_refunds.html:9
+msgid "Json body"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_refunds.html:38
+msgid "Refund Response"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_refunds.html:40
+msgid "Below is the json response for the refund initiated."
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:7
+msgid "Create a new request"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:16
+msgid "Mobile Number"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:21
+msgid "Amount"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:25
+msgid "Country Code"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:29
+msgid "Currency"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:34
+msgid "Session lifetime"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:34
+msgid "minutes"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:39
+msgid "Experience"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:40
+msgid "Add More"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:48
+msgid "Single payment option:"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:60
+msgid "Close"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_modal.html:61
+msgid "Launch"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_table.html:7
+msgid "Checkout Requests"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_table.html:42
+msgid "Pay"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_requests_table.html:45
+msgid "Refund"
+msgstr ""
+
+#: autoapp_mula/templates/registration/login.html:23
+msgid "Email"
+msgstr ""
+
+#: autoapp_mula/templates/registration/login.html:28
+msgid "Password"
+msgstr ""
+
+#: autoapp_mula/templates/registration/login.html:35
+msgid "Log in"
+msgstr ""
+
+#: autoapp_mula/templates/registration/login.html:45
+msgid "Forgot password?"
+msgstr ""
+
+#: autoapp_mula/templates/registration/login.html:53
+msgid "Don't have an account?"
+msgstr ""
+
+#: autoapp_mula/templates/registration/login.html:55
+msgid "Create"
+msgstr ""
+
+#: autoapp_mula/templates/user_keys/user_keys.html:13
+msgid "Keep your keys secret"
+msgstr ""
+
+#: autoapp_mula/views.py:316
+msgid "Oopsie!, we've got a problem!"
+msgstr ""

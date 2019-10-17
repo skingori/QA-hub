@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="a6803b9c-0d68-48cf-849b-ccffd3b1e5de" name="Default Changelist" comment="added more data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QAhome/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/QAhome/settings.py" afterDir="false" />
@@ -25,6 +26,11 @@
       <change beforePath="$PROJECT_DIR$/media/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/media/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/media/requests.json" beforeDir="false" afterPath="$PROJECT_DIR$/media/requests.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+=======
+    <list default="true" id="a6803b9c-0d68-48cf-849b-ccffd3b1e5de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -549,6 +555,7 @@
       <workItem from="1568126598373" duration="21203000" />
       <workItem from="1568287501677" duration="38854000" />
       <workItem from="1568614718589" duration="64986000" />
+<<<<<<< Updated upstream
       <workItem from="1569320461044" duration="7189000" />
       <workItem from="1569526141367" duration="845000" />
       <workItem from="1569531178935" duration="1600000" />
@@ -561,6 +568,9 @@
       <workItem from="1569930946149" duration="14043000" />
       <workItem from="1570007050341" duration="6722000" />
       <workItem from="1570092069890" duration="12712000" />
+=======
+      <workItem from="1569320461044" duration="7655000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="added more data">
       <created>1568546002757</created>

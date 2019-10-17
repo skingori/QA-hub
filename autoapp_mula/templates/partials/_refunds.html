@@ -8,6 +8,7 @@
                 <pre class="prettyprint checkout_pre"><code class="lang-python" id="header"></code></pre>
                 <p class="card-description">{% trans 'Json body' %}</p>
                 <form method="POST" id="submit_refunds_form">
+                    {% csrf_token %}
                     <pre class="prettyprint checkout_pre" contenteditable="true"><code id="refund"></code></pre>
                     <div class="d-flex justify-content-between align-items-end flex-wrap">
                         <button type="button" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block ">

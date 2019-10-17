@@ -6,7 +6,6 @@ from django.views.decorators.cache import never_cache
 
 app_name = "qa_app"
 
-
 urlpatterns = [
 
     path('', views.HomeView.as_view(), name='home'),
@@ -22,10 +21,15 @@ urlpatterns = [
     path('payments/', views.AllPayments.as_view(), name='payments'),
     # url(r'^refunds/(?P<checkout_id>\w+)/(?P<merchant_id>[\w-]+)/(?P<amount>[\w-]+)/$', views.Refunds.as_view(),
     #     name='refunds'),
-    path(r'^refunds/<str:checkout_id>/<str:merchant_id>/<str:amount>/', views.Refunds.as_view(), name='refunds'),
+    path('refunds/<str:checkout_id>/<str:merchant_id>/<str:amount>/', views.Refunds.as_view(), name='refunds'),
     path('post_refunds/', views.Refunds.as_view(), name='post_refunds'),
+    path('cancel_request/<str:checkout_id>/<str:merchant_id>/', views.CancelRequest.as_view(), name='cancel_request'),
+    path('initiate_cancel/', views.CancelRequest.as_view(), name='initiate_cancel'),
+    path('open/', views.OpenAPI.as_view(), name='open'),
     path('call/', views.APICallBack.as_view(), name='call'),
     path('simulate_json/', views.SimulateJson.as_view(), name='simulate_json'),
+    path('status_codes/', views.GetStatusCodes.as_view(), name='status_codes'),
+    path('endpoints/', views.GetEndpointsList.as_view(), name='endpoints'),
     re_path(r'^code/(?P<pk>[\w-]+)/$', views.SetDefaultCode.as_view(), name='set_code'),
     path('profile/', views.ProfileView.as_view(), name="profile"),
     path('signup/', views.SignUp.as_view(), name='signup'),

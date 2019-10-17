@@ -2,7 +2,7 @@
 <form id="form" action="{% url 'set_language' %}" method="post">{% csrf_token %}
     <input name="next" type="hidden" value="{{ redirect_to }}">
     <div class="col-sm-12">
-        <label for="sel">{% trans 'Select Language' %}</label>
+        <label for="sel">{% trans 'Select your language' %}</label>
         <select name="language" id="sel" class="form-control form-control-sm">
             {% get_current_language as LANGUAGE_CODE %}
             {% get_available_languages as LANGUAGES %}

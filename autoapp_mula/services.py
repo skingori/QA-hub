@@ -12,6 +12,7 @@ import sys
 from Crypto.Cipher import AES
 # hoping db will work
 from .models import APISettings, WebHook
+from django.shortcuts import render, get_object_or_404
 
 
 class QaOperations(object):
@@ -21,8 +22,19 @@ class QaOperations(object):
 
     @staticmethod
     def _write_requests(data):
-        with open("media/requests.json", "w") as write_file:
+        with open("media/requests_all.json", "w") as write_file:
             json.dump(data, write_file)
+            write_file.close()
+
+    @staticmethod
+    def read_any_file(filepath):
+        try:
+            with open(f"{filepath}", "r") as read_file:
+                data = json.load(read_file)
+                read_file.close()
+                return data
+        except FileNotFoundError:
+            return "File not found!"
 
     @staticmethod
     def get_date_now():
@@ -65,8 +77,28 @@ class QaOperations(object):
 
         except ConnectionError:
             return "Connection Error"
+        except ValueError:
+            return {"username": username, "message": ValueError}
         except TypeError:
-            return {"username": username}
+            return {"username": username, "message": ValueError}
+
+    @staticmethod
+    def create_status_codes_context(data, username):
+        try:
+            context = ({})
+            context['username'] = username
+            context['statuses'] = data['DATA']['metaData']['statusCodes']
+            return context
+        except KeyError:
+            print(KeyError)
+        except TypeError:
+            print(TypeError, __name__)
+        except ConnectionResetError:
+            print(ConnectionResetError, __name__)
+        except ConnectionError:
+            print(ConnectionError, __name__)
+        except Exception as error:
+            print(error)
 
     @staticmethod
     def create_all_req_context(service_code, data, request_data, service_, username):
@@ -140,20 +172,31 @@ class QaOperations(object):
 
     @staticmethod
     def get_profile_context(data, username, service_code):
+        try:
 
-        response_data = ({})
-        response_data['data'] = data['DATA']
-        response_data['accessKey'] = data['DATA']['clientAccessKeys']
-        response_data['clientDetails'] = data['DATA']['oauthKeyDetails']
-        response_data['serviceDetails'] = data['DATA']['serviceDetails']
-        response_data['clientCode'] = data['DATA']['clientCode']
-        response_data['firstName'] = data['DATA']['firstName']
-        response_data['lastName'] = data['DATA']['lastName']
-        response_data['serviceCode'] = service_code
-        response_data['clientName'] = data['DATA']['clientName']
-        response_data['username'] = username
+            response_data = ({})
+            response_data['data'] = data['DATA']
+            response_data['accessKey'] = data['DATA']['clientAccessKeys']
+            response_data['clientDetails'] = data['DATA']['oauthKeyDetails']
+            response_data['serviceDetails'] = data['DATA']['serviceDetails']
+            response_data['clientCode'] = data['DATA']['clientCode']
+            response_data['firstName'] = data['DATA']['firstName']
+            response_data['lastName'] = data['DATA']['lastName']
+            response_data['serviceCode'] = service_code
+            response_data['clientName'] = data['DATA']['clientName']
+            response_data['username'] = username
 
-        return response_data
+            return response_data
+        except KeyError:
+            print(KeyError)
+        except TypeError:
+            print(TypeError, __name__)
+        except ConnectionResetError:
+            print(ConnectionResetError, __name__)
+        except ConnectionError:
+            print(ConnectionError, __name__)
+        except Exception as error:
+            print(error)
 
     @staticmethod
     def get_client_keys(data):
@@ -217,13 +260,48 @@ class QaOperations(object):
             print(error)
 
     @staticmethod
-    def create_payment_context(payments, username):
-        context = ({})
-        context['username'] = username
-        context['payments'] = payments['DATA']['payments']
-        context['payerClients'] = payments['DATA']['metaData']['payerClients']
+    def cancel_request(data, token, _port):
+        try:
+            headers = {
+                'authorization': "Bearer " + token,
+                'content-type': "application/json",
+            }
+            get_request_url = get_object_or_404(APISettings, unique_name="cancel_request")
+            url = f"{get_request_url.url + ':' + _port}"
+            path = f"{get_request_url.path}"
+            response = requests.post(url=f"{url + path}",
+                                     data=json.dumps(data), headers=headers)
+            return json.dumps(response.json())
+        except KeyError:
+            print(KeyError)
+        except TypeError:
+            print(TypeError, __name__)
+        except ConnectionResetError:
+            print(ConnectionResetError, __name__)
+        except ConnectionError:
+            print(ConnectionError, __name__)
+        except Exception as error:
+            print(error)
 
-        return context
+    @staticmethod
+    def create_payment_context(payments, username):
+        try:
+            context = ({})
+            context['username'] = username
+            context['payments'] = payments['DATA']['payments']
+            context['payerClients'] = payments['DATA']['metaData']['payerClients']
+
+            return context
+        except KeyError:
+            print(KeyError)
+        except TypeError:
+            print(TypeError, __name__)
+        except ConnectionResetError:
+            print(ConnectionResetError, __name__)
+        except ConnectionError:
+            print(ConnectionError, __name__)
+        except Exception as error:
+            print(error)
 
     def get_checkout_requests(self, _port, _service_code, _token):
         try:
@@ -238,13 +316,13 @@ class QaOperations(object):
                         "max": self.max_date  # 1562597513
                     }
                     }
-            get_request_url = APISettings.objects.get(unique_name="fetchCheckoutRequests")
+            get_request_url = get_object_or_404(APISettings, unique_name="fetchCheckoutRequests")
             url = f"{get_request_url.url + ':' + _port}"
             path = f"{get_request_url.path}"
             response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
 
             all_req_response = json.loads(response.text)
-            # QaOperations._write_requests(all_req_response)
+            QaOperations._write_requests(all_req_response)
             return all_req_response
 
         except KeyError:
@@ -271,7 +349,7 @@ class QaOperations(object):
                         "max": self.max_date  # 1562597513
                     }
                     }
-            requests_totals = APISettings.objects.get(unique_name="fetchCheckoutRequestTotals")
+            requests_totals = get_object_or_404(APISettings, unique_name="fetchCheckoutRequestTotals")
             url = f"{requests_totals.url + ':' + _port}"
             path = f"{requests_totals.path}"
             response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
@@ -304,7 +382,7 @@ class QaOperations(object):
                         "max": self.max_date  # 1562597513
                     }
                     }
-            payments_totals = APISettings.objects.get(unique_name="fetchPaymentTotals")
+            payments_totals = get_object_or_404(APISettings, unique_name="fetchPaymentTotals")
             url = f"{payments_totals.url + ':' + _port}"
             path = f"{payments_totals.path}"
 
@@ -339,15 +417,12 @@ class QaOperations(object):
                         "max": self.max_date  # 1562597513
                     }
                     }
-
-            fetchPayments = APISettings.objects.get(unique_name="fetchPayments")
-            endpoint = f"{fetchPayments.url + ':' + _port}"
-            path = f"{fetchPayments.path}"
-            response = requests.post(
-                url=f"{endpoint + path}", data=json.dumps(data), headers=header)
+            fetch_payments = get_object_or_404(APISettings, unique_name="fetchPayments")
+            api = f"{fetch_payments.url + ':' + _port}"
+            path = f"{fetch_payments.path}"
+            response = requests.post(url=f"{api + path}", data=json.dumps(data), headers=header)
 
             all_payments = json.loads(response.text)
-            self._write_requests(all_payments)
             return all_payments
 
         except KeyError:
@@ -444,7 +519,7 @@ class QaOperations(object):
             payer_client,
             country_code
     ):
-        get_webHook = WebHook.objects.get(status=1)
+        get_webHook = get_object_or_404(WebHook, status=1)
         now = datetime.datetime.utcnow()
         me = now + datetime.timedelta(days=0, hours=0, minutes=int(minutes), seconds=0)
 

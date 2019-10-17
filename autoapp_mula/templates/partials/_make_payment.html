@@ -35,7 +35,7 @@
                         <select class="form-control form-control-sm" name="payerClient" id="payerClient">
                             {% for country, value in payerClients.items %}
                                 {% for key, value in value.items %}
-                                    <option value='{"clientCode":"{{ key }}","country":"{{ country }}"}'>{{ value.payerClientName }}</option>
+                                    <option value='{"clientCode":"{{ key }}","country":"{{ country }}"}' {% if key == "SAFKE" %}selected{% endif %}>{{ value.payerClientName }}</option>
                                 {% endfor %}
                             {% endfor %}
                         </select>

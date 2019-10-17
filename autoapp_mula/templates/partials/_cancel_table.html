@@ -1,0 +1,69 @@
+{% load i18n %}
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{% trans 'Cancel Request' %}</h4>
+                <p class="card-description">{% trans 'This is part is required to be on the header' %}</p>
+                <pre class="prettyprint checkout_pre"><code class="lang-css" id="header"></code></pre>
+                <p class="card-description">{% trans 'Json body' %}</p>
+                <form method="POST" id="submit_cancel_form">
+                    {% csrf_token %}
+                    <pre class="prettyprint checkout_pre" contenteditable="true"><code id="cancel"></code></pre>
+                    <div class="d-flex justify-content-between align-items-end flex-wrap">
+                        <button type="button" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block ">
+                            <i class="mdi mdi-download text-muted"></i>
+                        </button>
+                        <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-clock-outline text-muted"></i>
+                        </button>
+                        <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-plus text-muted"></i>
+                        </button>
+                        <button type="button" onclick="cleanResponse()"
+                                class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-json text-muted"></i>
+                        </button>
+                        <button type="submit" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-send text-muted"></i>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{% trans 'Cancel Response' %}</h4>
+                <p class="card-description">
+                    {% trans 'Below is the json response for the cancel request.' %}
+                </p>
+                <pre class="prettyprint checkout_pre"><code class="language-javascript"
+                                                            id="cancel_response"></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=desert"></script>
+<script>
+    $(function () {
+        PR.prettyPrint();
+    });
+    const header = {
+        "authorization": "Bearer <span title='{{ token }}'> ......</span>",
+        "content-type": "application/json",
+    };
+    const data = {
+        "merchantTransactionID": "{{merchantTransactionID}}",
+        "serviceCode": "{{serviceCode}}",
+        "checkoutRequestID": "{{ checkoutRequestID }}"
+    };
+    document.getElementById('cancel').innerHTML = JSON.stringify(data, undefined, 2);
+    document.getElementById('header').innerHTML = JSON.stringify(header, undefined, 2);
+
+    function cleanResponse() {
+        alert("Not Implemented");
+    }
+</script>

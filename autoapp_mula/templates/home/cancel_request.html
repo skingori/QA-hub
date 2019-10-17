@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content-wrapper %}
+    {% block home-message %}
+        {% block home-banner %}
+            {% include 'partials/_banner.html' %}
+        {% endblock home-banner %}
+        {#     contect#}
+        {% include 'partials/_cancel_table.html' %}
+    {% endblock home-message %}
+{% endblock %}

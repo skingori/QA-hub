@@ -237,10 +237,11 @@
         [5,7, 10, 15, "All"]
       ],
       "iDisplayLength": 7,
+      "pagingType": "simple_numbers" ,
       "language": {
         search: ""
       },"order": [[ 0, 'desc' ]],
-      searching: true, paging: true, info: false,autoWidth: true,ordering: true,lengthChange: true
+      searching: true, paging: true, info: true,autoWidth: true,ordering: true,lengthChange: true
     });
   });
 })(jQuery);

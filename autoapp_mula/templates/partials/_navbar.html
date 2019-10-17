@@ -30,17 +30,23 @@
                 <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown"
                    id="notificationDropdown" href="#" data-toggle="dropdown">
                     <i class="mdi mdi-translate mx-0"></i>
-                    <span class="count"></span>
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <span class="nav-profile-name">{% if language.code == LANGUAGE_CODE %}
+                            {{ language.name_local }}{% endif %}</span>
+                    {% endfor %}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
                     <p>{% include 'partials/_language_form.html' %}</p>
-
                 </div>
             </li>
 
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                    <i class="mdi mdi-account-circle mdi-36px"></i>
+                    {#                    <i class="mdi mdi-account-circle mdi-36px"></i>#}
+                    <img src="{% static 'images/faces/user.png' %}" alt="profile"/>
                     <span class="nav-profile-name">{% if username %}{{ username }}{% else %}
                         Configuration {% endif %}</span>
                 </a>

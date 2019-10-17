@@ -39,10 +39,15 @@
                             {% if i.overallStatus == 130 or i.overallStatus == 177 %}
                                 <a href="#" data-toggle="modal" data-target="#payment"
                                    data-id="{{ i.accountNumber }}"
-                                   class="badge badge badge-pill badge-warning float-right" id="simulate_pay">{% trans 'Pay' %}
-                                    now</a>{% elif i.overallStatus == 183 or i.overallStatus == 179 or i.overallStatus == 178 %}
+                                   class="badge badge badge-pill badge-warning float-right mr-3"
+                                   id="simulate_pay" title="Pay now">{% trans 'P' %}
+                                </a><a href="{% url 'main_app:cancel_request' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID %}"
+                                       class="badge badge badge-pill badge-info float-right mr-3"
+                                       title="Cancel request"> {% trans 'C' %}
+                            </a>{% elif i.overallStatus == 183 or i.overallStatus == 179 or i.overallStatus == 178 %}
                                 <a href="{% url 'main_app:refunds' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID amount=i.requestAmount %}"
-                                   class="badge badge badge-pill badge-success float-right">{% trans 'Refund' %}</a>
+                                   class="badge badge badge-pill badge-success float-right mr-3"
+                                   title="Refund">{% trans 'R' %}</a>
                             {% else %}{% endif %}
                         </td>
                         <td>{{ i.dateCreated }}</td>

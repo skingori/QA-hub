@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-02 13:00+0300\n"
+"POT-Creation-Date: 2019-10-07 11:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,194 +18,221 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\QAhome\settings.py:109
+#: QAhome/settings.py:109
 msgid "English"
 msgstr ""
 
-#: .\QAhome\settings.py:110
+#: QAhome/settings.py:110
 msgid "French"
 msgstr ""
 
-#: .\QAhome\settings.py:111
+#: QAhome/settings.py:111
 msgid "Swahili"
 msgstr "Swahili"
 
-#: .\autoapp_mula\templates\partials\_banner.html:8
+#: QAhome/settings.py:112
+msgid "Polish"
+msgstr ""
+
+#: QAhome/settings.py:113
+msgid "Dutch"
+msgstr ""
+
+#: QAhome/settings.py:114
+msgid "Slovak"
+msgstr ""
+
+#: QAhome/settings.py:115
+msgid "Russian"
+msgstr ""
+
+#: QAhome/settings.py:116
+msgid "Finnish"
+msgstr ""
+
+#: autoapp_mula/templates/partials/_banner.html:8
 msgid " This is a test system, don't use it for live products. "
 msgstr "Huu ni mfumo wa majaribio, usitumie kwa bidhaa za moja kwa moja."
 
-#: .\autoapp_mula\templates\partials\_create_tests.html:7
+#: autoapp_mula/templates/partials/_create_tests.html:7
 msgid " This is a test system that is still under development."
 msgstr "Huu ni mfumo wa majaribio ambao bado uko chini ya maendeleo."
 
-#: .\autoapp_mula\templates\partials\_language_form.html:5
-msgid "Select Language"
-msgstr "Chagua Lugha"
+#: autoapp_mula/templates/partials/_language_form.html:5
+msgid "Select your language"
+msgstr "Chagua lugha yako"
 
-#: .\autoapp_mula\templates\partials\_message.html:7
+#: autoapp_mula/templates/partials/_message.html:7
 msgid "Welcome back,"
 msgstr "Karibu tena,"
 
-#: .\autoapp_mula\templates\partials\_message.html:8
+#: autoapp_mula/templates/partials/_message.html:8
 msgid "Get the smart way to test."
 msgstr "Pata njia nzuri ya kujaribu."
 
-#: .\autoapp_mula\templates\partials\_navbar.html:50
+#: autoapp_mula/templates/partials/_navbar.html:54
 msgid "Profile"
 msgstr "Profaili"
 
-#: .\autoapp_mula\templates\partials\_navbar.html:54
+#: autoapp_mula/templates/partials/_navbar.html:58
 msgid "Logout"
 msgstr "Ondoka"
 
-#: .\autoapp_mula\templates\partials\_profile.html:15
+#: autoapp_mula/templates/partials/_profile.html:15
 msgid "First Name:"
 msgstr "Jina la kwanza:"
 
-#: .\autoapp_mula\templates\partials\_profile.html:18
+#: autoapp_mula/templates/partials/_profile.html:18
 msgid "Last Name:"
 msgstr "Jina la familia:"
 
-#: .\autoapp_mula\templates\partials\_profile.html:21
+#: autoapp_mula/templates/partials/_profile.html:21
 msgid "Email:"
 msgstr "Barua pepe:"
 
-#: .\autoapp_mula\templates\partials\_profile.html:24
+#: autoapp_mula/templates/partials/_profile.html:24
 msgid "Key:"
 msgstr "Ufunguo:"
 
-#: .\autoapp_mula\templates\partials\_profile.html:27
+#: autoapp_mula/templates/partials/_profile.html:27
 msgid "Iv Key:"
 msgstr "Ufunguo wa Iv:"
 
-#: .\autoapp_mula\templates\partials\_profile.html:31
+#: autoapp_mula/templates/partials/_profile.html:31
 msgid "Secret Key:"
 msgstr "Ufunguo wa Siri:"
 
-#: .\autoapp_mula\templates\partials\_profile.html:46
+#: autoapp_mula/templates/partials/_profile.html:46
 msgid "Service Code:"
 msgstr "Nambari ya Huduma:"
 
-#: .\autoapp_mula\templates\partials\_profile.html:48
+#: autoapp_mula/templates/partials/_profile.html:48
 msgid "Default"
 msgstr "Chaguo-msingi"
 
-#: .\autoapp_mula\templates\partials\_profile.html:50
+#: autoapp_mula/templates/partials/_profile.html:50
 msgid "Activate"
 msgstr "Washa"
 
-#: .\autoapp_mula\templates\partials\_profile.html:53
+#: autoapp_mula/templates/partials/_profile.html:53
 msgid "Service Name:"
 msgstr "Jina la Huduma:"
 
-#: .\autoapp_mula\templates\partials\_profile.html:54
+#: autoapp_mula/templates/partials/_profile.html:54
 msgid "Service ID:"
 msgstr "Kitambulisho cha huduma"
 
-#: .\autoapp_mula\templates\partials\_refunds.html:6
+#: autoapp_mula/templates/partials/_refunds.html:6
 msgid "Initiate refund"
 msgstr "Anza kurudishiwa pesa"
 
-#: .\autoapp_mula\templates\partials\_refunds.html:7
+#: autoapp_mula/templates/partials/_refunds.html:7
 msgid "This is part is required to be on the header"
 msgstr "Hii ni sehemu inahitajika kuwa juu ya kichwa"
 
-#: .\autoapp_mula\templates\partials\_refunds.html:9
+#: autoapp_mula/templates/partials/_refunds.html:9
 msgid "Json body"
 msgstr ""
 
-#: .\autoapp_mula\templates\partials\_refunds.html:38
+#: autoapp_mula/templates/partials/_refunds.html:38
 msgid "Refund Response"
 msgstr "Jibu la Refund"
 
-#: .\autoapp_mula\templates\partials\_refunds.html:40
+#: autoapp_mula/templates/partials/_refunds.html:40
 msgid "Below is the json response for the refund initiated."
 msgstr "Chini ya majibu ya json kwa refund iliyoanzishwa."
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:7
+#: autoapp_mula/templates/partials/_requests_modal.html:7
 msgid "Create a new request"
 msgstr "Unda ombi mpya"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:16
+#: autoapp_mula/templates/partials/_requests_modal.html:16
 msgid "Mobile Number"
 msgstr "Namba ya simu ya mkononi"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:21
+#: autoapp_mula/templates/partials/_requests_modal.html:21
 msgid "Amount"
 msgstr "Kiasi"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:25
+#: autoapp_mula/templates/partials/_requests_modal.html:25
 msgid "Country Code"
-msgstr "Nambari ya Nchi"
+msgstr "Msimbo wa Nchi"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:29
+#: autoapp_mula/templates/partials/_requests_modal.html:29
 msgid "Currency"
 msgstr "Fedha"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:34
+#: autoapp_mula/templates/partials/_requests_modal.html:34
 msgid "Session lifetime"
 msgstr "Maisha ya Kikao"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:34
+#: autoapp_mula/templates/partials/_requests_modal.html:34
 msgid "minutes"
 msgstr "dakika"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:39
+#: autoapp_mula/templates/partials/_requests_modal.html:39
 msgid "Experience"
 msgstr "Uzoefu"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:40
+#: autoapp_mula/templates/partials/_requests_modal.html:40
 msgid "Add More"
 msgstr "Ongeza zaidi"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:48
+#: autoapp_mula/templates/partials/_requests_modal.html:48
 msgid "Single payment option:"
 msgstr "Chaguo moja la malipo:"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:60
+#: autoapp_mula/templates/partials/_requests_modal.html:60
 msgid "Close"
 msgstr "Funga"
 
-#: .\autoapp_mula\templates\partials\_requests_modal.html:61
+#: autoapp_mula/templates/partials/_requests_modal.html:61
 msgid "Launch"
 msgstr "Uzinduzi"
 
-#: .\autoapp_mula\templates\partials\_requests_table.html:7
+#: autoapp_mula/templates/partials/_requests_table.html:7
 msgid "Checkout Requests"
 msgstr "Maombi ya Checkout"
 
-#: .\autoapp_mula\templates\partials\_requests_table.html:42
+#: autoapp_mula/templates/partials/_requests_table.html:42
 msgid "Pay"
 msgstr "Lipa"
 
-#: .\autoapp_mula\templates\partials\_requests_table.html:45
+#: autoapp_mula/templates/partials/_requests_table.html:45
 msgid "Refund"
 msgstr ""
 
-#: .\autoapp_mula\templates\registration\login.html:23
+#: autoapp_mula/templates/registration/login.html:23
 msgid "Email"
 msgstr "Barua pepe"
 
-#: .\autoapp_mula\templates\registration\login.html:28
+#: autoapp_mula/templates/registration/login.html:28
 msgid "Password"
 msgstr "Nywila"
 
-#: .\autoapp_mula\templates\registration\login.html:35
-msgid "SIGN IN"
-msgstr "WEKA SAHIHI"
+#: autoapp_mula/templates/registration/login.html:35
+msgid "Log in"
+msgstr ""
 
-#: .\autoapp_mula\templates\registration\login.html:45
+#: autoapp_mula/templates/registration/login.html:45
 msgid "Forgot password?"
 msgstr "Umesahau nywila?"
 
-#: .\autoapp_mula\templates\registration\login.html:53
+#: autoapp_mula/templates/registration/login.html:53
 msgid "Don't have an account?"
 msgstr "Huna akaunti?"
 
-#: .\autoapp_mula\templates\registration\login.html:55
+#: autoapp_mula/templates/registration/login.html:55
 msgid "Create"
 msgstr "Unda"
 
-#: .\autoapp_mula\templates\user_keys\user_keys.html:13
+#: autoapp_mula/templates/user_keys/user_keys.html:13
 msgid "Keep your keys secret"
 msgstr "Weka funguo zako kuwa siri"
+
+#: autoapp_mula/views.py:316
+msgid "Oopsie!, we've got a problem!"
+msgstr "Oopsie!, Tunayo shida!"
+
+#~ msgid "SIGN IN"
+#~ msgstr "WEKA SAHIHI"
