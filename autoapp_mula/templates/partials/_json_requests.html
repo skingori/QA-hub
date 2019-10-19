@@ -49,15 +49,16 @@
     function getJson(){
         alert("This method is not implemented!")
     }
+    let amount = Math.floor((Math.random() * 10000) + 10);
     let now = new Date();
     let timestamp = now.getTime();
     let year = now.getFullYear();
     let month = (now.getMonth() + 1);
-    let date = (now.getDate() + 1);
-    let hour = "0" + now.getHours();
+    let date = now.getDate();
+    let hour = "0" + now.getUTCHours();
     let min = "0" + now.getMinutes();
     let sec = "0" + now.getSeconds();
-    let time = pad(year) + '-' + pad(month) + '-' + pad(date)
+    let timeDate = pad(year) + '-' + pad(month) + '-' + pad(date)
         + ' ' + hour.slice(-2)
         + ':' + min.slice(-2)
         + ':' + sec.slice(-2);
@@ -67,11 +68,11 @@
         "customerLastName": "Mwangi",
         "MSISDN": "{{ MSISDN }}",
         "customerEmail": "samson.mwangi@cellulant.com",
-        "amount": "1000",
+        "amount": amount,
         "currencyCode": "KES",
         "accountNumber": timestamp,
         "serviceCode": '{{ s_code }}',
-        "dueDate": time,
+        "dueDate": timeDate,
         "serviceDescription": "Getting service/good x",
         "countryCode": 'KE',
         "languageCode": "en",

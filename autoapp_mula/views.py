@@ -24,7 +24,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from .services import QaServices, QaOperations, Encryption
-from .serializers import CheckoutCallSerial, ResponseCallSerial
+from .serializers import CheckoutCallSerial, ResponseCallSerial, SnippetSerializer
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
@@ -498,7 +498,7 @@ class Refunds(generic.TemplateView):
                 client_keys = QaOperations.get_client_keys(data)
                 get_token = QaOperations.get_oauth_token(
                     client_keys=client_keys, _port=port)
-                token = json.loads(get_token.text).get("access_token")
+                token = get_token.json().get("access_token")
                 username = request.session['username']
                 response = {"username": username, "merchantTransactionID": merchant_transaction,
                             "checkoutRequestID": checkout_request_id, "refundAmount": amount, "token": token}
@@ -524,7 +524,7 @@ class Refunds(generic.TemplateView):
                 get_token = QaOperations.get_oauth_token(
                     client_keys=client_keys, _port=port)
                 if get_token.status_code == 200:
-                    token = json.loads(get_token.text).get("access_token")
+                    token = get_token.json().get("access_token")
                     initiate_refund = QaOperations.initiate_refund(
                         data=cleaned_data, token=token, _port=port)
                     return HttpResponse(initiate_refund,
@@ -559,7 +559,7 @@ class CancelRequest(generic.TemplateView):
                 client_keys = QaOperations.get_client_keys(data)
                 get_token = QaOperations.get_oauth_token(
                     client_keys=client_keys, _port=port)
-                token = json.loads(get_token.text).get("access_token")
+                token = get_token.json().get("access_token")
                 username = request.session['username']
                 response = {"username": username, "merchantTransactionID": merchant_transaction,
                             "checkoutRequestID": checkout_request_id, "serviceCode": s_code, "token": token}
@@ -578,14 +578,14 @@ class CancelRequest(generic.TemplateView):
                 # <process form cleaned data>
                 cancel_response = request.POST.get("cancel")
                 cleaned_data = json.loads(cancel_response)
-                s_code = request.session['session_code']
-                username = request.session['username']
+                # s_code = request.session['session_code']
+                # username = request.session['username']
                 port = request.session['port']
                 data = request.session['data']
                 get_token = QaOperations.get_oauth_token(
                     client_keys=QaOperations.get_client_keys(data), _port=port)
                 if get_token.status_code == 200:
-                    token = json.loads(get_token.text).get("access_token")
+                    token = get_token.json().get("access_token")
                     initiate_refund = QaOperations.cancel_request(
                         data=cleaned_data, token=token, _port=port)
                     return HttpResponse(initiate_refund,
@@ -704,51 +704,34 @@ class GetEndpointsList(ListView):
 class APICallBack(APIView):
     @staticmethod
     def post(request):
-        try:
-            serializer = CheckoutCallSerial(data=request.data)
-            if serializer.is_valid():
-                db = get_object_or_404(WebHook, status=1)
-                merchant_id = request.data.get('merchantTransactionID')
-                checkout_id = request.data.get('checkoutRequestID')
+        serializer = CheckoutCallSerial(data=request.data)
+        if serializer.is_valid():
+            db = get_object_or_404(WebHook, status=1)
+            merchant_id = request.data.get('merchantTransactionID')
+            checkout_id = request.data.get('checkoutRequestID')
 
-                call_response = [{
-                    "merchantTransactionID": f"{merchant_id}",
-                    "checkoutRequestID": f"{checkout_id}",
-                    "receiptNumber": f"{merchant_id}",
-                    "statusCode": db.status_code,
-                    "statusDescription": f"{db.description}"
-                }]
-                results = ResponseCallSerial(call_response, many=True).data
-                appLogger.info(str(results))
-                return Response(str(results), status=status.HTTP_200_OK)
-            else:
-                return JsonResponse(data="400Bad Request", status=status.HTTP_400_BAD_REQUEST, safe=False)
-        except JSONParser:
-            return JsonResponse(data={}, status=status.HTTP_400_BAD_REQUEST)
+            call_response = {
+                "merchantTransactionID": f"{merchant_id}",
+                "checkoutRequestID": f"{checkout_id}",
+                "receiptNumber": f"{merchant_id}",
+                "statusCode": db.status_code,
+                "statusDescription": f"{db.description}"
+            }
+            appLogger.debug("WEB_HOOK REQUEST:" + str(request.data))
+            results = ResponseCallSerial(call_response, many=False)
+            appLogger.debug("WEB_HOOK RESPONSE: " + str(results.data))
+            return Response(data=results.data, status=status.HTTP_200_OK)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class OpenAPI(APIView):
     """
     This class accepts all the requests
     """
-    def get(self, request):
-        try:
-            data = request.data
-            """
-            Create a log system
-            """
-            appLogger.info(data)
-            return JsonResponse(data=data, status=status.HTTP_200_OK, safe=False)
-        except JSONParser:
-            return JsonResponse(data={}, status=status.HTTP_400_BAD_REQUEST)
-
-    def post(self, request):
-        try:
-            data = request.data
-            """
-            Create a logging system
-            """
-            appLogger.info(data)
-            return JsonResponse(data, safe=False, status=status.HTTP_200_OK)
-        except JSONParser:
-            return JsonResponse(data={}, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request, format=None):
+        serializer = SnippetSerializer(data=request.data)
+        if serializer.is_valid():
+            appLogger.debug("OPEN API REQUEST:" + str(request.data))
+            return Response(request.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -30,3 +30,7 @@ class ResponseCallSerial(serializers.Serializer):
     receiptNumber = serializers.CharField(max_length=200)
     statusCode = serializers.CharField(max_length=200)
     statusDescription = serializers.CharField(max_length=200)
+
+
+class SnippetSerializer(serializers.Serializer):
+    pass
