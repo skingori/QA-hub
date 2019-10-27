@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 
 # Create your views here.
 from django.views.generic import TemplateView, ListView
@@ -28,6 +28,7 @@ from .serializers import CheckoutCallSerial, ResponseCallSerial, SnippetSerializ
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
+from django.core import serializers
 
 # create logger
 appLogger = logging.getLogger('app-logger')
@@ -178,12 +179,15 @@ class Checkout(generic.TemplateView):
 
                 success = service['SUCCESS']
                 stat_code = service['STATCODE']
-                queryset = UISettings.objects.all()
+                # db = get_list_or_404(UISettings)
+                # queryset = serializers.serialize('json', UISettings.objects.all())
+                queryset = get_list_or_404(UISettings)
 
                 if success is True and stat_code == 1:
                     requests = QaOperations.create_all_req_context(service_code=service_code,
                                                                    request_data=queryset, data=data,
                                                                    service_=service, username=username)
+
                     return render(request, self.template_name, context=requests)
                 elif "Token has expired" in service.get("REASON"):
                     return HttpResponseRedirect('/logout/')
@@ -233,7 +237,8 @@ class Logout(View):
             print(TypeError)
         except Exception as error:
             print(error)
-        return render(request, self.template_name, {"message": 'Logged Out Successfully'})
+        # return render(request, self.template_name, {"message": 'Logged Out Successfully'})
+        return render(request, self.template_name, {"message": ''})
 
 
 @method_decorator(never_cache, name='dispatch')

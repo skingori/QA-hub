@@ -10,8 +10,8 @@
             </div>
             <form method="post" id="simulate_json_form">
                 {% csrf_token %}
-                <pre class="prettyprint" contenteditable="true"><code id="json_data"></code></pre>
-
+{#                <pre class="prettyprint" contenteditable="true"><code id="json_data"></code></pre>#}
+                <code id="json_data"></code>
                 <div class="modal-footer">
                     <div class="d-flex justify-content-between flex-wrap">
 
@@ -25,7 +25,8 @@
                             <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
                                 <i class="mdi mdi-plus text-muted"></i>
                             </button>
-                            <button type="button" onclick="getJson()" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <button type="button" onclick="getJson()"
+                                    class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
                                 <i class="mdi mdi-json text-muted"></i>
                             </button>
                             <button type="submit" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
@@ -38,10 +39,11 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=desert"></script>
+
+{#<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=desert"></script>#}
 <script>
     $(function ()  {
-        PR.prettyPrint();
+        {#PR.prettyPrint();#}
     });
     function pad(n) {
         return n < 10 ? '0' + n : n
@@ -62,7 +64,8 @@
         + ' ' + hour.slice(-2)
         + ':' + min.slice(-2)
         + ':' + sec.slice(-2);
-    const data = {
+    window.onload = function(){
+        const data = {
         "merchantTransactionID": timestamp,
         "customerFirstName": "Samson",
         "customerLastName": "Mwangi",
@@ -80,6 +83,7 @@
         "failRedirectUrl": "",
         "paymentWebhookUrl": ""
     };
-    document.getElementById("json_data").innerHTML = JSON.stringify(data, undefined, 2);
-
+   document.getElementById("json_data").value = JSON.stringify(data, undefined, 2);
+   CodeMirror.fromTextArea(document.getElementById('json_data'), { beautify: true, mode: { name: 'javascript' }, lineNumbers:false, theme:'blackboard' });
+    };
 </script>

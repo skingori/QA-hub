@@ -23,6 +23,7 @@
                 <thead>
                 <tr>
                     <th>Request</th>
+                    <th>Merchant id</th>
                     <th>Amount</th>
                     <th>Mobile number</th>
                     <th>Status</th>
@@ -33,6 +34,7 @@
                 {% for i in checkout_requests %}
                     <tr>
                         <td>{{ i.checkoutRequestID }}</td>
+                        <td>{{ i.merchantTransactionID }}</td>
                         <td>{{ i.originalCurrencyCode }}:{{ i.requestAmount }}</td>
                         <td>{{ i.MSISDN }}</td>
                         <td>{{ i.overallStatus }}:{{ i.statusCodeDesc }}
