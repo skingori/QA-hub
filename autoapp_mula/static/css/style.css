@@ -22110,7 +22110,7 @@ dl li {
 
 /* cellulant_ting_hover*/
 .sidebar .nav.sub-menu .nav-item .nav-link:hover {
-    color: #ffffff;
+    color: #6CD1EF;
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active {
@@ -22660,7 +22660,7 @@ dl li {
     .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapsing {
         display: block;
         padding: .5rem 0;
-        background: #ffffff;
+        background: #5D538B;
         border-radius: 0 0 5px 0;
         position: absolute;
         left: 70px;
