@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'autoapp_mula.apps.AutoappConfig',
+    'autoapp_tingg.apps.AutoappConfig',
     'rest_framework',
     'widget_tweaks'
 ]

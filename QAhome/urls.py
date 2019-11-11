@@ -27,8 +27,8 @@ urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
 
-    path('accounts/', include('autoapp_mula.urls')),
-    path('', include('autoapp_mula.urls', namespace='main_app')),
+    path('accounts/', include('autoapp_tingg.urls')),
+    path('', include('autoapp_tingg.urls', namespace='main_app')),
 
 ]
 
