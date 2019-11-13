@@ -92,7 +92,7 @@
     };
     document.getElementById("json_data").innerHTML = JSON.stringify(data, null, '\t');
     const editor = ace.edit("json_data");
-    editor.setTheme("ace/theme/monokai");
+    editor.setTheme("ace/theme/dracula");
     editor.session.setMode("ace/mode/javascript");
     editor.renderer.setShowGutter(false);
     editor.setOptions({
