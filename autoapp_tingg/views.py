@@ -516,6 +516,9 @@ class Refunds(generic.TemplateView):
             return HttpResponseRedirect('/')
         except ValueError:
             return HttpResponseRedirect('/')
+        except Exception as ex:
+            print(ex)
+            return HttpResponseRedirect('/')
 
     def post(self, request):
         try:

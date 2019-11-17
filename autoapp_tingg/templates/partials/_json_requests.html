@@ -28,8 +28,9 @@
                             <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
                                 <i class="mdi mdi-clock-outline text-muted"></i>
                             </button>
-                            <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
-                                <i class="mdi mdi-plus text-muted"></i>
+                            <button type="button" onclick="changeTheme()"
+                                    class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                                <i class="mdi mdi-theme-light-dark text-muted"></i>
                             </button>
                             <button type="button" onclick="getJson()"
                                     class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
@@ -78,7 +79,7 @@
         "customerLastName": "Mwangi",
         "MSISDN": "{{ MSISDN }}",
         "customerEmail": "samson.mwangi@cellulant.com",
-        "amount": amount,
+        "amount": "1000",
         "currencyCode": "KES",
         "accountNumber": timestamp,
         "serviceCode": '{{ s_code }}',
@@ -92,12 +93,21 @@
     };
     document.getElementById("json_data").innerHTML = JSON.stringify(data, null, '\t');
     const editor = ace.edit("json_data");
-    editor.setTheme("ace/theme/dracula");
+    editor.setTheme("ace/theme/dawn");
     editor.session.setMode("ace/mode/javascript");
+    editor.getSession().setTabSize(2);
+    editor.getSession().setUseWrapMode(true);
     editor.renderer.setShowGutter(false);
     editor.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true,
         enableLiveAutocompletion: true
     });
+
+    function changeTheme() {
+        let themes = ["ace/theme/dracula", "ace/theme/monokai", "ace/theme/github", "ace/theme/cobalt"];
+
+        let randomItem = themes[Math.floor(Math.random() * themes.length)];
+        editor.setTheme(randomItem);
+    }
 </script>

@@ -17,7 +17,12 @@ $(function () {
                 cancel: container_data
             }, // data sent with the post request
             success: function (response) {
-                document.getElementById('cancel_response').innerHTML = PR.prettyPrintOne(JSON.stringify(response));
+                const editor = ace.edit('cancel_response');
+                editor.setTheme("ace/theme/dracula");
+                editor.session.setMode("ace/mode/javascript");
+                editor.getSession().setTabSize(2);
+                editor.getSession().setUseWrapMode(true);
+                editor.setValue(JSON.stringify(response, null, '\t'));
             },
             error: function (json) {
                 alert(json.responseText)
