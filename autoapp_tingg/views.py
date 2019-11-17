@@ -200,7 +200,8 @@ class Checkout(generic.TemplateView):
             return HttpResponseRedirect('/')
         except TypeError:
             return HttpResponseRedirect('/')
-        except Exception:
+        except Exception as ex:
+            print(ex)
             return HttpResponseRedirect('/')
 
 
