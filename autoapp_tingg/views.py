@@ -459,7 +459,6 @@ class SimulateJson(View):
 
                 # <process form cleaned data>
                 json_data = request.POST.get("json_data")
-                print(json_data)
                 data_to_json = json.loads(json_data)
                 country = data_to_json.get('countryCode')
                 data = request.session['data']

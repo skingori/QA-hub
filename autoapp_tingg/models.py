@@ -77,3 +77,10 @@ class EnvironmentPorts(models.Model):
         verbose_name = 'Environment'
         verbose_name_plural = 'Environment'
         db_table = 'Environment'
+
+
+class JSONSimulator(models.Model):
+    unique_name = models.CharField(max_length=10, unique=True)
+
+    url = models.URLField()
+    description = models.TextField()
