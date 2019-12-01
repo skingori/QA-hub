@@ -31,6 +31,7 @@
   </component>
   <component name="ProjectId" id="1UOk1V18Jn88Sy5FBU6f9XEL5aZ" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
