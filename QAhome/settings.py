@@ -140,6 +140,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = "/accounts/login/"
 LOGOUT_REDIRECT_URL = '/'
 # DLL_FILE = '/Users/king/logs/debug.log'
+STATIC_ROOT = "static"
 
 APPEND_SLASH = True
 
