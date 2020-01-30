@@ -4,6 +4,10 @@
     <list default="true" id="0320bc25-a4e5-4058-82b4-77df00e9a432" name="Default Changelist" comment="Remove un wanted packages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QAhome/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/QAhome/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/info.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +80,8 @@
       <option name="presentableId" value="Default" />
       <updated>1575234813270</updated>
       <workItem from="1575234815852" duration="765000" />
-      <workItem from="1580228888708" duration="2245000" />
+      <workItem from="1580228888708" duration="9775000" />
+      <workItem from="1580370585118" duration="1906000" />
     </task>
     <task id="LOCAL-00001" summary="Remove un wanted packages">
       <created>1580272984303</created>
@@ -116,17 +121,37 @@
     <option name="LAST_COMMIT_MESSAGE" value="Remove un wanted packages" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="321" y="0" key="CommitChangelistDialog2" timestamp="1580273719919">
+    <state x="363" y="96" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580370109815">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="321" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580273719919" />
+    <state x="363" y="96" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1580370109815" />
+    <state x="321" y="0" key="CommitChangelistDialog2" timestamp="1580273736186">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="321" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580273736186" />
+    <state width="1323" height="165" key="GridCell.Tab.0.bottom" timestamp="1580372476732">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="165" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580372476732" />
+    <state width="1323" height="165" key="GridCell.Tab.0.center" timestamp="1580372476731">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="165" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580372476731" />
+    <state width="1323" height="165" key="GridCell.Tab.0.left" timestamp="1580372476731">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="165" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580372476731" />
+    <state width="1323" height="165" key="GridCell.Tab.0.right" timestamp="1580372476731">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="165" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580372476731" />
     <state x="186" y="10" key="SettingsEditor" timestamp="1580228933181">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1580228933181" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1580228888983">
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1580370634828">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580228888983" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580370634828" />
   </component>
 </project>

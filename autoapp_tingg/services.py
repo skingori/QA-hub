@@ -1,4 +1,6 @@
 import csv
+from typing import Dict, Union, Optional, Any
+
 import urllib3
 import requests
 from requests.exceptions import ConnectionError
@@ -15,10 +17,35 @@ from .models import APISettings, WebHook
 from django.shortcuts import render, get_object_or_404
 
 
+def header_with_no_token() -> Dict[str, str]:
+    header = {
+        'Content-Type': 'application/json',
+    }
+    return header
+
+
+def header_with_token(_token) -> Dict[str, str]:
+    auth = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {_token}'
+    }
+    return auth
+
+
 class QaOperations(object):
     def __init__(self, **date):
         self.min_date = date.get('date_min')
         self.max_date = date.get('date_max')
+
+    def get_max_min_date(self, service_code) -> Dict[str, Union[str, Dict[str, Union[Optional[str], Any]]]]:
+        data = {"serviceCode": f"{service_code}",
+                "date": {
+                    "type": "dateBetween",
+                    "min": self.min_date,  # 1561906314
+                    "max": self.max_date  # 1562597513
+                }
+                }
+        return data
 
     @staticmethod
     def _write_requests(data):
@@ -210,9 +237,7 @@ class QaOperations(object):
     @staticmethod
     def get_oauth_token(client_keys, _port):
         try:
-            header = {
-                'Content-Type': 'application/json',
-            }
+
             data = {
                 "grant_type": "client_credentials",
                 "client_id": f'{client_keys.get("client_id")}',
@@ -222,8 +247,8 @@ class QaOperations(object):
             get_request_url = APISettings.objects.get(unique_name="token")
             url = f"{get_request_url.url + ':' + _port}"
             path = f"{get_request_url.path}"
-            response = requests.post(url=f"{url+path}",
-                                     data=json.dumps(data), headers=header)
+            response = requests.post(url=f"{url + path}",
+                                     data=json.dumps(data), headers=header_with_no_token())
             if response.status_code == 200:
                 return response
             else:
@@ -238,15 +263,11 @@ class QaOperations(object):
     @staticmethod
     def initiate_refund(data, token, _port):
         try:
-            headers = {
-                'authorization': "Bearer " + token,
-                'content-type': "application/json",
-            }
             get_request_url = APISettings.objects.get(unique_name="initiate-refund")
             url = f"{get_request_url.url + ':' + _port}"
             path = f"{get_request_url.path}"
             response = requests.post(url=f"{url + path}",
-                                     data=json.dumps(data), headers=headers)
+                                     data=json.dumps(data), headers=header_with_token(token))
             return json.dumps(response.json())
         except KeyError:
             print(KeyError)
@@ -262,15 +283,11 @@ class QaOperations(object):
     @staticmethod
     def cancel_request(data, token, _port):
         try:
-            headers = {
-                'authorization': "Bearer " + token,
-                'content-type': "application/json",
-            }
             get_request_url = get_object_or_404(APISettings, unique_name="cancel_request")
             url = f"{get_request_url.url + ':' + _port}"
             path = f"{get_request_url.path}"
             response = requests.post(url=f"{url + path}",
-                                     data=json.dumps(data), headers=headers)
+                                     data=json.dumps(data), headers=header_with_token(token))
             return json.dumps(response.json())
         except KeyError:
             print(KeyError)
@@ -305,24 +322,14 @@ class QaOperations(object):
 
     def get_checkout_requests(self, _port, _service_code, _token):
         try:
-            header = {
-                'Content-Type': 'application/json',
-                'Authorization': f'Bearer {_token}'
-            }
-            data = {"serviceCode": f"{_service_code}",
-                    "date": {
-                        "type": "dateBetween",
-                        "min": self.min_date,  # 1561906314
-                        "max": self.max_date  # 1562597513
-                    }
-                    }
+            data = self.get_max_min_date(_service_code)
             get_request_url = get_object_or_404(APISettings, unique_name="fetchCheckoutRequests")
             url = f"{get_request_url.url + ':' + _port}"
             path = f"{get_request_url.path}"
-            response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
+            response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header_with_token(_token))
 
             all_req_response = json.loads(response.text)
-            QaOperations._write_requests(all_req_response)
+            # QaOperations._write_requests(all_req_response)
             return all_req_response
 
         except KeyError:
@@ -338,10 +345,8 @@ class QaOperations(object):
 
     def create_requests(self, _port, _service_code, _token):
         try:
-            header = {
-                'Content-Type': 'application/json',
-                'Authorization': f'Bearer {_token}'
-            }
+
+            header = header_with_token(_token)
             data = {"serviceCode": f"{_service_code}",
                     "date": {
                         "type": "dateBetween",
@@ -352,7 +357,7 @@ class QaOperations(object):
             requests_totals = get_object_or_404(APISettings, unique_name="fetchCheckoutRequestTotals")
             url = f"{requests_totals.url + ':' + _port}"
             path = f"{requests_totals.path}"
-            response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
+            response = requests.post(url=f"{url + path}", data=json.dumps(data), headers= header)
 
             req_response = json.loads(response.text)
             # self._write_requests(req_response)
@@ -371,10 +376,6 @@ class QaOperations(object):
 
     def fetch_payment_totals(self, _port, _service_code, _token):
         try:
-            content_header = {
-                'Content-Type': 'application/json',
-                'Authorization': f'Bearer {_token}'
-            }
             data = {"serviceCode": f"{_service_code}",
                     "date": {
                         "type": "dateBetween",
@@ -387,7 +388,7 @@ class QaOperations(object):
             path = f"{payments_totals.path}"
 
             response = requests.post(
-                url=f"{url + path}", data=json.dumps(data), headers=content_header)
+                url=f"{url + path}", data=json.dumps(data), headers=header_with_token(_token))
 
             pay_response = json.loads(response.text)
             # self._write_requests(pay_response)

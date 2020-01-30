@@ -4,8 +4,7 @@ django-widget-tweaks
 urllib3
 pycryptodome
 djangorestframework
-# pygments
-# gunicorn
+# pygment# gunicorn
 # psycopg2
 whitenoise
 # django_heroku

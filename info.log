@@ -30,3 +30,281 @@
 2019-12-03 20:57:17,890 [Thread-15   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1753
 2019-12-03 20:57:20,640 [Thread-16   ] [INFO ] [django.server       ]  "POST /initiate_cancel/ HTTP/1.1" 200 189
 2019-12-03 20:57:20,689 [Thread-16   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1753
+2020-01-29 18:05:20,361 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-29 18:05:24,242 [Thread-1    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 302 0
+2020-01-29 18:05:24,337 [Thread-1    ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4390
+2020-01-29 18:05:24,361 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.css HTTP/1.1" 200 2598
+2020-01-29 18:05:24,375 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/js/hoverable-collapse.js HTTP/1.1" 200 806
+2020-01-29 18:05:24,403 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/vendors/mdi/css/materialdesignicons.min.css HTTP/1.1" 200 158880
+2020-01-29 18:05:24,408 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/js/off-canvas.js HTTP/1.1" 200 185
+2020-01-29 18:05:24,429 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/css/style.css HTTP/1.1" 200 546888
+2020-01-29 18:05:24,448 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/images/Tingg.png HTTP/1.1" 200 44679
+2020-01-29 18:05:24,450 [Thread-6    ] [INFO ] [django.server       ]  "GET /static/js/template.js HTTP/1.1" 200 2057
+2020-01-29 18:05:24,548 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Light.woff2 HTTP/1.1" 200 65512
+2020-01-29 18:05:24,562 [Thread-6    ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Regular.woff2 HTTP/1.1" 200 65916
+2020-01-29 18:05:24,656 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.js HTTP/1.1" 200 185673
+2020-01-29 18:05:24,767 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/vendors/mdi/fonts/materialdesignicons-webfont.woff2?v=3.6.95 HTTP/1.1" 200 193408
+2020-01-29 18:05:33,687 [Thread-8    ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4390
+2020-01-29 18:05:34,172 [Thread-8    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-29 18:05:40,117 [Thread-10   ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 20407
+2020-01-29 18:05:40,150 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.css HTTP/1.1" 200 5799
+2020-01-29 18:05:40,158 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/images/faces/user.png HTTP/1.1" 200 44622
+2020-01-29 18:05:40,207 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/js/checkout_charts.js HTTP/1.1" 200 0
+2020-01-29 18:05:40,248 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.js HTTP/1.1" 200 4693
+2020-01-29 18:05:40,249 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/js/checkout_dash.js HTTP/1.1" 200 7220
+2020-01-29 18:05:40,267 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/unused/data-table.js HTTP/1.1" 200 821
+2020-01-29 18:05:40,273 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/js/checkout_copy.js HTTP/1.1" 200 2998
+2020-01-29 18:05:40,285 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/submit_json_request.js HTTP/1.1" 200 911
+2020-01-29 18:05:40,288 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/js/unused/dataTables.bootstrap4.js HTTP/1.1" 200 4678
+2020-01-29 18:05:40,303 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/js/submit_refunds_json.js HTTP/1.1" 200 1164
+2020-01-29 18:05:40,312 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/js/checkout_functions.js HTTP/1.1" 200 4174
+2020-01-29 18:05:40,345 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/js/language_change.js HTTP/1.1" 200 129
+2020-01-29 18:05:40,351 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/submit_cancel_json.js HTTP/1.1" 200 1163
+2020-01-29 18:05:40,386 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net/jquery.dataTables.js HTTP/1.1" 200 447569
+2020-01-29 18:05:40,397 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Bold.woff2 HTTP/1.1" 200 65972
+2020-01-29 18:05:40,398 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Medium.woff2 HTTP/1.1" 200 66792
+2020-01-29 18:05:40,403 [Thread-14   ] [INFO ] [django.server       ]  "GET /static/js/jquery.dataTables.js HTTP/1.1" 200 445792
+2020-01-29 18:05:40,427 [Thread-9    ] [INFO ] [django.server       ]  "GET /static/vendors/chart.js/dist/Chart.bundle.js HTTP/1.1" 200 547100
+2020-01-29 18:05:44,912 [Thread-9    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 45539
+2020-01-29 18:05:45,015 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ext-language_tools.js HTTP/1.1" 200 39167
+2020-01-29 18:05:45,212 [Thread-9    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ace.js HTTP/1.1" 200 376330
+2020-01-29 18:05:45,263 [Thread-16   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/text.js HTTP/1.1" 200 460
+2020-01-29 18:05:45,270 [Thread-9    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/theme-dawn.js HTTP/1.1" 200 2566
+2020-01-29 18:05:45,296 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/mode-javascript.js HTTP/1.1" 200 18545
+2020-01-29 18:05:45,418 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/javascript.js HTTP/1.1" 200 4175
+2020-01-29 18:05:45,489 [Thread-15   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-01-30 09:18:30,999 [Thread-17   ] [INFO ] [django.server       ]  "POST /simulate/ HTTP/1.1" 302 0
+2020-01-30 10:02:27,813 [Thread-19   ] [INFO ] [django.server       ]  "POST /checkout/ HTTP/1.1" 302 0
+2020-01-30 10:02:28,923 [Thread-19   ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 302 0
+2020-01-30 10:02:28,979 [Thread-19   ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4390
+2020-01-30 10:02:48,769 [Thread-19   ] [INFO ] [django.server       ]  "POST /checkout/ HTTP/1.1" 302 0
+2020-01-30 10:02:48,791 [Thread-19   ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 302 0
+2020-01-30 10:02:48,808 [Thread-19   ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4390
+2020-01-30 10:03:20,802 [Thread-19   ] [INFO ] [django.server       ]  "POST /checkout/ HTTP/1.1" 302 0
+2020-01-30 10:03:20,811 [Thread-19   ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 302 0
+2020-01-30 10:03:20,829 [Thread-19   ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4390
+2020-01-30 10:03:27,711 [Thread-19   ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 4610
+2020-01-30 10:03:36,573 [Thread-19   ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 20407
+2020-01-30 10:03:36,609 [Thread-19   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.css HTTP/1.1" 304 0
+2020-01-30 10:03:36,614 [Thread-23   ] [INFO ] [django.server       ]  "GET /static/vendors/chart.js/dist/Chart.bundle.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,617 [Thread-24   ] [INFO ] [django.server       ]  "GET /static/images/faces/user.png HTTP/1.1" 304 0
+2020-01-30 10:03:36,656 [Thread-24   ] [INFO ] [django.server       ]  "GET /static/js/checkout_charts.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,676 [Thread-24   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net/jquery.dataTables.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,677 [Thread-23   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,694 [Thread-24   ] [INFO ] [django.server       ]  "GET /static/js/unused/data-table.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,694 [Thread-19   ] [INFO ] [django.server       ]  "GET /static/js/jquery.dataTables.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,695 [Thread-23   ] [INFO ] [django.server       ]  "GET /static/js/checkout_dash.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,695 [Thread-25   ] [INFO ] [django.server       ]  "GET /static/js/unused/dataTables.bootstrap4.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,704 [Thread-25   ] [INFO ] [django.server       ]  "GET /static/js/submit_json_request.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,711 [Thread-23   ] [INFO ] [django.server       ]  "GET /static/js/submit_refunds_json.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,713 [Thread-24   ] [INFO ] [django.server       ]  "GET /static/js/submit_cancel_json.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,715 [Thread-25   ] [INFO ] [django.server       ]  "GET /static/js/language_change.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,716 [Thread-26   ] [INFO ] [django.server       ]  "GET /static/js/checkout_copy.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,717 [Thread-27   ] [INFO ] [django.server       ]  "GET /static/js/checkout_functions.js HTTP/1.1" 304 0
+2020-01-30 10:03:36,871 [Thread-27   ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Medium.woff2 HTTP/1.1" 304 0
+2020-01-30 10:03:36,872 [Thread-26   ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Bold.woff2 HTTP/1.1" 304 0
+2020-01-30 10:03:41,790 [Thread-26   ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 45005
+2020-01-30 10:03:41,839 [Thread-26   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ace.js HTTP/1.1" 304 0
+2020-01-30 10:03:41,840 [Thread-27   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ext-language_tools.js HTTP/1.1" 304 0
+2020-01-30 10:03:41,961 [Thread-26   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/mode-javascript.js HTTP/1.1" 304 0
+2020-01-30 10:03:41,964 [Thread-27   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/theme-dawn.js HTTP/1.1" 304 0
+2020-01-30 10:03:41,966 [Thread-25   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/text.js HTTP/1.1" 304 0
+2020-01-30 10:03:42,149 [Thread-25   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/javascript.js HTTP/1.1" 304 0
+2020-01-30 10:03:42,180 [Thread-25   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-01-30 10:03:44,548 [Thread-27   ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4390
+2020-01-30 10:03:55,795 [Thread-27   ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 20404
+2020-01-30 10:03:56,560 [Thread-27   ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 304 0
+2020-01-30 10:04:03,143 [Thread-27   ] [INFO ] [django.server       ]  "GET /profile/ HTTP/1.1" 200 14769
+2020-01-30 10:04:04,121 [Thread-27   ] [INFO ] [django.server       ]  "GET /code/RHYSBX0725/ HTTP/1.1" 302 0
+2020-01-30 10:04:04,147 [Thread-27   ] [INFO ] [django.server       ]  "GET /profile/ HTTP/1.1" 200 14769
+2020-01-30 10:04:06,716 [Thread-27   ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 54752
+2020-01-30 10:04:07,078 [Thread-27   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-01-30 10:23:22,088 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:23:24,857 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:32:42,620 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:32:44,583 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:34:15,595 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:34:16,611 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:40:17,331 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:40:19,150 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:41:14,755 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:41:16,375 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:41:26,024 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:41:27,702 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:44:07,218 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:44:09,110 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:45:51,553 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:45:53,216 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:45:59,008 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:45:59,951 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:47:10,681 [Thread-1    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 54752
+2020-01-30 10:47:11,098 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-30 10:47:11,151 [Thread-1    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-01-30 10:47:13,953 [Thread-2    ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4390
+2020-01-30 10:48:44,700 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:48:46,420 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:48:50,360 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:48:52,004 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:50:44,599 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:50:53,846 [Thread-2    ] [ERROR] [django.request      ]  Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py", line 377, in create_requests
+    response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
+NameError: name 'header' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\VENV\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\VENV\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\VENV\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\VENV\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\VENV\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\VENV\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\VENV\lib\site-packages\django\views\generic\base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\views.py", line 311, in post
+    _port=port)
+  File "C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py", line 392, in create_requests
+    print(error)
+OSError: [Errno 22] Invalid argument
+2020-01-30 10:50:53,849 [Thread-2    ] [ERROR] [django.server       ]  "POST /login/ HTTP/1.1" 500 109409
+2020-01-30 10:50:54,133 [Thread-2    ] [WARNI] [django.request      ]  Not Found: /favicon.ico
+2020-01-30 10:50:54,134 [Thread-2    ] [WARNI] [django.server       ]  "GET /favicon.ico HTTP/1.1" 404 6312
+2020-01-30 10:52:00,259 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:52:00,409 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:52:01,369 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:52:01,498 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:52:08,493 [Thread-2    ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 19133
+2020-01-30 10:53:12,057 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:53:12,287 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:53:14,446 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:53:14,447 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:53:18,451 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:53:19,311 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:53:19,346 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:53:20,473 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:54:13,672 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:54:13,712 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:54:15,964 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:54:15,965 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:54:26,394 [Thread-2    ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 19133
+2020-01-30 10:54:26,746 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-30 10:55:09,177 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:55:09,227 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:55:10,782 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:55:10,782 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:55:25,337 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:55:25,397 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:55:27,200 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:55:27,219 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:55:33,059 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:55:33,241 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:55:34,566 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:55:34,662 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:55:48,258 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:55:48,287 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:55:49,996 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:55:49,997 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:56:00,043 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:56:00,122 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:56:01,307 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:56:01,475 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:58:15,557 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:58:15,593 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:58:16,589 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:58:16,604 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:58:45,746 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:58:45,763 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:58:46,762 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:59:12,528 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:59:12,547 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 10:59:13,619 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:59:13,635 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 10:59:24,405 [Thread-1    ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 19133
+2020-01-30 10:59:24,701 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-30 10:59:28,684 [Thread-1    ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4390
+2020-01-30 10:59:36,228 [Thread-1    ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 19133
+2020-01-30 11:00:12,584 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:00:12,752 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:00:14,452 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:00:14,480 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:00:20,014 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:00:20,040 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:00:21,025 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:00:28,974 [Thread-1    ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 19133
+2020-01-30 11:00:29,319 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-30 11:01:20,059 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:01:20,837 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:01:21,298 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:01:22,035 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:01:50,560 [Thread-2    ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 20407
+2020-01-30 11:01:50,917 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-30 11:03:04,969 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:03:05,130 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:03:05,971 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:03:06,172 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:03:47,977 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:03:48,617 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:03:48,865 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:03:49,595 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:06:10,311 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:06:10,458 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:06:11,278 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:06:11,430 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:06:28,141 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:06:29,081 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:06:52,722 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:06:53,585 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:07:12,651 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:07:13,496 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:07:31,056 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:07:32,190 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:07:53,093 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:07:53,868 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:08:33,805 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:08:34,733 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:09:08,200 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:09:09,019 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:09:16,612 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:09:17,406 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:11:07,694 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:11:08,549 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:13:05,935 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:13:06,774 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:13:19,674 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:13:20,506 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:13:28,754 [Thread-2    ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 20407
+2020-01-30 11:13:29,086 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-30 11:13:34,140 [Thread-2    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 45005
+2020-01-30 11:13:34,507 [Thread-2    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-01-30 11:14:39,662 [Thread-4    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 20407
+2020-01-30 11:15:06,792 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\services.py changed, reloading.
+2020-01-30 11:15:07,669 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:17:47,546 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\views.py changed, reloading.
+2020-01-30 11:17:49,571 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:17:52,235 [Thread-1    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 21578
+2020-01-30 11:17:52,541 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-30 11:18:10,754 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\views.py changed, reloading.
+2020-01-30 11:18:12,472 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:18:16,659 [Thread-1    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 22358
+2020-01-30 11:18:17,087 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-30 11:18:30,371 [Thread-1    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 45005
+2020-01-30 11:18:30,728 [Thread-1    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-01-30 11:18:33,896 [Thread-3    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 22358
+2020-01-30 11:19:50,688 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\autoapp_tingg\views.py changed, reloading.
+2020-01-30 11:19:51,500 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-01-30 11:19:55,064 [Thread-1    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 21578
+2020-01-30 11:19:55,384 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-01-30 11:20:03,092 [Thread-1    ] [INFO ] [django.server       ]  "GET /profile/ HTTP/1.1" 200 15296
+2020-01-30 11:20:04,539 [Thread-1    ] [INFO ] [django.server       ]  "GET /code/XMIDEV5137/ HTTP/1.1" 302 0
+2020-01-30 11:20:04,565 [Thread-1    ] [INFO ] [django.server       ]  "GET /profile/ HTTP/1.1" 200 15296
+2020-01-30 11:20:08,869 [Thread-1    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 21577
+2020-01-30 11:20:17,391 [Thread-1    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 44120
+2020-01-30 11:20:17,763 [Thread-1    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755

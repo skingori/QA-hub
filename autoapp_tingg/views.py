@@ -49,7 +49,7 @@ class HomeView(View):
                 port = request.session['port']
 
                 future_date = QaOperations.create_future_date(
-                    days=-15, today=QaOperations.get_date_now())
+                    days=-30, today=QaOperations.get_date_now())
 
                 date_min_to_sec = QaOperations.unix_time_millis(future_date)
                 date_max_to_sec = QaOperations.unix_time_millis(
