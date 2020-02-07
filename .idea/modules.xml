@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/QAhomeSession.iml" filepath="$PROJECT_DIR$/.idea/QAhomeSession.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/qatestertool.iml" filepath="$PROJECT_DIR$/.idea/qatestertool.iml" />
     </modules>
   </component>
 </project>

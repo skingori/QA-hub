@@ -308,3 +308,6 @@ OSError: [Errno 22] Invalid argument
 2020-01-30 11:20:08,869 [Thread-1    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 21577
 2020-01-30 11:20:17,391 [Thread-1    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 44120
 2020-01-30 11:20:17,763 [Thread-1    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-02-07 13:10:16,568 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-02-07 13:10:20,081 [Thread-1    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 302 0
+2020-02-07 13:10:20,105 [Thread-1    ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4390
