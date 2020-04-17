@@ -2870,3 +2870,5 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2020-04-17 22:17:57,023 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
 2020-04-17 22:32:35,574 [Thread-1    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 44656
 2020-04-17 22:32:36,418 [Thread-1    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 00:00:26,961 [MainThread  ] [INFO ] [django.utils.autorel]  C:\FILES\CELLULANT\QATOOLS\qatestertool\QAhome\settings.py changed, reloading.
+2020-04-18 00:00:28,635 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
