@@ -3158,3 +3158,5 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2020-04-18 00:00:28,635 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
 >>>>>>> 5e258a87a0b73171aad188323e608a2a36f9276b
 2020-04-17 21:30:36,226 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-04-17 21:32:21,294 [MainThread  ] [INFO ] [django.utils.autorel]  /Users/king/Desktop/FOLDERS/QATOOLS/qatestertool/QAhome/settings.py changed, reloading.
+2020-04-17 21:32:22,743 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
