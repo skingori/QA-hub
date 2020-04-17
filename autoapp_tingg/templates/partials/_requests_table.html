@@ -43,7 +43,7 @@
                     <tr>
                         <td>{{ i.checkoutRequestID }}</td>
                         <td>{{ i.merchantTransactionID }}</td>
-                        <td>{{ i.originalCurrencyCode }}:{{ i.requestAmount }}</td>
+                        <td>{{ i.originalCurrencyCode }}:{{ i.totalPayableAmount }}</td>
                         <td>{{ i.MSISDN }}</td>
                         <td>{{ i.overallStatus }}:{{ i.statusCodeDesc }}
                             {% if i.overallStatus == 130 or i.overallStatus == 177 %}

@@ -26,6 +26,7 @@ urlpatterns = [
     path('cancel_request/<str:checkout_id>/<str:merchant_id>/', views.CancelRequest.as_view(), name='cancel_request'),
     path('initiate_cancel/', views.CancelRequest.as_view(), name='initiate_cancel'),
     path('open/', views.OpenAPI.as_view(), name='open'),
+    path('mockapi/', views.MockAPI.as_view(), name='mock'),
     path('call/', views.APICallBack.as_view(), name='call'),
     path('simulate_json/', views.SimulateJson.as_view(), name='simulate_json'),
     path('status_codes/', views.GetStatusCodes.as_view(), name='status_codes'),

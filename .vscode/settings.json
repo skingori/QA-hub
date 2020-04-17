@@ -5,7 +5,7 @@
 
 {
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "/Users/king/globalenv/bin/python",
+    "python.pythonPath": "C:\\Users\\smwangi\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
     // "python.linting.pycodestyleEnabled": true,
     // "python.linting.enabled": true
 }
