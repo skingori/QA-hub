@@ -84,3 +84,20 @@ class JSONSimulator(models.Model):
 
     url = models.URLField()
     description = models.TextField()
+
+
+class MockingData(models.Model):
+    ACTIVE = '1'
+    INACTIVE = '2'
+    CHOICES = [
+        (ACTIVE, 'Active'),
+        (INACTIVE, 'In-active'),
+    ]
+    status = models.CharField(max_length=2,
+                              choices=CHOICES,
+                              default=INACTIVE,
+                              )
+    unique_name = models.CharField(max_length=10, unique=True)
+
+    json_string = models.TextField()
+    description = models.TextField()

@@ -2,6 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0320bc25-a4e5-4058-82b4-77df00e9a432" name="Default Changelist" comment="Remove un wanted packages">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_json_requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_json_requests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_requests_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_requests_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+=======
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/QAhomeSession.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/qatestertool.iml" afterDir="false" />
@@ -11,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/QAhome/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/QAhome/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_tingg.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test_tingg.py" afterDir="false" />
+>>>>>>> dc62723ae5187b42d6716fb1043fd352b5555306
       <change beforePath="$PROJECT_DIR$/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
@@ -18,6 +33,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -28,14 +46,25 @@
   <component name="ProjectId" id="1UOk1V18Jn88Sy5FBU6f9XEL5aZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+=======
+>>>>>>> dc62723ae5187b42d6716fb1043fd352b5555306
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="13" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="QAhomeSession" type="Python.DjangoServer" factoryName="Django server">
@@ -63,18 +92,6 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -87,8 +104,21 @@
       <updated>1575234813270</updated>
       <workItem from="1575234815852" duration="765000" />
       <workItem from="1580228888708" duration="9775000" />
+<<<<<<< HEAD
+      <workItem from="1580370585118" duration="3067000" />
+      <workItem from="1580395615576" duration="58000" />
+      <workItem from="1580729618071" duration="99000" />
+      <workItem from="1580729732342" duration="352000" />
+      <workItem from="1580732130570" duration="54000" />
+      <workItem from="1586952169116" duration="1136000" />
+      <workItem from="1586953351726" duration="11385000" />
+      <workItem from="1587116288632" duration="599000" />
+      <workItem from="1587124359620" duration="232000" />
+      <workItem from="1587124810827" duration="6772000" />
+=======
       <workItem from="1580370585118" duration="1906000" />
       <workItem from="1581078081379" duration="5234000" />
+>>>>>>> dc62723ae5187b42d6716fb1043fd352b5555306
     </task>
     <task id="LOCAL-00001" summary="Remove un wanted packages">
       <created>1580272984303</created>
@@ -108,53 +138,83 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Remove un wanted packages" />
     <option name="LAST_COMMIT_MESSAGE" value="Remove un wanted packages" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
+    <state x="163" y="0" key="#Project_Structure" timestamp="1586969789149">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1586969789149" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586952327050">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586952327050" />
+    <state x="363" y="96" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580729661783">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="96" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1580729661783" />
+    <state x="321" y="0" key="CommitChangelistDialog2" timestamp="1580372626972">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="321" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580372626972" />
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1586969780028">
+=======
     <state x="240" y="52" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581078156437">
       <screen x="0" y="23" width="1280" height="737" />
     </state>
     <state x="240" y="52" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.737@0.23.1280.737" timestamp="1581078156437" />
     <state x="363" y="96" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580370109815">
+>>>>>>> dc62723ae5187b42d6716fb1043fd352b5555306
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="96" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1580370109815" />
-    <state x="321" y="0" key="CommitChangelistDialog2" timestamp="1580273736186">
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586969780028" />
+    <state width="1323" height="96" key="GridCell.Tab.0.bottom" timestamp="1587028903774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="321" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580273736186" />
-    <state width="1323" height="165" key="GridCell.Tab.0.bottom" timestamp="1580372476732">
+    <state width="1323" height="96" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587028903774" />
+    <state width="1323" height="96" key="GridCell.Tab.0.center" timestamp="1587028903773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="165" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580372476732" />
-    <state width="1323" height="165" key="GridCell.Tab.0.center" timestamp="1580372476731">
+    <state width="1323" height="96" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587028903773" />
+    <state width="1323" height="96" key="GridCell.Tab.0.left" timestamp="1587028903773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="165" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580372476731" />
-    <state width="1323" height="165" key="GridCell.Tab.0.left" timestamp="1580372476731">
+    <state width="1323" height="96" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587028903773" />
+    <state width="1323" height="96" key="GridCell.Tab.0.right" timestamp="1587028903774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="165" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580372476731" />
-    <state width="1323" height="165" key="GridCell.Tab.0.right" timestamp="1580372476731">
+    <state width="1323" height="96" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587028903774" />
+    <state x="186" y="0" key="SettingsEditor" timestamp="1586952444990">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+<<<<<<< HEAD
+    <state x="186" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586952444990" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1580732156763">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580732156763" />
+    <state x="89" y="0" key="new project wizard" timestamp="1586952455000">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="89" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1586952455000" />
+=======
     <state width="1323" height="165" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580372476731" />
     <state x="174" y="33" key="SettingsEditor" timestamp="1581078334992">
       <screen x="0" y="23" width="1280" height="737" />
@@ -166,5 +226,6 @@
     </state>
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580370634828" />
     <state x="366" y="218" key="com.intellij.ide.util.TipDialog/0.23.1280.737@0.23.1280.737" timestamp="1581078080138" />
+>>>>>>> dc62723ae5187b42d6716fb1043fd352b5555306
   </component>
 </project>
