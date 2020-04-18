@@ -74,6 +74,7 @@
         + ':' + min.slice(-2)
         + ':' + sec.slice(-2);
     let data = {
+<<<<<<< HEAD
       'merchantTransactionID': timestamp,
       'customerFirstName': 'Samson',
       'customerLastName': 'Mwangi',
@@ -90,6 +91,26 @@
       'successRedirectUrl': null,
       'failRedirectUrl': null,
       'paymentWebhookUrl': null
+=======
+        "merchantTransactionID": timestamp,
+        "customerFirstName": "Samson",
+        "customerLastName": "Mwangi",
+        "MSISDN": "{{ MSISDN }}",
+        "customerEmail": "samson.mwangi@cellulant.com",
+        "amount": "1000",
+        "currencyCode": "KES",
+        "accountNumber": timestamp,
+        "serviceCode": '{{ s_code }}',
+        "dueDate": timeDate,
+        "serviceDescription": "Getting service/good x",
+        "countryCode": "KE",
+        "payerClientCode": "",
+        "languageCode": "en",
+        "pendingRedirectUrl": "",
+        "successRedirectUrl": "",
+        "failRedirectUrl": "",
+        "paymentWebhookUrl": ""
+>>>>>>> c24666444cbf83775124cc9850425642b3fa2d72
     };
     document.getElementById("json_data").innerHTML = JSON.stringify(data, null, '\t');
     const editor = ace.edit("json_data");

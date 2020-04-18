@@ -12,7 +12,7 @@ from .forms import RegistrationForm, LoginForm, TestForm, SimulateForm, Simulate
 from django.views import View
 from django.http import HttpResponseRedirect, HttpResponse
 # import db
-from .models import APISettings, WebHook, UISettings, EnvironmentPorts
+from .models import APISettings, WebHook, UISettings, EnvironmentPorts, MockingData
 # end import db
 import json
 from django.http import JsonResponse
@@ -187,7 +187,7 @@ class Checkout(generic.TemplateView):
                     requests = QaOperations.create_all_req_context(service_code=service_code,
                                                                    request_data=queryset, data=data,
                                                                    service_=service, username=username)
-
+                    print(f"REQUESTS:{requests}")
                     return render(request, self.template_name, context=requests)
                 elif "Token has expired" in service.get("REASON"):
                     return HttpResponseRedirect('/logout/')
@@ -738,9 +738,24 @@ class OpenAPI(APIView):
     """
     This class accepts all the requests
     """
+
     def post(self, request, format=None):
         serializer = SnippetSerializer(data=request.data)
         if serializer.is_valid():
             appLogger.debug("OPEN API REQUEST:" + str(request.data))
             return Response(request.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class MockAPI(APIView):
+    """
+    This API return user saved json
+    """
+    def post(self, request, format=None):
+        data = MockingData.objects.get(status='1')
+        serializer = SnippetSerializer(data=json.loads(str(data.json_string)))
+        if serializer.is_valid():
+            appLogger.debug("MOCKING REQUEST:" + str(request.data))
+            appLogger.debug("MOCKING RESPONSE:" + str(data.json_string))
+            return Response(json.loads(data.json_string), status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -330,6 +330,7 @@ class QaOperations(object):
 
             all_req_response = json.loads(response.text)
             # QaOperations._write_requests(all_req_response)
+            print(all_req_response)
             return all_req_response
 
         except KeyError:
@@ -545,8 +546,11 @@ class QaOperations(object):
                 "languageCode": "en",
                 'pendingRedirectUrl': "",
                 "successRedirectUrl": f"{get_webHook.fail_url}",
+                "pendingRedirectUrl": "%s" % get_webHook.fail_url,
                 "failRedirectUrl": f"{get_webHook.success_url}",
-                "paymentWebhookUrl": f"{get_webHook.url}"
+                "paymentWebhookUrl": f"{get_webHook.url}",
+                "clientCode": "EMIDEV5370",
+                "requestOrigin": "UI"
             }
             print(params)
             return json.dumps(params)

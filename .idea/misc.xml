@@ -3,5 +3,13 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="Python 3.7 virtualenv at ~/GLOBALVEN" project-jdk-type="Python SDK" />
+=======
+<<<<<<< HEAD
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="Python 3.7 (VENV)" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (globalenv)" project-jdk-type="Python SDK" />
+>>>>>>> dc62723ae5187b42d6716fb1043fd352b5555306
+>>>>>>> c24666444cbf83775124cc9850425642b3fa2d72
 </project>
