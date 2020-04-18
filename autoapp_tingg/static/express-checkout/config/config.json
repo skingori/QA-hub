@@ -1,0 +1,12 @@
+{
+    "live": {
+        "ORIGIN_URL": "https://mula.africa",
+        "MODAL_CHECKOUT_URL": "https://mula.africa/v2/modal/",
+        "EXPRESS_CHECKOUT_URL": "https://mula.africa/v2/express/"
+    },
+    "test": {
+        "ORIGIN_URL": "https://beep2.cellulant.com:9212",
+        "MODAL_CHECKOUT_URL": "https://beep2.cellulant.com:9212/checkout/v2/modal/",
+        "EXPRESS_CHECKOUT_URL": "https://beep2.cellulant.com:9212/checkout/v2/express/"
+    }
+}

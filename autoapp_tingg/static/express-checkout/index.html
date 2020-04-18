@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E2E</title>
+</head>
+<body>
+<button class="awesome-checkout-button"></button>
+<script type="text/javascript" src="dist/tingg-checkout-library.js"></script>
+<script type="text/javascript">
+    Tingg.renderPayButton({
+        color: 'yellow',
+        className: 'awesome-checkout-button',
+        text: 'Get "Facebook Jest" tickets now!'
+    });
+
+    document.querySelector('.awesome-checkout-button').addEventListener('click', function () {
+        Tingg.renderCheckout({
+            test: true,
+            merchantProperties: {
+                params: "asdfghjklpoiuytrewqzxcvbnm==",
+                accessKey: "qwertyuiop",
+                countryCode: "KE"
+            },
+            checkoutType: "redirect"
+        });
+    });
+</script>
+</body>
+</html>

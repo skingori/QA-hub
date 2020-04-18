@@ -1,0 +1,82 @@
+{% load i18n %}
+{% load static %}
+<div class="modal fade" id="tinggbtn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{% blocktrans %}Discount offer:
+                    <strong>98% off</strong>
+                {% endblocktrans %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" action="{% url 'main_app:simulate' %}">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <ul class="list-group mb-3">
+
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Nokia C118</h6>
+                                <small class="text-muted">Get the best product in the market!</small>
+                            </div>
+                            <span class="text-muted">KES 60000</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between bg-light">
+                            <div class="text-success">
+                                <h6 class="my-0">Promo code</h6>
+                                <small>I575787BN0</small>
+                            </div>
+                            <span class="text-success">KES -59000</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total (KES)</span>
+                            <strong>KES 1000</strong>
+                        </li>
+                    </ul>
+                    <hr class="mb-4">
+                    <h5 class="modal-title">Billing address</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name">{% trans 'Name' %}</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                            <small class="text-muted">Full name as displayed on card</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">{% trans 'Mobile Number' %}</label>
+                            <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+{#                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>#}
+                    <button type="submit" class="awesome-checkout-button btn-block"></button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'express-checkout/dist/tingg-checkout-library.js' %}"></script>
+<script type="text/javascript">
+  Tingg.renderPayButton({
+    color: 'yellow',
+    className: 'awesome-checkout-button',
+    text: "{% trans 'Checkout Now!' %}"
+  })
+
+  document.querySelector('.awesome-checkout-button').addEventListener('click', function () {
+    const params = "Smh3cTNVQ1hLY2FYWGpXLzhEN0o1cU0vV3JQMW15VTdReHlZSDQ0RFlQdXY2T1VWTU1WTkJvbTNRbTB6WFRyQzI3bGRVekM4c1BYVk9CQ1VHR1ZIemZvbUVIVzFLOTBjUFB6eDQ4U0hNejNPNm9VOCt3eTJhRktMVGFGb0hDd08vNzRqZ1dJWUMzby85K0dNZUVJL1N2QXFBbXNBZENhblFzZnhOMHoxclZjMVpKT2pJQ0lRRE5KVW5kQU8zVEx0akNTa2VuRlBhMmlzSHNzWllmREh1NmVMam9OWFpFU28wODJpQWdHOGxleUh6ZnBISVJZZ2dlQjRnY0dGd2RlYXpHbnEyT1hXcW9MbjAyTmdaOEd4QkRCMEFtdXBEeEV2ZklmbTBxdE5Lcm81RU9xK0tsQzZtT2VPVk5rd1lCKzA3OEpYRkVTNHpNQVpGSU50NnRDYUV4cGpTR3ZVcTEvbzJ3cjFneUZsT1FsQUI3U01uaXZLWVptQ0FseitDMXgwZFhqbzJNazYvT3ZnSGxHUlVuYjhzK0x5Uy9mbHh4UjBYcitFeHRGV1NuUGNpR0RLU295dXg5a1NKNjR6V3FmdHZua1pMSlV1bVo0bmJhMk9GdmI3M2JBeXhwVWN1SjRScUxGLzhKTU42c3d5MGRvUWJBaVNQcXBSeElVakpmeEVsYk9yNXBmSHJHcmFrZ0laMlNmd1YyOHVoNzJkSXRvMzdmSFdrSURjcWFzR2lnajRYYm9keUpuTFVIZFE5MjJSV2U4NHNkdkVzUnpzT3Nac3drNXhRZnl0MndLR05Ob1Q4NjVLaDBPeW5Sbm1Wc2pNWHBybE5qRVRCUWdZWEU3L0w0YlZmTzRmSjB1V3VtaHB2RVIwQ1ZJekdBSTlJQnVuTEx6dXZzNThsSXpFUzZ5Z1V4VmhZSVJiMmU0dTVvNktSK0xLVXFRcU5zdzNFRlBMbkV5MDhOcHh6T3FEd1k3Vnc2WGVXZDNMcHRGQ1o4a3R1a0U1MThFOGZINC9xTURHQW5NQzltb3hRRUpLbjdQNDl2MStGRWtkYkxRYlRVYldrZlVlcWxvbC9ZOUtzbndSRURqamlSL1VwSlpheWxJdFMzeVc4MVZvVW1MU2o0QkhjMkpWTU8zQ0lyR2gyTFBFMzh1dHl6UkE0Vm9GK2tWUUMrNUFad3pDazVMeEZCUFBnT0RqcVhRdS8zVFpkalE1MFFVWFBMb3l1MWQxTHVRRU5GYTlGY255a2dYMDFRYm9WQzlSUXBMQ0Z4bUlzOFQv";
+    Tingg.renderCheckout({
+      test: true,
+      merchantProperties: {
+        params: params,
+        accessKey: '$2a$08$K4u8XasweAw5Csr1IaloQOjC1dNsz2Ak6LYg0Q0fotvY1Fl8.Ivza',
+        countryCode: 'KE'
+      },
+      checkoutType: 'redirect'
+    })
+  })
+</script>

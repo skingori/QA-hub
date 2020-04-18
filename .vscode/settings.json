@@ -4,8 +4,10 @@
 // }
 
 {
-    "python.linting.pylintEnabled": true,
-    "python.pythonPath": "/Users/king/globalenv/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "/Users/king/GLOBALVEN/bin/python",
+    "python.linting.enabled": false,
+    "python.linting.flake8Enabled": true,
     // "python.linting.pycodestyleEnabled": true,
     // "python.linting.enabled": true
 }

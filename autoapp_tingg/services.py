@@ -324,9 +324,9 @@ class QaOperations(object):
         try:
             data = self.get_max_min_date(_service_code)
             get_request_url = get_object_or_404(APISettings, unique_name="fetchCheckoutRequests")
-            url = f"{get_request_url.url + ':' + _port}"
             path = f"{get_request_url.path}"
-            response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header_with_token(_token))
+            response = requests.post(url=f"{get_request_url.url + ':' + _port + path}",
+                                     data=json.dumps(data), headers=header_with_token(_token))
 
             all_req_response = json.loads(response.text)
             # QaOperations._write_requests(all_req_response)
@@ -543,11 +543,12 @@ class QaOperations(object):
                 "countryCode": f"{country_code}",
                 "payerClientCode": payer_client,
                 "languageCode": "en",
+                'pendingRedirectUrl': "",
                 "successRedirectUrl": f"{get_webHook.fail_url}",
                 "failRedirectUrl": f"{get_webHook.success_url}",
                 "paymentWebhookUrl": f"{get_webHook.url}"
             }
-
+            print(params)
             return json.dumps(params)
 
         except KeyError:
