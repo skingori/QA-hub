@@ -83,11 +83,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         # 'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'qatool',
-<<<<<<< HEAD
-        # 'USER': 'root',
-=======
         # 'USER': 'postgres',
->>>>>>> c24666444cbf83775124cc9850425642b3fa2d72
         # 'PASSWORD': 'root',
         # 'HOST': '127.0.0.1',
         # 'PORT': '5432',
