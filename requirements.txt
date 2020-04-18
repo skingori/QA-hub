@@ -1,0 +1,10 @@
+django
+requests
+django-widget-tweaks
+urllib3
+pycryptodome
+djangorestframework
+# pygment# gunicorn
+psycopg2-binary
+# whitenoise
+# django_heroku

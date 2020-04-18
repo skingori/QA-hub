@@ -6408,3 +6408,182 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2020-04-18 00:38:34,525 [Thread-46   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/javascript.js HTTP/1.1" 200 4096
 2020-04-18 00:38:34,670 [Thread-47   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
 >>>>>>> c24666444cbf83775124cc9850425642b3fa2d72
+2020-04-18 02:26:09,164 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-04-18 02:26:17,238 [Thread-1    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 53913
+2020-04-18 02:26:17,265 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/vendors/mdi/css/materialdesignicons.min.css HTTP/1.1" 304 0
+2020-04-18 02:26:17,287 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/css/style.css HTTP/1.1" 304 0
+2020-04-18 02:26:17,293 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.css HTTP/1.1" 304 0
+2020-04-18 02:26:17,295 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.css HTTP/1.1" 304 0
+2020-04-18 02:26:17,336 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ace.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,342 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ext-language_tools.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,344 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,348 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/express-checkout/dist/tingg-checkout-library.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,355 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,356 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net/jquery.dataTables.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,378 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/js/unused/data-table.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,380 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/js/template.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,382 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/js/off-canvas.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,383 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/js/jquery.dataTables.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,383 [Thread-6    ] [INFO ] [django.server       ]  "GET /static/js/hoverable-collapse.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,385 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/js/checkout_dash.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,387 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/js/unused/dataTables.bootstrap4.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,390 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/js/checkout_functions.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,393 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/js/checkout_copy.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,397 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/js/submit_json_request.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,399 [Thread-6    ] [INFO ] [django.server       ]  "GET /static/js/submit_refunds_json.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,412 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/images/Tingg.png HTTP/1.1" 200 44679
+2020-04-18 02:26:17,410 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/js/submit_cancel_json.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,420 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/js/language_change.js HTTP/1.1" 304 0
+2020-04-18 02:26:17,408 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/images/faces/user.png HTTP/1.1" 304 0
+2020-04-18 02:26:17,536 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Regular.woff2 HTTP/1.1" 304 0
+2020-04-18 02:26:17,538 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/vendors/mdi/fonts/materialdesignicons-webfont.woff2?v=3.6.95 HTTP/1.1" 304 0
+2020-04-18 02:26:18,189 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Medium.woff2 HTTP/1.1" 304 0
+2020-04-18 02:26:18,192 [Thread-6    ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Bold.woff2 HTTP/1.1" 304 0
+2020-04-18 02:26:18,535 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Light.woff2 HTTP/1.1" 304 0
+2020-04-18 02:26:28,472 [Thread-1    ] [WARNI] [django.request      ]  Not Found: /checkout/call/
+2020-04-18 02:26:28,473 [Thread-1    ] [WARNI] [django.server       ]  "GET /checkout/call/ HTTP/1.1" 404 6489
+2020-04-18 02:26:28,595 [Thread-5    ] [WARNI] [django.request      ]  Not Found: /favicon.ico
+2020-04-18 02:26:28,598 [Thread-5    ] [WARNI] [django.server       ]  "GET /favicon.ico HTTP/1.1" 404 6480
+2020-04-18 02:26:34,587 [Thread-1    ] [WARNI] [django.request      ]  Method Not Allowed: /call/
+2020-04-18 02:26:34,588 [Thread-1    ] [WARNI] [django.server       ]  "GET /call/ HTTP/1.1" 405 5603
+2020-04-18 02:26:34,651 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+2020-04-18 02:26:34,657 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1131
+2020-04-18 02:26:34,660 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+2020-04-18 02:26:34,666 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+2020-04-18 02:26:34,702 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+2020-04-18 02:26:34,711 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+2020-04-18 02:26:34,715 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+2020-04-18 02:26:34,716 [Thread-6    ] [INFO ] [django.server       ]  "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+2020-04-18 02:26:34,724 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+2020-04-18 02:26:34,727 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+2020-04-18 02:26:34,731 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/rest_framework/js/jquery-3.4.1.min.js HTTP/1.1" 200 88145
+2020-04-18 02:26:40,903 [Thread-5    ] [WARNI] [django.request      ]  Method Not Allowed: /open/
+2020-04-18 02:26:40,905 [Thread-5    ] [WARNI] [django.server       ]  "GET /open/ HTTP/1.1" 405 5613
+2020-04-18 02:26:47,468 [Thread-5    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 21822
+2020-04-18 02:26:47,565 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/vendors/chart.js/dist/Chart.bundle.js HTTP/1.1" 304 0
+2020-04-18 02:26:47,570 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/js/checkout_charts.js HTTP/1.1" 304 0
+2020-04-18 02:26:51,558 [Thread-5    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 53913
+2020-04-18 02:27:06,013 [Thread-5    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 53913
+2020-04-18 02:27:22,852 [Thread-5    ] [INFO ] [django.server       ]  "POST /simulate_json/ HTTP/1.1" 302 0
+2020-04-18 02:27:23,554 [Thread-5    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 21822
+2020-04-18 02:27:23,566 [Thread-5    ] [WARNI] [django.request      ]  Not Found: /checkout/undefined
+2020-04-18 02:27:23,566 [Thread-5    ] [WARNI] [django.server       ]  "GET /checkout/undefined HTTP/1.1" 404 6501
+2020-04-18 02:27:35,859 [Thread-5    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 53913
+2020-04-18 02:27:50,685 [Thread-5    ] [INFO ] [django.server       ]  "GET /cancel_request/297990/904609/ HTTP/1.1" 200 19088
+2020-04-18 02:27:50,943 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/theme-dracula.js HTTP/1.1" 200 2913
+2020-04-18 02:27:50,960 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/text.js HTTP/1.1" 304 0
+2020-04-18 02:27:50,963 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/mode-javascript.js HTTP/1.1" 304 0
+2020-04-18 02:27:51,188 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/javascript.js HTTP/1.1" 304 0
+2020-04-18 02:27:51,217 [Thread-5    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 02:27:51,222 [Thread-3    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 02:27:54,973 [Thread-1    ] [INFO ] [django.server       ]  "POST /initiate_cancel/ HTTP/1.1" 200 189
+2020-04-18 02:27:55,026 [Thread-6    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 02:29:53,237 [Thread-7    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 52527
+2020-04-18 02:29:53,444 [Thread-7    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/theme-dawn.js HTTP/1.1" 304 0
+2020-04-18 02:29:53,700 [Thread-8    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 02:30:06,244 [Thread-7    ] [INFO ] [django.server       ]  "POST /simulate_json/ HTTP/1.1" 302 0
+2020-04-18 02:30:07,001 [Thread-7    ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 21822
+2020-04-18 02:30:07,012 [Thread-7    ] [WARNI] [django.request      ]  Not Found: /checkout/undefined
+2020-04-18 02:30:07,013 [Thread-7    ] [WARNI] [django.server       ]  "GET /checkout/undefined HTTP/1.1" 404 6501
+2020-04-18 02:30:09,924 [Thread-7    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 52527
+2020-04-18 02:30:10,235 [Thread-7    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 02:30:53,043 [Thread-10   ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 52502
+2020-04-18 02:30:53,067 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/vendors/mdi/css/materialdesignicons.min.css HTTP/1.1" 304 0
+2020-04-18 02:30:53,084 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/css/style.css HTTP/1.1" 304 0
+2020-04-18 02:30:53,090 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.css HTTP/1.1" 304 0
+2020-04-18 02:30:53,093 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,096 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ext-language_tools.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,100 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.css HTTP/1.1" 304 0
+2020-04-18 02:30:53,108 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/hoverable-collapse.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,110 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net/jquery.dataTables.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,112 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,115 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/template.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,127 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/express-checkout/dist/tingg-checkout-library.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,130 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/js/unused/data-table.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,133 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/js/unused/dataTables.bootstrap4.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,135 [Thread-14   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ace.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,135 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/js/checkout_copy.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,140 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/jquery.dataTables.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,140 [Thread-14   ] [INFO ] [django.server       ]  "GET /static/js/submit_refunds_json.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,140 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/js/off-canvas.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,143 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/js/submit_cancel_json.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,143 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/js/submit_json_request.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,146 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/language_change.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,152 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/js/checkout_functions.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,153 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/js/checkout_dash.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,186 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/images/faces/user.png HTTP/1.1" 304 0
+2020-04-18 02:30:53,187 [Thread-14   ] [INFO ] [django.server       ]  "GET /static/images/Tingg.png HTTP/1.1" 304 0
+2020-04-18 02:30:53,227 [Thread-12   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/theme-dawn.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,230 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/mode-javascript.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,240 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/text.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,340 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/javascript.js HTTP/1.1" 304 0
+2020-04-18 02:30:53,381 [Thread-14   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 02:31:13,309 [Thread-10   ] [INFO ] [django.server       ]  "POST /simulate_json/ HTTP/1.1" 302 0
+2020-04-18 02:31:13,981 [Thread-10   ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 200 21822
+2020-04-18 02:31:13,993 [Thread-10   ] [WARNI] [django.request      ]  Not Found: /checkout/undefined
+2020-04-18 02:31:13,994 [Thread-10   ] [WARNI] [django.server       ]  "GET /checkout/undefined HTTP/1.1" 404 6501
+2020-04-18 02:31:16,378 [Thread-10   ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 52502
+2020-04-18 02:31:16,824 [Thread-12   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 02:31:27,754 [Thread-10   ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 52480
+2020-04-18 02:31:27,779 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.css HTTP/1.1" 304 0
+2020-04-18 02:31:27,782 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/css/style.css HTTP/1.1" 304 0
+2020-04-18 02:31:27,783 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/vendors/mdi/css/materialdesignicons.min.css HTTP/1.1" 304 0
+2020-04-18 02:31:27,786 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.css HTTP/1.1" 304 0
+2020-04-18 02:31:27,852 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ace.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,856 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/ext-language_tools.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,862 [Thread-16   ] [INFO ] [django.server       ]  "GET /static/js/off-canvas.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,868 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/hoverable-collapse.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,869 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,872 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net/jquery.dataTables.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,875 [Thread-16   ] [INFO ] [django.server       ]  "GET /static/js/template.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,877 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/unused/data-table.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,885 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/js/checkout_dash.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,886 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/vendors/datatables.net-bs4/dataTables.bootstrap4.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,887 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/checkout_copy.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,889 [Thread-16   ] [INFO ] [django.server       ]  "GET /static/js/unused/dataTables.bootstrap4.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,891 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/js/checkout_functions.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,891 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/js/jquery.dataTables.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,896 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/js/submit_json_request.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,897 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/express-checkout/dist/tingg-checkout-library.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,905 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/images/Tingg.png HTTP/1.1" 304 0
+2020-04-18 02:31:27,906 [Thread-16   ] [INFO ] [django.server       ]  "GET /static/js/submit_cancel_json.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,907 [Thread-10   ] [INFO ] [django.server       ]  "GET /static/js/language_change.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,911 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/images/faces/user.png HTTP/1.1" 304 0
+2020-04-18 02:31:27,917 [Thread-13   ] [INFO ] [django.server       ]  "GET /static/js/submit_refunds_json.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,980 [Thread-15   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/theme-dawn.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,983 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/mode-javascript.js HTTP/1.1" 304 0
+2020-04-18 02:31:27,987 [Thread-16   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/text.js HTTP/1.1" 304 0
+2020-04-18 02:31:28,070 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/javascript.js HTTP/1.1" 304 0
+2020-04-18 02:31:28,100 [Thread-13   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 02:31:32,811 [Thread-10   ] [INFO ] [django.server       ]  "POST /simulate_json/ HTTP/1.1" 200 1079
+2020-04-18 02:31:33,840 [Thread-18   ] [INFO ] [django.server       ]  "GET / HTTP/1.1" 302 0
+2020-04-18 02:31:33,874 [Thread-18   ] [INFO ] [django.server       ]  "GET /logout/ HTTP/1.1" 200 4475
+2020-04-18 02:31:33,912 [Thread-19   ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.css HTTP/1.1" 200 2598
+2020-04-18 02:31:33,917 [Thread-20   ] [INFO ] [django.server       ]  "GET /static/js/off-canvas.js HTTP/1.1" 200 185
+2020-04-18 02:31:33,918 [Thread-23   ] [INFO ] [django.server       ]  "GET /static/js/hoverable-collapse.js HTTP/1.1" 200 806
+2020-04-18 02:31:33,921 [Thread-19   ] [INFO ] [django.server       ]  "GET /static/js/template.js HTTP/1.1" 200 2057
+2020-04-18 02:31:33,922 [Thread-18   ] [INFO ] [django.server       ]  "GET /static/vendors/mdi/css/materialdesignicons.min.css HTTP/1.1" 200 158880
+2020-04-18 02:31:33,925 [Thread-21   ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.js HTTP/1.1" 200 185673
+2020-04-18 02:31:33,930 [Thread-22   ] [INFO ] [django.server       ]  "GET /static/css/style.css HTTP/1.1" 200 546888
+2020-04-18 02:31:33,948 [Thread-21   ] [INFO ] [django.server       ]  "GET /static/images/Tingg.png HTTP/1.1" 200 44679
+2020-04-18 02:31:34,477 [Thread-22   ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-04-18 02:31:34,490 [Thread-22   ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Regular.woff2 HTTP/1.1" 200 65916
+2020-04-18 02:31:34,514 [Thread-22   ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Light.woff2 HTTP/1.1" 200 65512
+2020-04-18 02:31:36,933 [Thread-22   ] [INFO ] [django.server       ]  "GET /static/vendors/mdi/fonts/materialdesignicons-webfont.woff2?v=3.6.95 HTTP/1.1" 200 193408
+2020-04-18 02:31:43,114 [Thread-10   ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 52480
+2020-04-18 02:31:43,494 [Thread-15   ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
+2020-04-18 02:32:28,646 [Thread-10   ] [INFO ] [django.server       ]  "GET /admin/ HTTP/1.1" 302 0
+2020-04-18 02:32:28,678 [Thread-10   ] [INFO ] [django.server       ]  "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1900
+2020-04-18 02:32:28,722 [Thread-16   ] [INFO ] [django.server       ]  "GET /static/admin/css/login.css HTTP/1.1" 200 1233
+2020-04-18 02:32:28,726 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/admin/css/responsive.css HTTP/1.1" 200 18052
+2020-04-18 02:32:28,728 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/admin/css/base.css HTTP/1.1" 200 16378
+2020-04-18 02:32:28,797 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+2020-04-18 02:32:28,843 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+2020-04-18 02:32:28,845 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+2020-04-18 02:32:31,604 [Thread-17   ] [INFO ] [django.server       ]  "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2072
+2020-04-18 02:32:31,727 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+2020-04-18 02:32:36,832 [Thread-17   ] [INFO ] [django.server       ]  "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2020-04-18 02:32:36,867 [Thread-17   ] [INFO ] [django.server       ]  "GET /admin/ HTTP/1.1" 200 8588
+2020-04-18 02:32:36,937 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+2020-04-18 02:32:36,997 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+2020-04-18 02:32:37,001 [Thread-17   ] [INFO ] [django.server       ]  "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331

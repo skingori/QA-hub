@@ -52,83 +52,64 @@
         charset="utf-8"></script>
 
 <script type="text/javascript">
-    function pad(n) {
-        return n < 10 ? '0' + n : n
-    }
+  function pad (n) {
+    return n < 10 ? '0' + n : n
+  }
 
-    function getJson() {
-        alert("This method is not implemented!")
-    }
+  function getJson () {
+    alert('This method is not implemented!')
+  }
 
-    let amount = Math.floor((Math.random() * 10000) + 10);
-    let now = new Date();
-    let timestamp = now.getTime();
-    let year = now.getFullYear();
-    let month = (now.getMonth() + 1);
-    let date = now.getDate();
-    let hour = "0" + (now.getUTCHours() + 1);
-    let min = "0" + now.getMinutes();
-    let sec = "0" + now.getSeconds();
-    let timeDate = pad(year) + '-' + pad(month) + '-' + pad(date)
-        + ' ' + hour.slice(-2)
-        + ':' + min.slice(-2)
-        + ':' + sec.slice(-2);
-    let data = {
-<<<<<<< HEAD
-      'merchantTransactionID': timestamp,
-      'customerFirstName': 'Samson',
-      'customerLastName': 'Mwangi',
-      'MSISDN': "{{ MSISDN }}",
-      'customerEmail': 'samson.mwangi@cellulant.com',
-      'amount': '1000',
-      'currencyCode': 'KES',
-      'accountNumber': timestamp,
-      'serviceCode': '{{ s_code }}',
-      'dueDate': timeDate,
-      'serviceDescription': 'Getting service/good x',
-      'countryCode': 'KE',
-      'languageCode': 'en',
-      'successRedirectUrl': null,
-      'failRedirectUrl': null,
-      'paymentWebhookUrl': null
-=======
-        "merchantTransactionID": timestamp,
-        "customerFirstName": "Samson",
-        "customerLastName": "Mwangi",
-        "MSISDN": "{{ MSISDN }}",
-        "customerEmail": "samson.mwangi@cellulant.com",
-        "amount": "1000",
-        "currencyCode": "KES",
-        "accountNumber": timestamp,
-        "serviceCode": '{{ s_code }}',
-        "dueDate": timeDate,
-        "serviceDescription": "Getting service/good x",
-        "countryCode": "KE",
-        "payerClientCode": "",
-        "languageCode": "en",
-        "pendingRedirectUrl": "",
-        "successRedirectUrl": "",
-        "failRedirectUrl": "",
-        "paymentWebhookUrl": ""
->>>>>>> c24666444cbf83775124cc9850425642b3fa2d72
-    };
-    document.getElementById("json_data").innerHTML = JSON.stringify(data, null, '\t');
-    const editor = ace.edit("json_data");
-    editor.setTheme("ace/theme/dawn");
-    editor.session.setMode("ace/mode/javascript");
-    editor.getSession().setTabSize(2);
-    editor.getSession().setUseWrapMode(true);
-    editor.renderer.setShowGutter(false);
-    editor.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: true
-    });
+  let amount = Math.floor((Math.random() * 10000) + 10)
+  let now = new Date()
+  let timestamp = now.getTime()
+  let year = now.getFullYear()
+  let month = (now.getMonth() + 1)
+  let date = now.getDate()
+  let hour = '0' + (now.getUTCHours() + 1)
+  let min = '0' + now.getMinutes()
+  let sec = '0' + now.getSeconds()
+  let timeDate = pad(year) + '-' + pad(month) + '-' + pad(date)
+    + ' ' + hour.slice(-2)
+    + ':' + min.slice(-2)
+    + ':' + sec.slice(-2)
+  let data = {
+    'merchantTransactionID': timestamp,
+    'customerFirstName': 'Samson',
+    'customerLastName': 'Mwangi',
+    'MSISDN': "{{ MSISDN }}",
+    'customerEmail': 'samson.mwangi@cellulant.com',
+    'amount': '1000',
+    'currencyCode': 'KES',
+    'accountNumber': timestamp,
+    'serviceCode': '{{ s_code }}',
+    'dueDate': timeDate,
+    'serviceDescription': 'Getting service/good x',
+    'countryCode': 'KE',
+    {#'payerClientCode': '',#}
+    'languageCode': 'en',
+    {#'pendingRedirectUrl': '',#}
+    'successRedirectUrl': '',
+    'failRedirectUrl': '',
+    'paymentWebhookUrl': ''
+  }
+  document.getElementById('json_data').innerHTML = JSON.stringify(data, null, '\t')
+  const editor = ace.edit('json_data')
+  editor.setTheme('ace/theme/dawn')
+  editor.session.setMode('ace/mode/javascript')
+  editor.getSession().setTabSize(2)
+  editor.getSession().setUseWrapMode(true)
+  editor.renderer.setShowGutter(false)
+  editor.setOptions({
+    enableBasicAutocompletion: true,
+    enableSnippets: true,
+    enableLiveAutocompletion: true
+  })
 
-    function changeTheme() {
-        let themes = ["ace/theme/dracula", "ace/theme/monokai", "ace/theme/github", "ace/theme/cobalt"];
+  function changeTheme () {
+    let themes = ['ace/theme/dracula', 'ace/theme/monokai', 'ace/theme/github', 'ace/theme/cobalt']
 
-        let randomItem = themes[Math.floor(Math.random() * themes.length)];
-        editor.setTheme(randomItem);
-    }
+    let randomItem = themes[Math.floor(Math.random() * themes.length)]
+    editor.setTheme(randomItem)
+  }
 </script>
