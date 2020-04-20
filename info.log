@@ -8874,3 +8874,17 @@ django.db.utils.OperationalError: no such table: autoapp_tingg_mockingdata
 2020-04-19 12:43:37,665 [Thread-11   ] [INFO ] [django.server       ]  "GET /static/vendors/mdi/fonts/materialdesignicons-webfont.woff2?v=3.6.95 HTTP/1.1" 200 193408
 2020-04-20 06:00:29,377 [MainThread  ] [INFO ] [django.utils.autorel]  /Users/king/Documents/CELLULANT/GITAUTOMATION/qatestertool/autoapp_tingg/services.py changed, reloading.
 2020-04-20 06:00:31,216 [MainThread  ] [INFO ] [django.utils.autorel]  Watching for file changes with StatReloader
+2020-04-20 07:05:03,126 [Thread-1    ] [INFO ] [django.server       ]  "POST /login/ HTTP/1.1" 200 20652
+2020-04-20 07:05:03,332 [Thread-1    ] [INFO ] [django.server       ]  "GET /static/vendors/base/vendor.bundle.base.css HTTP/1.1" 200 2598
+2020-04-20 07:05:03,360 [Thread-2    ] [INFO ] [django.server       ]  "GET /static/js/checkout_charts.js HTTP/1.1" 200 0
+2020-04-20 07:05:03,378 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/js/hoverable-collapse.js HTTP/1.1" 200 806
+2020-04-20 07:05:03,379 [Thread-4    ] [INFO ] [django.server       ]  "GET /static/js/off-canvas.js HTTP/1.1" 200 185
+2020-04-20 07:05:03,388 [Thread-6    ] [INFO ] [django.server       ]  "GET /static/js/submit_json_request.js HTTP/1.1" 200 911
+2020-04-20 07:05:03,389 [Thread-5    ] [INFO ] [django.server       ]  "GET /static/js/unused/data-table.js HTTP/1.1" 200 821
+2020-04-20 07:05:03,393 [Thread-7    ] [INFO ] [django.server       ]  "GET /static/js/language_change.js HTTP/1.1" 200 129
+2020-04-20 07:05:03,658 [Thread-6    ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Medium.woff2 HTTP/1.1" 200 66792
+2020-04-20 07:05:03,697 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/fonts/Roboto/Roboto-Bold.woff2 HTTP/1.1" 200 65972
+2020-04-20 07:05:03,854 [Thread-6    ] [INFO ] [django.server       ]  "GET /static/images/tinggfavicon.ico HTTP/1.1" 200 1150
+2020-04-20 07:05:08,663 [Thread-3    ] [INFO ] [django.server       ]  "GET /checkout/ HTTP/1.1" 200 52600
+2020-04-20 07:05:09,007 [Thread-3    ] [INFO ] [django.server       ]  "GET /static/ace/src-min-noconflict/snippets/text.js HTTP/1.1" 200 460
+2020-04-20 07:05:09,132 [Thread-4    ] [WARNI] [django.server       ]  "GET /static/ace/src-min-noconflict/worker-javascript.js HTTP/1.1" 404 1755
