@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+.header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+.content {
+  margin-top:50px;
+  margin-bottom:80px;
+}
+body {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em auto 1em;
+    padding-bottom: 100px;
+    padding-left: 10px;
+}
+</style>
+    <title></title>
+</head>
+
+<body>
+    <div class="header"><strong>QA tester live logs</strong></div>
+    <div class="footer"><strong>Cellulant © registered.</strong></div>
+    {{result}}
+</body>
+</html>
+
+

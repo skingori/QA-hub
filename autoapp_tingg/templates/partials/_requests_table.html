@@ -23,23 +23,21 @@
             </div>
         </div>
         <div class="table-responsive">
-        <style>
-
-            table.table tr td {
-                font-size: 11px;
-                font-family: "Roboto", sans-serif;
-            }
-
-        </style>
-            <table id="checkout_requests" class="table">
+            <table id="checkout_requests" class="table table-striped table-bordered dt-responsive nowrap "
+                   style="width:100%">
                 <thead>
                 <tr>
                     <th>Request</th>
                     <th>Merchant id</th>
-                    <th>Amount</th>
+                    <th>Request Amount</th>
                     <th>Mobile number</th>
                     <th>Status</th>
-                    <th>Date</th>
+                    <th>Date Created</th>
+                    <th>Account</th>
+                    <th>Converted Amount</th>
+                    <th>Conversion Rate</th>
+                    <th>Amount Paid</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,32 +45,36 @@
                     <tr>
                         <td>{{ i.checkoutRequestID }}</td>
                         <td>{{ i.merchantTransactionID }}</td>
-                        <td>{{ i.originalCurrencyCode }}:{{i.requestAmount}}</td>
+                        <td>{{ i.originalCurrencyCode }}:{{ i.requestAmount }}</td>
                         <td>{{ i.MSISDN }}</td>
                         <td>{{ i.overallStatus }}:{{ i.statusCodeDesc }}
-                            {% if i.overallStatus == 130 or i.overallStatus == 177 %}
-                                <a href="#" data-toggle="modal" data-target="#payment"
-                                   data-id="{{ i.accountNumber }}"
-                                   class="badge badge badge-pill badge-warning float-right mr-3"
-                                   id="simulate_pay" title="Pay now">{% trans 'P' %}
-                                </a><a href="{% url 'main_app:cancel_request' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID %}"
-                                       class="badge badge badge-pill badge-info float-right mr-3"
-                                       title="Cancel request"> {% trans 'C' %}
-                            </a>{% elif i.overallStatus == 183 or i.overallStatus == 179 or i.overallStatus == 178 %}
-                                <a href="{% url 'main_app:refunds' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID amount=i.requestAmount %}"
-                                   class="badge badge badge-pill badge-success float-right mr-3"
-                                   title="Refund">{% trans 'R' %}</a>
-                            {% else %}{% endif %}
                         </td>
                         <td>{{ i.dateCreated }}</td>
+                        <td>{{ i.accountNumber }}</td>
+                        <td>{{ i.convertedCurrencyCode }} {{ i.convertedAmount }}</td>
+                        <td>{{ i.conversionRate }}</td>
+                        <td>{{ i.amountPaid }}</td>
+                        <td>
+                            <a href="#" data-toggle="modal" data-target="#payment"
+                               data-id="{{ i.accountNumber }}"
+                               class="badge badge badge-pill badge-warning float-right mr-1"
+                               id="simulate_pay" title="Pay now">{% trans 'P' %}
+                            </a>
+                            <a href="{% url 'main_app:cancel_request' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID %}"
+                               class="badge badge badge-pill badge-info float-right mr-1"
+                               title="Cancel request"> {% trans 'C' %}
+                            </a>
+                            <a href="{% url 'main_app:refunds' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID amount=i.requestAmount %}"
+                               class="badge badge badge-pill badge-success float-right mr-1"
+                               title="Refund">{% trans 'R' %}</a>
+                            <a href="{% url 'main_app:acknowledge' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID %}"
+                               class="badge badge badge-pill badge-outline-warning float-right mr-1"
+                               title="Acknowledge">{% trans 'A' %}</a>
+                        </td>
                     </tr>
-                        {% endfor %}
+                {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-
-
-
-

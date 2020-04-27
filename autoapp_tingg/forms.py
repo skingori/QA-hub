@@ -66,6 +66,10 @@ class CancelForm(forms.Form):
     cancel = forms.Textarea()
 
 
+class AckForm(forms.Form):
+    acknowledge = forms.Textarea()
+
+
 class SimulatePayment(forms.Form):
     amount = forms.CharField(max_length=6)
     account_number = forms.CharField(max_length=200)

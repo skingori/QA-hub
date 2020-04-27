@@ -301,6 +301,27 @@ class QaOperations(object):
             print(error)
 
     @staticmethod
+    def acknowledge_payment(data, token, _port):
+        try:
+            get_request_url = get_object_or_404(APISettings, unique_name="acknowledge")
+            url = f"{get_request_url.url + ':' + _port}"
+            path = f"{get_request_url.path}"
+            response = requests.post(url=f"{url + path}",
+                                     data=json.dumps(data), headers=header_with_token(token))
+            print(response)
+            return json.dumps(response.json())
+        except KeyError:
+            print(KeyError)
+        except TypeError:
+            print(TypeError, __name__)
+        except ConnectionResetError:
+            print(ConnectionResetError, __name__)
+        except ConnectionError:
+            print(ConnectionError, __name__)
+        except Exception as error:
+            print(error)
+
+    @staticmethod
     def create_payment_context(payments, username):
         try:
             context = ({})
@@ -330,7 +351,6 @@ class QaOperations(object):
 
             all_req_response = json.loads(response.text)
             # QaOperations._write_requests(all_req_response)
-            print(all_req_response)
             return all_req_response
 
         except KeyError:
@@ -544,12 +564,10 @@ class QaOperations(object):
                 "countryCode": f"{country_code}",
                 "payerClientCode": payer_client,
                 "languageCode": "en",
-                'pendingRedirectUrl': "",
                 "successRedirectUrl": f"{get_webHook.fail_url}",
                 "pendingRedirectUrl": "%s" % get_webHook.fail_url,
                 "failRedirectUrl": f"{get_webHook.success_url}",
                 "paymentWebhookUrl": f"{get_webHook.url}",
-                "clientCode": "EMIDEV5370",
                 "requestOrigin": "UI"
             }
             print(params)

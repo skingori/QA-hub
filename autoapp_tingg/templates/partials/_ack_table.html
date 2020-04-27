@@ -1,0 +1,127 @@
+{% load i18n %}
+{% load static %}
+<div class="row">
+    <style>
+        #header {
+            /** Setting height is also important, otherwise editor wont showup**/
+            height: 150px;
+            font-size: x-small;
+        }
+
+        #ack_response {
+            /** Setting height is also important, otherwise editor wont showup**/
+            height: 335px;
+            font-size: x-small;
+        }
+
+        #ack {
+            /** Setting height is also important, otherwise editor wont showup**/
+            height: 150px;
+            font-size: x-small;
+        }
+    </style>
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{% trans 'Acknowledge Payment' %}</h4>
+                <p class="card-description">{% trans 'This is part is required to be on the header' %}</p>
+                <div id="header"></div>
+                <p class="card-description">{% trans 'Json body' %}</p>
+                <form method="POST" id="submit_ack_form">
+                    {% csrf_token %}
+                    <div id="ack"></div>
+                    <div class="d-flex justify-content-between align-items-end flex-wrap">
+                        <button type="button" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block ">
+                            <i class="mdi mdi-download text-muted"></i>
+                        </button>
+                        <button type="button" onclick="changeTheme()" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-theme-light-dark text-muted"></i>
+                        </button>
+                        <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-plus text-muted"></i>
+                        </button>
+                        <button type="button" onclick="cleanResponse()"
+                                class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-json text-muted"></i>
+                        </button>
+                        <button type="submit" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
+                            <i class="mdi mdi-send text-muted"></i>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{% trans 'Acknowledgement Response' %}</h4>
+                <p class="card-description">
+                    {% trans 'Below is the json response for the  acknowledgement.' %}
+                </p>
+                <pre id="ack_response"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'ace/src-min-noconflict/ace.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'ace/src-min-noconflict/ext-language_tools.js' %}" type="text/javascript"
+        charset="utf-8"></script>
+<script>
+    const header = {
+      'authorization': 'Bearer',
+      'content-type': 'application/json',
+    };
+    const data = {
+      'merchantTransactionID': "{{merchantTransactionID}}",
+      'checkoutRequestID': "{{ checkoutRequestID }}",
+      'receiptNumber': "{{merchantTransactionID}}",
+      'statusCode': 183,
+      'statusDescription': 'Payment Accepted',
+    };
+    document.getElementById('ack').innerHTML = JSON.stringify(data, null, '\t');
+    document.getElementById('header').innerHTML = JSON.stringify(header, null, '\t');
+
+    function cleanResponse() {
+        alert("Not Implemented");
+    }
+
+    $(function () {
+        editor = "";
+        editor = ace.edit("header");
+        editor.setTheme("ace/theme/dracula");
+        editor.session.setMode("ace/mode/javascript");
+        editor.getSession().setTabSize(2);
+        editor.getSession().setUseWrapMode(false);
+        editor.renderer.setShowGutter(false);
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: true
+        });
+    });
+
+    $(function () {
+      edit_ack = ''
+      edit_ack = ace.edit('ack')
+      edit_ack.setTheme('ace/theme/dracula')
+      edit_ack.session.setMode('ace/mode/javascript')
+      edit_ack.getSession().setTabSize(2)
+      edit_ack.getSession().setUseWrapMode(true)
+      edit_ack.renderer.setShowGutter(false)
+      edit_ack.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+      })
+    });
+
+    function changeTheme() {
+        let themes = ["ace/theme/dawn", "ace/theme/monokai", "ace/theme/github", "ace/theme/cobalt"];
+
+        let randomItem = themes[Math.floor(Math.random() * themes.length)];
+        editor.setTheme(randomItem);
+        edit_ack.setTheme(randomItem);
+    }
+</script>

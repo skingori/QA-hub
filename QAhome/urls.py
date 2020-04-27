@@ -22,7 +22,6 @@ from django.urls import reverse_lazy
 
 from django.views.generic.base import TemplateView
 
-
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
@@ -31,4 +30,3 @@ urlpatterns = [
     path('', include('autoapp_tingg.urls', namespace='main_app')),
 
 ]
-

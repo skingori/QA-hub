@@ -2,11 +2,10 @@
 {% load static %}
 {% block content-wrapper %}
     {% block home-message %}
-
         {% block home-banner %}
-{#            {% include 'partials/_banner.html' %}#}
+            {% include 'partials/_banner.html' %}
         {% endblock home-banner %}
-{#     contect#}
-        {% include 'partials/_create_tests.html' %}
+        {#     contect#}
+        {% include 'partials/_ack_table.html' %}
     {% endblock home-message %}
 {% endblock %}

@@ -4,11 +4,18 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.views.generic import TemplateView, ListView
 from django.views import generic
 #
+# import logs libraries
+from django.contrib.auth.decorators import user_passes_test
+import os, time
+from django.http import StreamingHttpResponse
+from django.template import loader
+from django.conf import settings
+# end import
 from django.urls import reverse_lazy
 from rest_framework.parsers import JSONParser
 
 from .forms import RegistrationForm, LoginForm, TestForm, SimulateForm, SimulateJsonForm, SimulatePayment, \
-    RefundJsonForm, CancelForm
+    RefundJsonForm, CancelForm, AckForm
 from django.views import View
 from django.http import HttpResponseRedirect, HttpResponse
 # import db
@@ -187,7 +194,7 @@ class Checkout(generic.TemplateView):
                     requests = QaOperations.create_all_req_context(service_code=service_code,
                                                                    request_data=queryset, data=data,
                                                                    service_=service, username=username)
-                    print(f"REQUESTS:{requests}")
+                    appLogger.info(requests)
                     return render(request, self.template_name, context=requests)
                 elif "Token has expired" in service.get("REASON"):
                     return HttpResponseRedirect('/logout/')
@@ -484,7 +491,8 @@ class SimulateJson(View):
             return HttpResponseRedirect('/')
         except TypeError:
             return HttpResponseRedirect('/')
-        except:
+        except Exception as u:
+            logging.error(u)
             return HttpResponseRedirect('/')
 
 
@@ -613,6 +621,125 @@ class CancelRequest(generic.TemplateView):
         except Exception as ex:
             print(ex)
             return HttpResponseRedirect('/')
+
+
+@method_decorator(never_cache, name='dispatch')
+class Acknowledge(generic.TemplateView):
+    template_name = 'home/ack_request.html'
+    form_class = AckForm
+
+    def get(self, request, *args, **kwargs):
+        try:
+            if request.session['username']:
+                merchant_transaction = kwargs.get("merchant_id")
+                checkout_request_id = kwargs.get("checkout_id")
+                username = request.session['username']
+                response = {"username": username, "merchantTransactionID": merchant_transaction,
+                            "checkoutRequestID": checkout_request_id}
+                return render(request, self.template_name, context=response, status=status.HTTP_200_OK)
+            else:
+                return HttpResponseRedirect('/')
+        except KeyError:
+            return HttpResponseRedirect('/')
+        except ValueError:
+            return HttpResponseRedirect('/')
+
+    def post(self, request):
+        try:
+            form = self.form_class(request.POST)
+            if form.is_valid() and request.session['username']:
+                # <process form cleaned data>
+                post_data = request.POST.get("acknowledge")
+                cleaned_data = json.loads(post_data)
+                port = request.session['port']
+                get_token = QaOperations.get_oauth_token(
+                    client_keys=QaOperations.get_client_keys(data=request.session['data']), _port=port)
+                if get_token.status_code == 200:
+                    token = get_token.json().get("access_token")
+                    initiate_ack = QaOperations.acknowledge_payment(
+                        data=cleaned_data, token=token, _port=port)
+                    return HttpResponse(initiate_ack,
+                                        content_type="application/json", status=status.HTTP_200_OK
+                                        )
+                else:
+                    return HttpResponse(
+                        json.dumps({"nothing to see": "this isn't happening"}),
+                        content_type="application/json", status=status.HTTP_400_BAD_REQUEST
+                    )
+
+        except KeyError:
+            return HttpResponseRedirect('/')
+        except ValueError:
+            return HttpResponseRedirect('/')
+        except Exception as ex:
+            print(ex)
+            return HttpResponseRedirect('/')
+
+
+@method_decorator(never_cache, name='dispatch')
+class ViewLogs(View):
+    template_name = 'home/logs.html'
+
+    def log_streamer(self, request, from_=0, file_path=None):
+        try:
+            file_path = file_path or settings.DLL_FILE
+            mtime = os.path.getmtime(file_path)
+            with open(file_path) as f:
+                start = -int(from_) or -2000
+                filestart = True
+                while filestart:
+                    try:
+                        f.seek(start, 2)
+                        filestart = False
+                        result = f.read()
+                        last = f.tell()
+                        t = loader.get_template(template_name=self.template_name)
+                        yield t.render({"result": result})
+
+                    except IOError:
+                        start += 50
+            reset = 0
+            while True:
+                first = True
+                newmtime = os.path.getmtime(file_path)
+                if newmtime == mtime:
+                    time.sleep(1)
+                    reset += 1
+                    if reset >= 60:
+                        yield "<!-- empty -->"
+                        reset = 0
+                    continue
+                mtime = newmtime
+                with open(file_path) as f:
+                    f.seek(last)
+                    result = f.read()
+                    if result:
+                        t = loader.get_template('home/logs.html')
+                        if first:
+                            yield result
+                            first = False
+                        else:
+                            yield result
+                    last = f.tell()
+        except Exception as e:
+            import traceback
+            print(traceback.format_exc())
+            logging.error(e)
+
+    def dispatch(self, request, *args, **kwargs):
+        response = StreamingHttpResponse(self.log_streamer(request, request.GET.get('from', 1000),
+                                                           request.GET.get('file_path', "")))
+        response['X-Accel-Buffering'] = "no"
+        return response
+
+    @staticmethod
+    def group_check(user):
+        return user.groups.filter(
+            name__in=settings.DLL_GROUP_PERMISSION if isinstance(settings.DLL_GROUP_PERMISSION, list) else [
+                settings.DLL_GROUP_PERMISSION])
+
+    if getattr(settings, "DLL_GROUP_PERMISSION", ""):
+        dll = user_passes_test(group_check)(dispatch)
 
 
 @method_decorator(never_cache, name='dispatch')
@@ -751,10 +878,13 @@ class MockAPI(APIView):
     """
     This API return user saved json
     """
-    def post(self, request, format=None):
+
+    def post(self, request, **kwargs):
         data = MockingData.objects.get(status='1')
         serializer = SnippetSerializer(data=json.loads(str(data.json_string)))
         if serializer.is_valid():
+            # print(**kwargs)
+            # print(str(request.data))
             appLogger.debug("MOCKING REQUEST:" + str(request.data))
             appLogger.debug("MOCKING RESPONSE:" + str(data.json_string))
             return Response(json.loads(data.json_string), status=status.HTTP_200_OK)
