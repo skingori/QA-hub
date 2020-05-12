@@ -308,7 +308,6 @@ class QaOperations(object):
             path = f"{get_request_url.path}"
             response = requests.post(url=f"{url + path}",
                                      data=json.dumps(data), headers=header_with_token(token))
-            print(response)
             return json.dumps(response.json())
         except KeyError:
             print(KeyError)
@@ -570,7 +569,6 @@ class QaOperations(object):
                 "paymentWebhookUrl": f"{get_webHook.url}",
                 "requestOrigin": "UI"
             }
-            print(params)
             return json.dumps(params)
 
         except KeyError:

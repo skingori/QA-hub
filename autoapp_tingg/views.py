@@ -866,7 +866,7 @@ class OpenAPI(APIView):
     This class accepts all the requests
     """
 
-    def post(self, request, format=None):
+    def post(self, request, **kwargs):
         serializer = SnippetSerializer(data=request.data)
         if serializer.is_valid():
             appLogger.debug("OPEN API REQUEST:" + str(request.data))

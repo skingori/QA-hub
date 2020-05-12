@@ -154,6 +154,7 @@ APPEND_SLASH = True
 min_level = 'DEBUG'
 min_django_level = 'INFO'
 
+LOGS_DIR = os.path.join(BASE_DIR, 'logs')
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,  # keep Django's default loggers
@@ -176,8 +177,8 @@ LOGGING = {
             'level': min_level,  # this level or higher goes to the log file
             'class': 'logging.handlers.RotatingFileHandler',
             # IMPORTANT: replace with your desired logfile name!
-            'filename': os.path.join(BASE_DIR, 'info.log'),
-            'maxBytes': 50 * 10 ** 6,  # will 50 MB do?
+            'filename': os.path.join(LOGS_DIR, 'info.log'),
+            'maxBytes': 16 * 1024 * 1024,  # will 16 MB do?
             'backupCount': 3,  # keep this many extra historical files
             'formatter': 'timestamp_thread'
         },
@@ -200,7 +201,7 @@ LOGGING = {
         },
     },
 }
-DLL_FILE = os.path.join(BASE_DIR, 'info.log')
+DLL_FILE = os.path.join(LOGS_DIR, 'info.log')
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),

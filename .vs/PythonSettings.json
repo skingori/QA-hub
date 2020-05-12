@@ -1,4 +1,4 @@
 {
-  "Interpreter": "C:\\GLOBALVENV\\Scripts\\python.exe",
+  "Interpreter": "/home/king/VENV/bin/python",
   "TestFramework": "Pytest"
 }

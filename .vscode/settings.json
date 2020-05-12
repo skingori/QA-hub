@@ -4,15 +4,22 @@
 // }
 
 {
-<<<<<<< HEAD
-    "python.linting.pylintEnabled": false,
-    "python.pythonPath": "/Users/king/GLOBALVEN/bin/python",
-    "python.linting.enabled": false,
-    "python.linting.flake8Enabled": true,
-=======
-    "python.linting.pylintEnabled": true,
-    "python.pythonPath": "C:\\Users\\smwangi\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
->>>>>>> c24666444cbf83775124cc9850425642b3fa2d72
+// <<<<<<< HEAD
+//     "python.linting.pylintEnabled": false,
+//     "python.pythonPath": "/Users/king/GLOBALVEN/bin/python",
+//     "python.linting.enabled": false,
+//     "python.linting.flake8Enabled": true,
+// =======
+    // "python.linting.pylintEnabled": true,
+    // "python.pythonPath": "C:\\Users\\smwangi\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+// >>>>>>> c24666444cbf83775124cc9850425642b3fa2d72
     // "python.linting.pycodestyleEnabled": true,
     // "python.linting.enabled": true
+    
+    // for linux
+
+    "python.linting.pylintEnabled": true,
+    "python.pythonPath": "/home/king/VENV/bin/python",
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.enabled": true
 }
