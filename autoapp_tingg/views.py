@@ -714,7 +714,7 @@ class ViewLogs(View):
                     f.seek(last)
                     result = f.read()
                     if result:
-                        t = loader.get_template('home/logs.html')
+                        loader.get_template(self.template_name)
                         if first:
                             yield result
                             first = False

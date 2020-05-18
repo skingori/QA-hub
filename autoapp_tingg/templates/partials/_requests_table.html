@@ -8,10 +8,10 @@
                 </div>
             </div>
             <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <button type="button" class="btn btn-primary btn-icon mr-3 mt-2 mt-xl-0" data-toggle="modal"
-                        data-target="#tinggbtn">
-                    <i class="mdi mdi-library"></i>
-                </button>
+{#                <button type="button" class="btn btn-primary btn-icon mr-3 mt-2 mt-xl-0" data-toggle="modal"#}
+{#                        data-target="#tinggbtn">#}
+{#                    <i class="mdi mdi-library"></i>#}
+{#                </button>#}
                 <button type="button" class="btn btn-primary btn-icon mr-3 mt-2 mt-xl-0" data-toggle="modal"
                         data-target="#json_modal">
                     <i class="mdi mdi-json"></i>
@@ -29,7 +29,7 @@
                 <tr>
                     <th>Request</th>
                     <th>Merchant id</th>
-                    <th>Request Amount</th>
+                    <th>Amount</th>
                     <th>Mobile number</th>
                     <th>Status</th>
                     <th>Date Created</th>
@@ -47,8 +47,7 @@
                         <td>{{ i.merchantTransactionID }}</td>
                         <td>{{ i.originalCurrencyCode }}:{{ i.requestAmount }}</td>
                         <td>{{ i.MSISDN }}</td>
-                        <td>{{ i.overallStatus }}:{{ i.statusCodeDesc }}
-                        </td>
+                        <td>{{ i.overallStatus }}:{{ i.statusCodeDesc }}</td>
                         <td>{{ i.dateCreated }}</td>
                         <td>{{ i.accountNumber }}</td>
                         <td>{{ i.convertedCurrencyCode }} {{ i.convertedAmount }}</td>
@@ -66,10 +65,12 @@
                             </a>
                             <a href="{% url 'main_app:refunds' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID amount=i.requestAmount %}"
                                class="badge badge badge-pill badge-success float-right mr-1"
-                               title="Refund">{% trans 'R' %}</a>
+                               title="Refund">{% trans 'R' %}
+                            </a>
                             <a href="{% url 'main_app:acknowledge' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID %}"
                                class="badge badge badge-pill badge-outline-warning float-right mr-1"
-                               title="Acknowledge">{% trans 'A' %}</a>
+                               title="Acknowledge">{% trans 'A' %}
+                            </a>
                         </td>
                     </tr>
                 {% endfor %}
