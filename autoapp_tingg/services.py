@@ -54,7 +54,7 @@ class QaOperations(object):
             write_file.close()
 
     @staticmethod
-    def read_any_file(filepath):
+    def read_any_file(filepath) -> str:
         try:
             with open(f"{filepath}", "r") as read_file:
                 data = json.load(read_file)
@@ -69,7 +69,7 @@ class QaOperations(object):
         return today_date
 
     @staticmethod
-    def create_future_date(days, today):
+    def create_future_date(days, today) -> str:
         td = timedelta(days=days)
         future_date = today + td
         return future_date
@@ -81,7 +81,7 @@ class QaOperations(object):
         return int(date_mill)
 
     @staticmethod
-    def create_req_context(payments, create_req_, username, first_name, last_name):
+    def create_req_context(payments, create_req_, username, first_name, last_name) -> Dict[str, Union[str, Dict[str, Union[Optional[str], Any]]]]:
         try:
             context = ({})
             context['total_requests'] = create_req_['DATA']['activeRequests']['currentTotal']
@@ -103,7 +103,7 @@ class QaOperations(object):
             return context
 
         except ConnectionError:
-            return "Connection Error"
+            return {"username": username, "message": ConnectionError}
         except ValueError:
             return {"username": username, "message": ValueError}
         except TypeError:
@@ -473,7 +473,7 @@ class QaOperations(object):
                 "accountNumber": f"{account}",
                 "customerName": f"{name}",
                 "MSISDN": f"{msisdn}",
-                "chargeAmount": f"{amount}",
+                "chargeAmount": amount,
                 "currencyCode": f"{currency}",
                 "serviceCode": f"{s_code}",
                 "narration": f"Simulated payment by {name}",

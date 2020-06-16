@@ -1,9 +1,0 @@
-# directories
-/src/
-/build/
-/tests/
-/coverage/
-
-# files
-.babelrc
-jest.config.js

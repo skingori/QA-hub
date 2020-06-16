@@ -22,7 +22,7 @@ $(function () {
             url: "/simulatePay/", // the endpoint
             type: "POST", // http method
             data: {
-                amount: $('#amount').val(),
+                amount: $('#pay_amount').val(),
                 account_number: $('#account_number').val(),
                 msisdn: $('#msisdn').val(),
                 payerClient: $('#payerClient').val(),

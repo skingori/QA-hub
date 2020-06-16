@@ -67,7 +67,7 @@
                                class="badge badge badge-pill badge-success float-right mr-1"
                                title="Refund">{% trans 'R' %}
                             </a>
-                            <a href="{% url 'main_app:acknowledge' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID %}"
+                            <a href="{% url 'main_app:acknowledge' checkout_id=i.checkoutRequestID merchant_id=i.merchantTransactionID amount=i.requestAmount %}"
                                class="badge badge badge-pill badge-outline-warning float-right mr-1"
                                title="Acknowledge">{% trans 'A' %}
                             </a>

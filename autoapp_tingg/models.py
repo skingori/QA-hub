@@ -101,3 +101,8 @@ class MockingData(models.Model):
 
     json_string = models.TextField()
     description = models.TextField()
+
+
+class TestrailDetails:
+    testrail_name = models.CharField(max_length=200)
+    testrail_password = models.CharField(max_length=200)

@@ -34,6 +34,12 @@
                         <button type="button" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block ">
                             <i class="mdi mdi-download text-muted"></i>
                         </button>
+                        <button type="button" onclick="changeDelivery()" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block ">
+                            D
+                        </button>
+                        <button type="button" onclick="changePartial()" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block ">
+                            P
+                        </button>
                         <button type="button" onclick="changeTheme()" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
                             <i class="mdi mdi-theme-light-dark text-muted"></i>
                         </button>
@@ -86,6 +92,39 @@
     function cleanResponse() {
         alert("Not Implemented");
     }
+
+    function changeDelivery() {
+        const data = {
+            'merchantTransactionID': "{{merchantTransactionID}}",
+            'checkoutRequestID': "{{ checkoutRequestID }}",
+            'receiptNumber': "{{merchantTransactionID}}",
+            'statusCode': 188,
+            'statusDescription': 'Payment Delivered',
+        };
+        setTheme(data)
+    }
+
+    function changePartial() {
+        const data = {
+            'merchantTransactionID': "{{merchantTransactionID}}",
+            'checkoutRequestID': "{{ checkoutRequestID }}",
+            'receiptNumber': "{{merchantTransactionID}}",
+            'statusCode': 183,
+            'currencyCode': "KES",
+            'acknowledgeAmount': `{{amount}}`,
+            'statusDescription': 'Payment Partially Accepted'
+        };
+
+        setTheme(data)
+    }
+     function setTheme(data) {
+         const editor = ace.edit('ack');
+         editor.setTheme("ace/theme/dracula");
+         editor.session.setMode("ace/mode/javascript");
+         editor.getSession().setTabSize(2);
+         editor.getSession().setUseWrapMode(true);
+         editor.setValue(JSON.stringify(data, null, '\t'));
+     }
 
     $(function () {
         editor = "";

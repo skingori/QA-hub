@@ -633,9 +633,11 @@ class Acknowledge(generic.TemplateView):
             if request.session['username']:
                 merchant_transaction = kwargs.get("merchant_id")
                 checkout_request_id = kwargs.get("checkout_id")
+                Amount = kwargs.get("amount")
                 username = request.session['username']
                 response = {"username": username, "merchantTransactionID": merchant_transaction,
-                            "checkoutRequestID": checkout_request_id}
+                            "checkoutRequestID": checkout_request_id,
+                            "amount": Amount}
                 return render(request, self.template_name, context=response, status=status.HTTP_200_OK)
             else:
                 return HttpResponseRedirect('/')
