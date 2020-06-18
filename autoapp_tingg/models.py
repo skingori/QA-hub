@@ -102,7 +102,28 @@ class MockingData(models.Model):
     json_string = models.TextField()
     description = models.TextField()
 
+    class Meta:
+        verbose_name = 'Mocking Data'
+        verbose_name_plural = 'Mocking Data'
+        db_table = 'MockingData'
 
-class TestrailDetails:
-    testrail_name = models.CharField(max_length=200)
+
+class TestrailDetails(models.Model):
+    ACTIVE = '1'
+    INACTIVE = '2'
+    CHOICES = [
+        (ACTIVE, 'Active'),
+        (INACTIVE, 'In-active'),
+    ]
+    status = models.CharField(max_length=2,
+                              choices=CHOICES,
+                              default=INACTIVE,
+                              )
+    testrail_username = models.CharField(max_length=200)
     testrail_password = models.CharField(max_length=200)
+    testrail_url = models.URLField()
+
+    class Meta:
+        verbose_name = 'TestRail'
+        verbose_name_plural = 'TestRail Settings'
+        db_table = 'TestRail'

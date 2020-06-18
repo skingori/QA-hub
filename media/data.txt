@@ -1,18 +1,1 @@
-{
-	"merchantTransactionID":1589892361332,
-	"customerFirstName":"Samson",
-	"customerLastName":"Mwangi",
-	"MSISDN":"254708070897",
-	"customerEmail":"samson.mwangi@cellulant.com",
-	"amount":"1000",
-	"currencyCode":"KES",
-	"accountNumber":1589892361332,
-	"serviceCode":"JAMDEV1745",
-	"dueDate":"2020-05-1913:46:01",
-	"serviceDescription":"Gettingservice/goodx",
-	"countryCode":"KE",
-	"languageCode":"en",
-	"successRedirectUrl":"",
-	"failRedirectUrl":"",
-	"paymentWebhookUrl":""
-}
+j,n

@@ -190,7 +190,7 @@ class Checkout(generic.TemplateView):
                 # queryset = serializers.serialize('json', UISettings.objects.all())
                 queryset = get_list_or_404(UISettings)
 
-                if success is True and stat_code == 1:
+                if success and stat_code == 1:
                     requests = QaOperations.create_all_req_context(service_code=service_code,
                                                                    request_data=queryset, data=data,
                                                                    service_=service, username=username)
@@ -274,11 +274,11 @@ class MakeLogin(generic.TemplateView):
             environment = request.POST.get("environment", '') == "on"
 
             try:
-                if environment is True:
+                if environment:
                     sandbox_port = get_object_or_404(EnvironmentPorts,
                                                      unique_name="sandbox")
                     request.session['port'] = sandbox_port.port
-                elif environment is False:
+                elif not environment:
                     staging_port = get_object_or_404(EnvironmentPorts,
                                                      unique_name="staging")
                     request.session['port'] = staging_port.port
@@ -296,7 +296,7 @@ class MakeLogin(generic.TemplateView):
                 stat_code = compare['STATCODE']
                 reason = compare['REASON']
 
-                if success is True and stat_code == 1:
+                if success and stat_code == 1:
 
                     request.session['username'] = username
                     data = request.session['data'] = compare
@@ -322,7 +322,7 @@ class MakeLogin(generic.TemplateView):
                     context = QaOperations.create_req_context(
                         payments, create_req, username, first_name, last_name)
                     return render(request, 'home/home.html', context=context)
-                elif success is False and stat_code == 0:
+                elif not success and stat_code == 0:
                     return render(request, self.template_name, {"message": reason})
                 else:
                     return render(request, self.template_name, {"message": reason})

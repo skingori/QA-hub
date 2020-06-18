@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import APISettings, WebHook, UISettings, EnvironmentPorts, MockingData
+from .models import APISettings, WebHook, UISettings, EnvironmentPorts, MockingData, TestrailDetails
 
 admin.site.site_header = "CELLULANT QA HUB"
 admin.site.site_title = "API Settings"
@@ -40,8 +40,14 @@ class MockingAdmin(admin.ModelAdmin):
     list_display = ('unique_name', 'json_string', 'description',)
 
 
+class TestRailAdmin(admin.ModelAdmin):
+    search_fields = ('id', 'testrail_username',)
+    list_display = ('status', 'testrail_username', 'testrail_password', 'testrail_url',)
+
+
 admin.site.register(APISettings, APISettingsAdmin)
 admin.site.register(WebHook, WebHookAdmin)
 admin.site.register(UISettings, UISettingsAdmin)
 admin.site.register(EnvironmentPorts, EnvironmentAdmin)
 admin.site.register(MockingData, MockingAdmin)
+admin.site.register(TestrailDetails, TestRailAdmin)

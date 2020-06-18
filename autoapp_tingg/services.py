@@ -1,6 +1,7 @@
 import csv
 from typing import Dict, Union, Optional, Any
 
+import logging
 import urllib3
 import requests
 from requests.exceptions import ConnectionError
@@ -11,10 +12,15 @@ import base64
 import hashlib
 import random
 import sys
+import time
 from Crypto.Cipher import AES
 # hoping db will work
-from .models import APISettings, WebHook
+from .models import APISettings, WebHook, TestrailDetails
 from django.shortcuts import render, get_object_or_404
+
+
+# create logger
+appLogger = logging.getLogger('app-logger')
 
 
 def header_with_no_token() -> Dict[str, str]:
@@ -548,7 +554,7 @@ class QaOperations(object):
         try:
 
             params = {
-                "merchantTransactionID": random.randint(0, sys.maxunicode),
+                "merchantTransactionID": int(round(time.time() * 1000)),
                 "customerFirstName": "QA",
                 "customerLastName": "Testing App",
                 "MSISDN": f"{msisdn}",
@@ -615,15 +621,17 @@ class QaServices(object):
                 for row in csv_reader:
                     for i in row:
                         urllib3.disable_warnings()
-                        username = ""
-                        password = ""
+                        db = get_object_or_404(TestrailDetails, status=1)
+                        username = db.testrail_username
+                        password = db.testrail_password
+                        url = db.testrail_url
 
                         data = {
                             'Content-Type': 'application/json',
                             'User-Agent': 'TestRail API v: 2'
                         }
                         # TODO : Change test case
-                        if i is not "" or None:
+                        if i != "" or None:
                             set_ = {
                                 "title": f"{self.test_case.replace('*case*', i)}",
                                 "name": f"{self.test_case.replace('*case*', i)}",
@@ -635,12 +643,12 @@ class QaServices(object):
                             uri_add = f"/index.php?/api/v2/add_case/{self.section}"
                             # This url will be used to get the cases
                             # uri_get = f"/index.php?/api/v2/get_cases/{82}&suite_id={322}&section_id={6238}"
-                            post = requests.post(url=f"https://41.84.155.54:9401/testrail{uri_add}",
+                            post = requests.post(url=f"{url}{uri_add}",
                                                  auth=(username, password), headers=data, data=payload, verify=False)
-                            if post.status_code is not 200:
+                            if post.status_code != 200:
                                 return json.loads(post.text).get("error", "null")
                             else:
-                                pass
+                                appLogger.error(post.text)
                         else:
                             pass
 

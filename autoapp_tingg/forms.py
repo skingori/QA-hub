@@ -77,3 +77,4 @@ class SimulatePayment(forms.Form):
     payerClient = forms.CharField(max_length=200)
     currency = forms.CharField(max_length=4)
 
+

@@ -37,8 +37,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="experience">{% trans 'Experience' %} <span class="text text-success"><a
-                                href="{% url 'admin:autoapp_tingg' %}">{% trans 'Add More' %}</a> </span></label>
+                        <label for="experience">{% trans 'Experience' %} <span class="text text-success">
+                            <a href="{% url 'admin:index' %}">{% trans 'Add More' %}</a> </span></label>
                         <select class="form-control form-control-sm" id="experience" name="experience">
                             {% for i in request_data %}
                                 {{ i }}
