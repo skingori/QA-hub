@@ -648,7 +648,12 @@ class QaServices(object):
                             if post.status_code != 200:
                                 return json.loads(post.text).get("error", "null")
                             else:
-                                appLogger.error(post.text)
+                                lst = ['erer', 'ererwe']
+                                lst = lst.append(lst)
+                                print(lst)
+                                appLogger.error(lst)
+                                # appLogger.error(post.text)
+                                # yield lst
                         else:
                             pass
 
