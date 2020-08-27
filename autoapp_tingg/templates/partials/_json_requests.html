@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <div class="modal fade" id="json_modal" tabindex="-1" role="dialog" aria-labelledby=""
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -20,9 +21,27 @@
                 <div id="json_data"></div>
                 <div class="modal-footer">
                     <div class="d-flex justify-content-between flex-wrap">
-
                         <div class="d-flex justify-content-between align-items-end flex-wrap">
-                            <button type="button" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block ">
+                            <button type="button" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block">
+                                <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown"
+                                   id="notificationDropdown" href="#" data-toggle="dropdown">
+                                    <i class="mdi mdi-translate mx-0"></i>
+                                    {% for language in languages %}
+                                        <span class="nav-profile-name">{% if language.code == LANGUAGE_CODE %}
+                                            {{ language.name_local }}{% endif %}</span>
+                                    {% endfor %}
+                                </a>
+                                <a aria-labelledby="notificationDropdown"
+                                   class="dropdown-menu dropdown-menu-right navbar-dropdown">
+                                    jgjgjhjghg
+                                </a>
+
+                            </button>
+                            {#                            <div aria-labelledby="notificationDropdown"#}
+                            {#                                 class="dropdown-menu dropdown-menu-right navbar-dropdown">#}
+                            {#                                <p>{% include 'partials/_language_form.html' %}</p>#}
+                            {#                            </div>#}
+                            <button type="button" class="btn btn-light bg-white btn-icon mr-3 d-none d-md-block">
                                 <i class="mdi mdi-download text-muted"></i>
                             </button>
                             <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
@@ -52,64 +71,64 @@
         charset="utf-8"></script>
 
 <script type="text/javascript">
-  function pad (n) {
-    return n < 10 ? '0' + n : n
-  }
+    function pad(n) {
+        return n < 10 ? '0' + n : n
+    }
 
-  function getJson () {
-    alert('This method is not implemented!')
-  }
+    function getJson() {
+        alert("Not configured!");
+    }
 
-  let amount = Math.floor((Math.random() * 10000) + 10)
-  let now = new Date()
-  let timestamp = now.getTime()
-  let year = now.getFullYear()
-  let month = (now.getMonth() + 1)
-  let date = now.getDate()
-  let hour = '0' + (now.getUTCHours() + 1)
-  let min = '0' + now.getMinutes()
-  let sec = '0' + now.getSeconds()
-  let timeDate = pad(year) + '-' + pad(month) + '-' + pad(date)
-    + ' ' + hour.slice(-2)
-    + ':' + min.slice(-2)
-    + ':' + sec.slice(-2)
-  let data = {
-    'merchantTransactionID': timestamp,
-    'customerFirstName': 'Samson',
-    'customerLastName': 'Mwangi',
-    'MSISDN': "{{ MSISDN }}",
-    'customerEmail': 'samson.mwangi@cellulant.com',
-    'amount': '1000',
-    'currencyCode': 'KES',
-    'accountNumber': timestamp,
-    'serviceCode': '{{ s_code }}',
-    'dueDate': timeDate,
-    'serviceDescription': 'Getting service/good x',
-    'countryCode': 'KE',
-    //{#'payerClientCode': '',#}
-    'languageCode': 'en',
-    //{#'pendingRedirectUrl': '',#}
-    'successRedirectUrl': '',
-    'failRedirectUrl': '',
-    'paymentWebhookUrl': ''
-  }
-  document.getElementById('json_data').innerHTML = JSON.stringify(data, null, '\t')
-  const editor = ace.edit('json_data')
-  editor.setTheme('ace/theme/dawn')
-  editor.session.setMode('ace/mode/javascript')
-  editor.getSession().setTabSize(2)
-  editor.getSession().setUseWrapMode(true)
-  editor.renderer.setShowGutter(false)
-  editor.setOptions({
-    enableBasicAutocompletion: true,
-    enableSnippets: true,
-    enableLiveAutocompletion: true
-  })
+    let amount = Math.floor((Math.random() * 10000) + 10)
+    let now = new Date()
+    let timestamp = now.getTime()
+    let year = now.getFullYear()
+    let month = (now.getMonth() + 1)
+    let date = now.getDate()
+    let hour = '0' + (now.getUTCHours() + 1)
+    let min = '0' + now.getMinutes()
+    let sec = '0' + now.getSeconds()
+    let timeDate = pad(year) + '-' + pad(month) + '-' + pad(date)
+        + ' ' + hour.slice(-2)
+        + ':' + min.slice(-2)
+        + ':' + sec.slice(-2)
+    let data = {
+        'merchantTransactionID': timestamp,
+        'customerFirstName': 'Samson',
+        'customerLastName': 'Mwangi',
+        'MSISDN': "{{ MSISDN }}",
+        'customerEmail': 'samson.mwangi@cellulant.com',
+        'amount': '1000',
+        'currencyCode': 'KES',
+        'accountNumber': timestamp,
+        'serviceCode': '{{ s_code }}',
+        'dueDate': timeDate,
+        'serviceDescription': 'Getting service/good x',
+        'countryCode': 'KE',
+        //{#'payerClientCode': '',#}
+        'languageCode': 'en',
+        //{#'pendingRedirectUrl': '',#}
+        'successRedirectUrl': '',
+        'failRedirectUrl': '',
+        'paymentWebhookUrl': ''
+    }
+    document.getElementById('json_data').innerHTML = JSON.stringify(data, null, '\t')
+    const editor = ace.edit('json_data')
+    editor.setTheme('ace/theme/dawn')
+    editor.session.setMode('ace/mode/javascript')
+    editor.getSession().setTabSize(2)
+    editor.getSession().setUseWrapMode(true)
+    editor.renderer.setShowGutter(false)
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true
+    })
 
-  function changeTheme () {
-    let themes = ['ace/theme/dracula', 'ace/theme/monokai', 'ace/theme/github', 'ace/theme/cobalt']
+    function changeTheme() {
+        let themes = ['ace/theme/dracula', 'ace/theme/monokai', 'ace/theme/github', 'ace/theme/cobalt']
 
-    let randomItem = themes[Math.floor(Math.random() * themes.length)]
-    editor.setTheme(randomItem)
-  }
+        let randomItem = themes[Math.floor(Math.random() * themes.length)]
+        editor.setTheme(randomItem)
+    }
 </script>

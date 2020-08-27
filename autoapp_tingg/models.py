@@ -6,10 +6,20 @@ from django.shortcuts import reverse
 
 
 class APISettings(models.Model):
+    ACCEPT = '1'
+    REJECT = '2'
+    CHOICES = [
+        (ACCEPT, 'Active'),
+        (REJECT, 'In-active'),
+    ]
+    status = models.CharField(max_length=2,
+                              choices=CHOICES,
+                              default=REJECT,
+                              )
     display_name = models.CharField(max_length=30)
-    unique_name = models.CharField(max_length=50, unique=True)
+    unique_name = models.CharField(max_length=50)
     url = models.URLField()
-    port = models.IntegerField()
+    environment = models.CharField(max_length=20)
     path = models.CharField(max_length=200)
     description = models.TextField()
 
@@ -49,10 +59,21 @@ class WebHook(models.Model):
 
 
 class UISettings(models.Model):
+    ACCEPT = '1'
+    REJECT = '2'
+    CHOICES = [
+        (ACCEPT, 'Active'),
+        (REJECT, 'In-active'),
+    ]
+    status = models.CharField(max_length=2,
+                              choices=CHOICES,
+                              default=REJECT,
+                              )
     display_name = models.CharField(max_length=50)
-    unique_name = models.CharField(max_length=50, unique=True)
-    encoded_url = models.URLField()
+    unique_name = models.CharField(max_length=50)
     url = models.URLField()
+    path = models.CharField(max_length=20)
+    environment = models.CharField(max_length=20)
     description = models.TextField()
 
     def __str__(self):
@@ -64,26 +85,30 @@ class UISettings(models.Model):
         db_table = 'UISettings'
 
 
-class EnvironmentPorts(models.Model):
-    display_name = models.CharField(max_length=20)
-    unique_name = models.CharField(max_length=10, unique=True)
-    port = models.CharField(max_length=6)
+class JSONSimulator(models.Model):
+    ACCEPT = '1'
+    REJECT = '2'
+    CHOICES = [
+        (ACCEPT, 'Active'),
+        (REJECT, 'In-active'),
+    ]
+    status = models.CharField(max_length=2,
+                              choices=CHOICES,
+                              default=REJECT
+                              )
+    unique_name = models.CharField(max_length=10)
+    url = models.URLField()
+    path = models.CharField(max_length=50)
+    environment = models.CharField(max_length=50)
     description = models.TextField()
 
     def __str__(self):
-        return self.display_name
+        return self.unique_name
 
     class Meta:
-        verbose_name = 'Environment'
-        verbose_name_plural = 'Environment'
-        db_table = 'Environment'
-
-
-class JSONSimulator(models.Model):
-    unique_name = models.CharField(max_length=10, unique=True)
-
-    url = models.URLField()
-    description = models.TextField()
+        verbose_name = 'JSONSimulator'
+        verbose_name_plural = 'JSONSimulators'
+        db_table = 'JSONSimulator'
 
 
 class MockingData(models.Model):

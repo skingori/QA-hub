@@ -39,7 +39,7 @@
     $('.nav li a', sidebar).each(function() {
       var $this = $(this);
       addActiveClass($this);
-    })
+    });
 
     //Close other submenu in sidebar on opening any
 

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import APISettings, WebHook, UISettings, EnvironmentPorts, MockingData, TestrailDetails
+from .models import APISettings, WebHook, UISettings, JSONSimulator, MockingData, TestrailDetails
 
 admin.site.site_header = "CELLULANT QA HUB"
 admin.site.site_title = "API Settings"
@@ -14,7 +14,7 @@ class APISettingsAdmin(admin.ModelAdmin):
 
     # columns to be displayed on listing view
 
-    list_display = ('display_name', 'unique_name', 'url', 'port', 'path', 'description',)
+    list_display = ('status', 'display_name', 'unique_name', 'environment', 'url', 'path', 'description',)
 
 
 class WebHookAdmin(admin.ModelAdmin):
@@ -27,12 +27,12 @@ class WebHookAdmin(admin.ModelAdmin):
 
 class UISettingsAdmin(admin.ModelAdmin):
     search_fields = ('id', 'display_name',)
-    list_display = ('display_name', 'unique_name', 'encoded_url', 'description',)
+    list_display = ('display_name', 'unique_name', 'url', 'path', 'environment', 'description',)
 
 
-class EnvironmentAdmin(admin.ModelAdmin):
-    search_fields = ('id', 'display_name',)
-    list_display = ('display_name', 'unique_name', 'port', 'description',)
+class JSONSimulatorAdmin(admin.ModelAdmin):
+    search_fields = ('id', 'unique_name',)
+    list_display = ('status', 'unique_name', 'url', 'path', 'environment', 'description',)
 
 
 class MockingAdmin(admin.ModelAdmin):
@@ -48,6 +48,6 @@ class TestRailAdmin(admin.ModelAdmin):
 admin.site.register(APISettings, APISettingsAdmin)
 admin.site.register(WebHook, WebHookAdmin)
 admin.site.register(UISettings, UISettingsAdmin)
-admin.site.register(EnvironmentPorts, EnvironmentAdmin)
+admin.site.register(JSONSimulator, JSONSimulatorAdmin)
 admin.site.register(MockingData, MockingAdmin)
 admin.site.register(TestrailDetails, TestRailAdmin)

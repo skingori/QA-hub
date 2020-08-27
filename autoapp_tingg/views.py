@@ -10,6 +10,7 @@ import os, time
 from django.http import StreamingHttpResponse
 from django.template import loader
 from django.conf import settings
+from tingg.adapters import TinggAdapter
 # end import
 from django.urls import reverse_lazy
 from rest_framework.parsers import JSONParser
@@ -19,7 +20,8 @@ from .forms import RegistrationForm, LoginForm, TestForm, SimulateForm, Simulate
 from django.views import View
 from django.http import HttpResponseRedirect, HttpResponse
 # import db
-from .models import APISettings, WebHook, UISettings, EnvironmentPorts, MockingData
+from .models import APISettings, WebHook, UISettings, MockingData
+from django.db import connection
 # end import db
 import json
 from django.http import JsonResponse
@@ -41,6 +43,7 @@ from django.core import serializers
 appLogger = logging.getLogger('app-logger')
 
 
+@method_decorator(login_required, name='dispatch')
 @method_decorator(never_cache, name='dispatch')
 class HomeView(View):
     template_name = 'registration/login.html'
@@ -48,12 +51,12 @@ class HomeView(View):
     @staticmethod
     def get(request, *args, **kwargs):
         try:
-            if request.session['username'] and request.session['session_code'] and request.session['port']:
+            if request.session['username'] and request.session['session_code'] and request.session['env']:
                 # if request.session['username']:
                 # get the service code
                 username = request.session['username']
                 data = request.session['data']
-                port = request.session['port']
+                env = request.session['env']
 
                 future_date = QaOperations.create_future_date(
                     days=-30, today=QaOperations.get_date_now())
@@ -67,10 +70,10 @@ class HomeView(View):
                 service_code = request.session['session_code']
                 create_req = QaOperations.create_requests(QaOperations(
                     date_max=date_max_to_sec, date_min=date_min_to_sec), _service_code=service_code, _token=auth_token,
-                    _port=port)
+                    _env=env)
                 payments = QaOperations.fetch_payment_totals(QaOperations(
                     date_max=date_max_to_sec, date_min=date_min_to_sec), _service_code=service_code, _token=auth_token,
-                    _port=port)
+                    _env=env)
 
                 success = create_req['SUCCESS']
                 stat_code = create_req['STATCODE']
@@ -125,7 +128,7 @@ class ProfileView(generic.CreateView):
 
     def get(self, request, *args, **kwargs):
         try:
-            if request.session['username'] and request.session['session_code'] and request.session['port']:
+            if request.session['username'] and request.session['session_code'] and request.session['env']:
                 username = request.session['username']
                 data = request.session['data']
                 service_code = request.session['session_code']
@@ -171,24 +174,24 @@ class Checkout(generic.TemplateView):
 
     def get(self, request, *args, **kwargs):
         try:
-            if request.session['username'] and request.session['session_code'] and request.session['port']:
+            if request.session['username'] and request.session['session_code'] and request.session['env']:
                 # get the service code
                 username = request.session['username']
                 data = request.session['data']
-                port = request.session['port']
+                env = request.session['env']
 
                 auth_token = QaOperations.login_auth_and_code(data)[
                     'auth_token']
 
                 service_code = request.session['session_code']
                 service = QaOperations.get_checkout_requests(QaOperations(**kwargs),
-                                                             _service_code=service_code, _token=auth_token, _port=port)
+                                                             _service_code=service_code, _token=auth_token, _env=env)
 
                 success = service['SUCCESS']
                 stat_code = service['STATCODE']
                 # db = get_list_or_404(UISettings)
                 # queryset = serializers.serialize('json', UISettings.objects.all())
-                queryset = get_list_or_404(UISettings)
+                queryset = get_list_or_404(UISettings, status=1, environment=env)
 
                 if success and stat_code == 1:
                     requests = QaOperations.create_all_req_context(service_code=service_code,
@@ -238,7 +241,7 @@ class Logout(View):
         try:
             del request.session['username']
             del request.session['data']
-            del request.session['port']
+            del request.session['env']
         except KeyError:
             print(KeyError)
         except TypeError:
@@ -260,7 +263,7 @@ class MakeLogin(generic.TemplateView):
         # try:
         #     del request.session['username']
         #     del request.session['data']
-        #     del request.session['port']
+        #     del request.session['env']
         # except KeyError:
         #     pass
         # return render(request, self.template_name, {"message": 'Logged Out Successfully'})
@@ -275,19 +278,15 @@ class MakeLogin(generic.TemplateView):
 
             try:
                 if environment:
-                    sandbox_port = get_object_or_404(EnvironmentPorts,
-                                                     unique_name="sandbox")
-                    request.session['port'] = sandbox_port.port
+                    request.session['env'] = "sandbox"
                 elif not environment:
-                    staging_port = get_object_or_404(EnvironmentPorts,
-                                                     unique_name="staging")
-                    request.session['port'] = staging_port.port
+                    request.session['env'] = "staging"
                 else:
                     raise TypeError
 
-                port = request.session['port']
+                env = request.session['env']
                 compare = QaOperations.login(
-                    username=username, password=password, _port=port)
+                    username=username, password=password, _env=env)
                 # "SUCCESS": false,
                 # "DATA": null,
                 # "REASON": "Authentication failed",
@@ -315,10 +314,10 @@ class MakeLogin(generic.TemplateView):
                     last_name = data['DATA']['lastName']
                     create_req = QaOperations.create_requests(QaOperations(
                         date_max=date_max, date_min=date_min), _service_code=service_code, _token=auth_token,
-                        _port=port)
+                        _env=env)
                     payments = QaOperations.fetch_payment_totals(QaOperations(
                         date_max=date_max, date_min=date_min), _service_code=service_code,
-                        _token=auth_token, _port=port)
+                        _token=auth_token, _env=env)
                     context = QaOperations.create_req_context(
                         payments, create_req, username, first_name, last_name)
                     return render(request, 'home/home.html', context=context)
@@ -336,14 +335,14 @@ class MakeLogin(generic.TemplateView):
             except ValueError:  # includes simplejson.decoder.JSONDecodeError
                 return render(request, self.template_name, {"message": ValueError})
             except TypeError:
-                message = _("Oopsie!, we've got a problem!")
+                message = _("Oopsie, we've got a problem!")
                 return render(request, self.template_name, {"message": message})
         else:
             message = self.form_class(request.POST)
             return render(request, 'registration/login.html', {'message': message})
 
 
-@method_decorator(never_cache, name='dispatch')
+# @method_decorator(never_cache, name='dispatch')
 class TestCreate(TemplateView):
     form_class = TestForm
     template_name = 'home/create_test.html'
@@ -392,7 +391,7 @@ class CreateKeyView(TemplateView):
     template_name = 'user_keys/user_keys.html'
 
     def get(self, request, *args, **kwargs):
-        if request.session['username'] and request.session['session_code'] and request.session['port']:
+        if request.session['username'] and request.session['session_code'] and request.session['env']:
             username = request.session['username']
             data = request.session['data']
             code = request.session['session_code']
@@ -425,13 +424,11 @@ class SimulateTest(TemplateView):
                 s_code = request.session['session_code']
                 username = request.session['username']
                 data = request.session['data']
-                port = request.session['port']
+                env = request.session['env']
 
                 iv_key = QaServices.get_user_profile_and_keys(data)["iv_key"]
-                secret_key = QaServices.get_user_profile_and_keys(data)[
-                    "secret_key"]
-                access_key = QaServices.get_user_profile_and_keys(data)[
-                    "accessKey"]
+                secret_key = QaServices.get_user_profile_and_keys(data)["secret_key"]
+                access_key = QaServices.get_user_profile_and_keys(data)["accessKey"]
                 encrypted_params = Encryption(iv_=iv_key, key=secret_key).encrypt(QaOperations.create_encryption(
                     msisdn=msisdn,
                     email=username,
@@ -442,9 +439,13 @@ class SimulateTest(TemplateView):
                     access_key=access_key,
                     country_code=country,
                     payer_client=payer_client))
+
+                db_data = UISettings.objects.get(status=1, environment=env, unique_name=experience)
+                url = db_data.url
+                path = db_data.path
+                print(db_data)
                 return HttpResponseRedirect(
-                    f"https://beep2.cellulant.com:{port}/checkout/v2/{experience}"
-                    f"/?params={encrypted_params}&accessKey={access_key}&countryCode={country}")
+                    f"{url+path}/?params={encrypted_params}&accessKey={access_key}&countryCode={country}")
             else:
                 return HttpResponseRedirect('/')
         except KeyError:
@@ -469,17 +470,15 @@ class SimulateJson(View):
                 data_to_json = json.loads(json_data)
                 country = data_to_json.get('countryCode')
                 data = request.session['data']
-                port = request.session['port']
+                env = request.session['env']
 
                 experience = "express"
                 iv_key = QaServices.get_user_profile_and_keys(data)["iv_key"]
-                secret_key = QaServices.get_user_profile_and_keys(data)[
-                    "secret_key"]
-                access_key = QaServices.get_user_profile_and_keys(data)[
-                    "accessKey"]
+                secret_key = QaServices.get_user_profile_and_keys(data)["secret_key"]
+                access_key = QaServices.get_user_profile_and_keys(data)["accessKey"]
                 encrypted_params = Encryption(
                     iv_=iv_key, key=secret_key).encrypt(json_data)
-                url = f"https://beep2.cellulant.com:{port}/checkout/v2/{experience}/?params={encrypted_params}&accessKey={access_key}&countryCode={country}"
+                url = f"?params={encrypted_params}&accessKey={access_key}&countryCode={country}"
                 redirect = {
                     "redirect_url": url
                 }
@@ -508,10 +507,10 @@ class Refunds(generic.TemplateView):
                 checkout_request_id = kwargs.get("checkout_id")
                 amount = kwargs.get("amount")
                 data = request.session["data"]
-                port = request.session["port"]
+                env = request.session["env"]
                 client_keys = QaOperations.get_client_keys(data)
                 get_token = QaOperations.get_oauth_token(
-                    client_keys=client_keys, _port=port)
+                    client_keys=client_keys, _env=env)
                 token = get_token.json().get("access_token")
                 username = request.session['username']
                 response = {"username": username, "merchantTransactionID": merchant_transaction,
@@ -597,7 +596,7 @@ class CancelRequest(generic.TemplateView):
                 cleaned_data = json.loads(cancel_response)
                 # s_code = request.session['session_code']
                 # username = request.session['username']
-                port = request.session['port']
+                port = request.session['env']
                 data = request.session['data']
                 get_token = QaOperations.get_oauth_token(
                     client_keys=QaOperations.get_client_keys(data), _port=port)
@@ -653,7 +652,7 @@ class Acknowledge(generic.TemplateView):
                 # <process form cleaned data>
                 post_data = request.POST.get("acknowledge")
                 cleaned_data = json.loads(post_data)
-                port = request.session['port']
+                port = request.session['env']
                 get_token = QaOperations.get_oauth_token(
                     client_keys=QaOperations.get_client_keys(data=request.session['data']), _port=port)
                 if get_token.status_code == 200:
@@ -761,7 +760,7 @@ class SimulatePay(View):
             s_code = request.session['session_code']
             username = request.session['username']
             data = request.session['data']
-            port = request.session['port']
+            port = request.session['env']
 
             user_data = QaOperations.get_profile_context(
                 data=data, username=username, service_code=s_code)
@@ -788,13 +787,13 @@ class AllPayments(View):
     @classmethod
     def get(cls, request):
         try:
-            port = request.session['port']
+            port = request.session['env']
             service_code = request.session['session_code']
             data = request.session['data']
             username = request.session['username']
             token = QaOperations.login_auth_and_code(data)['auth_token']
             payment_response = QaOperations().fetch_payments(
-                _port=port, _service_code=service_code, _token=token)
+                _service_code=service_code, _token=token, _env=port)
             context = QaOperations.create_payment_context(
                 payment_response, username)
             return render(request, template_name=cls.template_name, context=context)
@@ -882,12 +881,17 @@ class MockAPI(APIView):
     """
 
     def post(self, request, **kwargs):
-        data = MockingData.objects.get(status='1')
-        serializer = SnippetSerializer(data=json.loads(str(data.json_string)))
-        if serializer.is_valid():
-            # print(**kwargs)
-            # print(str(request.data))
-            appLogger.debug("MOCKING REQUEST:" + str(request.data))
-            appLogger.debug("MOCKING RESPONSE:" + str(data.json_string))
-            return Response(json.loads(data.json_string), status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        code = kwargs.get("pk")
+        if code is None:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        else:
+            db = get_object_or_404(MockingData, unique_name=code)
+            print(db.json_string)
+            serializer = SnippetSerializer(data=json.loads(str(db.json_string)))
+            if serializer.is_valid():
+                # print(**kwargs)
+                # print(str(request.data))
+                appLogger.debug("MOCKING REQUEST:" + str(request.data))
+                appLogger.debug("MOCKING RESPONSE:" + str(db.json_string))
+                return Response(json.loads(db.json_string), status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

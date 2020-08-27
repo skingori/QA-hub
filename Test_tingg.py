@@ -3,11 +3,10 @@ from tingg.adapters import TinggAdapter
 import random
 
 
-def get_response():
-    print("We still cannot get here")
+def get_response() -> str:
     init = TinggAdapter(iv_key="h3tckgMNbmj8VP4R", secret_key="Nm6GxzKhPVwn84vq",
                         access_key="$2a$08$wQ2PLnHf6vTFY0KMGN5iFuSCXUwy1iQe.8T/TLK0.4hml45m4sDJy",
-                        service_code="INSDEV7654", domain="SANDBOX")
+                        service_code="INSDEV7654", domain="SANDBOX", url=None, path=None)
 
     response = init.get_encryption(msisdn='0724090774',
                                    customer_first_name='John',
@@ -27,5 +26,8 @@ def get_response():
                                    fail_url='http://callbackurl.com/fail',
                                    callback_url='http://callbackurl.com/callback'
                                    )
-    print(response)
-    print("We still cannot get here")
+    return response
+
+
+if __name__ == '__main__':
+    print(get_response())

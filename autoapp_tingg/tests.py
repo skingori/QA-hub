@@ -5,6 +5,7 @@ from .models import APISettings
 import unittest
 from django.test import Client
 import json
+from .services import Encryption
 
 
 class QaTester(unittest.TestCase):
@@ -16,6 +17,7 @@ class QaTester(unittest.TestCase):
         self.response = QaOperations.read_any_file(self.file_path)
         self.actual_result = json.dumps(self.response)
         self.success = self.response["SUCCESS"]
+        self.raw_data = {"test", "123"}
 
     def test_status_codes_success(self):
         """Test if user gets statusCodes value form the file"""
@@ -41,3 +43,8 @@ class QaTester(unittest.TestCase):
         """Test if user gets available status codes"""
         status = self.response['DATA']['metaData']['statusCodes']
         self.assertTrue(status, msg="No Status")
+
+    def test_encryption(self):
+        enc = Encryption(iv_=str("Test12"), key=str("Key123"))
+        print(enc.encrypt(raw=self.raw_data))
+        assert str(enc.encrypt(self.raw_data)) == "342342342sdasdas"

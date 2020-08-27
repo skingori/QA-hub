@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="dc554872-a7f2-464f-8a20-13ff835f73c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/qatestertool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/qatestertool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/PythonSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/qatestertool/config/applicationhost.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/qatestertool/v16/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/tasks.vs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_tingg.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test_tingg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autoapp_tingg/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/static/js/template.js" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/static/js/template.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_endpoints_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_endpoints_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_json_requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_json_requests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/templates/partials/_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoapp_tingg/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoapp_tingg/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/media/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/media/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,125 +51,14 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_tingg/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-309">
-              <caret line="704" column="28" selection-start-line="704" selection-start-column="28" selection-end-line="704" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#71#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_tingg/static/js/submit_json_request.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_tingg/static/js/submit_refunds_json.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/autoapp_tingg/services.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="654" column="60" lean-forward="true" selection-start-line="654" selection-start-column="60" selection-end-line="654" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_tingg/serializers.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_tingg/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
-              <caret line="125" column="15" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_tingg/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_tingg/templates/partials/_requests_modal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoapp_tingg/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>is</find>
-      <find>is§</find>
-      <find>is §</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/autoapp_tingg/apps.py" />
-        <option value="$PROJECT_DIR$/autoapp_tingg/templates/partials/_requests_table.html" />
-        <option value="$PROJECT_DIR$/autoapp_tingg/templates/partials/_requests_modal.html" />
-        <option value="$PROJECT_DIR$/autoapp_tingg/views.py" />
-        <option value="$PROJECT_DIR$/autoapp_tingg/forms.py" />
-        <option value="$PROJECT_DIR$/autoapp_tingg/models.py" />
-        <option value="$PROJECT_DIR$/autoapp_tingg/admin.py" />
-        <option value="$PROJECT_DIR$/autoapp_tingg/urls.py" />
-        <option value="$PROJECT_DIR$/Test_tingg.py" />
-        <option value="$PROJECT_DIR$/autoapp_tingg/services.py" />
-      </list>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
     </option>
   </component>
   <component name="InvalidFacetManager">
@@ -160,56 +67,8 @@
       <facet id="qatestertool/invalid/Python" />
     </ignored-facets>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="8" />
-    <option name="y" value="41" />
-    <option name="width" value="1264" />
-    <option name="height" value="696" />
-  </component>
   <component name="ProjectId" id="1c8iW6P998Ge7Tj7XO998dNYC9x" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
-              <item name="autoapp_tingg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
-              <item name="autoapp_tingg" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
-              <item name="autoapp_tingg" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="qatestertool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="qatestertool" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -218,6 +77,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
@@ -225,6 +85,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32988507" />
@@ -236,19 +97,29 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django server.qatestertool">
+    <configuration name="Test_tingg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="qatestertool" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test_tingg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="qatestertool" type="Python.DjangoServer" factoryName="Django server">
       <module name="qatestertool" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -273,6 +144,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Test_tingg" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -295,42 +171,52 @@
       <workItem from="1592484342861" duration="1677000" />
       <workItem from="1592563320263" duration="2903000" />
       <workItem from="1592746860939" duration="2917000" />
-      <workItem from="1592814334982" duration="3286000" />
+      <workItem from="1592814334982" duration="13699000" />
+      <workItem from="1593067149816" duration="574000" />
+      <workItem from="1593151886828" duration="7586000" />
+      <workItem from="1593436038029" duration="1315000" />
+      <workItem from="1593523754231" duration="59000" />
+      <workItem from="1593523905017" duration="1441000" />
+      <workItem from="1593748263023" duration="18412000" />
+      <workItem from="1594193325596" duration="14792000" />
+      <workItem from="1594270945920" duration="1768000" />
+      <workItem from="1594375044653" duration="2052000" />
+      <workItem from="1594377237685" duration="5653000" />
+      <workItem from="1594727527357" duration="1197000" />
+      <workItem from="1594890687627" duration="1729000" />
+      <workItem from="1594966963895" duration="188000" />
+      <workItem from="1594972534900" duration="214000" />
+      <workItem from="1595233136911" duration="1766000" />
+      <workItem from="1595249930896" duration="16202000" />
+      <workItem from="1595317493881" duration="812000" />
+      <workItem from="1595321720106" duration="244000" />
+      <workItem from="1595621206877" duration="4399000" />
+      <workItem from="1597930044427" duration="2315000" />
+      <workItem from="1598011491193" duration="334000" />
+      <workItem from="1598515969320" duration="264000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21216000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="736" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24313408" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.431677" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016155" side_tool="true" weight="0.3068536" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4983845" weight="0.3068536" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
+  <component name="TestHistory">
+    <history-entry file="Unittests_for_autoapp_tingg_tests_QaTester_test_encryption - 2020.06.23 at 17h 57m 06s.xml">
+      <configuration name="Unittests for autoapp_tingg.tests.QaTester.test_encryption" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -338,177 +224,107 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="128" y="25" key="#Project_Structure" timestamp="1593525100394">
+      <screen x="0" y="25" width="1280" height="718" />
+    </state>
+    <state x="128" y="25" key="#Project_Structure/0.25.1280.718@0.25.1280.718" timestamp="1593525100394" />
+    <state x="104" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594272789046">
+      <screen x="0" y="25" width="1280" height="719" />
+    </state>
+    <state x="104" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1280.718@0.25.1280.718" timestamp="1593524325922" />
+    <state x="104" y="41" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1280.719@0.25.1280.719" timestamp="1594272789046" />
+    <state x="336" y="25" key="#qatestertool" timestamp="1593524311783">
+      <screen x="0" y="25" width="1280" height="718" />
+    </state>
+    <state x="336" y="25" key="#qatestertool/0.25.1280.718@0.25.1280.718" timestamp="1593524311783" />
     <state x="441" y="152" key="FileChooserDialogImpl" timestamp="1590078170600">
       <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="441" y="152" key="FileChooserDialogImpl/0.23.1280.732@0.23.1280.732" timestamp="1590078170600" />
-    <state x="141" y="23" key="SettingsEditor" timestamp="1590078409558">
-      <screen x="0" y="23" width="1280" height="732" />
+    <state width="1238" height="357" key="GridCell.Tab.0.bottom" timestamp="1597950504534">
+      <screen x="0" y="25" width="1280" height="728" />
+    </state>
+    <state width="1238" height="267" key="GridCell.Tab.0.bottom/0.25.1280.719@0.25.1280.719" timestamp="1594967153172" />
+    <state width="1238" height="94" key="GridCell.Tab.0.bottom/0.25.1280.720@0.25.1280.720" timestamp="1594268802341" />
+    <state width="1238" height="171" key="GridCell.Tab.0.bottom/0.25.1280.721@0.25.1280.721" timestamp="1595621267203" />
+    <state width="1238" height="132" key="GridCell.Tab.0.bottom/0.25.1280.722@0.25.1280.722" timestamp="1593888138968" />
+    <state width="1238" height="115" key="GridCell.Tab.0.bottom/0.25.1280.724@0.25.1280.724" timestamp="1594802082563" />
+    <state width="1238" height="101" key="GridCell.Tab.0.bottom/0.25.1280.725@0.25.1280.725" timestamp="1595318596218" />
+    <state width="1238" height="324" key="GridCell.Tab.0.bottom/0.25.1280.726@0.25.1280.726" timestamp="1594106095757" />
+    <state width="1238" height="189" key="GridCell.Tab.0.bottom/0.25.1280.727@0.25.1280.727" timestamp="1594116869659" />
+    <state width="1238" height="357" key="GridCell.Tab.0.bottom/0.25.1280.728@0.25.1280.728" timestamp="1597950504534" />
+    <state width="1238" height="118" key="GridCell.Tab.0.bottom/0.25.1280.729@0.25.1280.729" timestamp="1594021803274" />
+    <state width="1238" height="224" key="GridCell.Tab.0.bottom/0.25.1280.730@0.25.1280.730" timestamp="1595235581680" />
+    <state width="1238" height="357" key="GridCell.Tab.0.center" timestamp="1597950504533">
+      <screen x="0" y="25" width="1280" height="728" />
+    </state>
+    <state width="1238" height="267" key="GridCell.Tab.0.center/0.25.1280.719@0.25.1280.719" timestamp="1594967153170" />
+    <state width="1238" height="94" key="GridCell.Tab.0.center/0.25.1280.720@0.25.1280.720" timestamp="1594268802341" />
+    <state width="1238" height="171" key="GridCell.Tab.0.center/0.25.1280.721@0.25.1280.721" timestamp="1595621267202" />
+    <state width="1238" height="132" key="GridCell.Tab.0.center/0.25.1280.722@0.25.1280.722" timestamp="1593888138966" />
+    <state width="1238" height="115" key="GridCell.Tab.0.center/0.25.1280.724@0.25.1280.724" timestamp="1594802082562" />
+    <state width="1238" height="101" key="GridCell.Tab.0.center/0.25.1280.725@0.25.1280.725" timestamp="1595318596215" />
+    <state width="1238" height="324" key="GridCell.Tab.0.center/0.25.1280.726@0.25.1280.726" timestamp="1594106095753" />
+    <state width="1238" height="189" key="GridCell.Tab.0.center/0.25.1280.727@0.25.1280.727" timestamp="1594116869659" />
+    <state width="1238" height="357" key="GridCell.Tab.0.center/0.25.1280.728@0.25.1280.728" timestamp="1597950504533" />
+    <state width="1238" height="118" key="GridCell.Tab.0.center/0.25.1280.729@0.25.1280.729" timestamp="1594021803270" />
+    <state width="1238" height="224" key="GridCell.Tab.0.center/0.25.1280.730@0.25.1280.730" timestamp="1595235581678" />
+    <state width="1238" height="357" key="GridCell.Tab.0.left" timestamp="1597950504532">
+      <screen x="0" y="25" width="1280" height="728" />
+    </state>
+    <state width="1238" height="267" key="GridCell.Tab.0.left/0.25.1280.719@0.25.1280.719" timestamp="1594967153169" />
+    <state width="1238" height="94" key="GridCell.Tab.0.left/0.25.1280.720@0.25.1280.720" timestamp="1594268802340" />
+    <state width="1238" height="171" key="GridCell.Tab.0.left/0.25.1280.721@0.25.1280.721" timestamp="1595621267201" />
+    <state width="1238" height="132" key="GridCell.Tab.0.left/0.25.1280.722@0.25.1280.722" timestamp="1593888138966" />
+    <state width="1238" height="115" key="GridCell.Tab.0.left/0.25.1280.724@0.25.1280.724" timestamp="1594802082561" />
+    <state width="1238" height="101" key="GridCell.Tab.0.left/0.25.1280.725@0.25.1280.725" timestamp="1595318596210" />
+    <state width="1238" height="324" key="GridCell.Tab.0.left/0.25.1280.726@0.25.1280.726" timestamp="1594106095749" />
+    <state width="1238" height="189" key="GridCell.Tab.0.left/0.25.1280.727@0.25.1280.727" timestamp="1594116869658" />
+    <state width="1238" height="357" key="GridCell.Tab.0.left/0.25.1280.728@0.25.1280.728" timestamp="1597950504532" />
+    <state width="1238" height="118" key="GridCell.Tab.0.left/0.25.1280.729@0.25.1280.729" timestamp="1594021803265" />
+    <state width="1238" height="224" key="GridCell.Tab.0.left/0.25.1280.730@0.25.1280.730" timestamp="1595235581676" />
+    <state width="1238" height="357" key="GridCell.Tab.0.right" timestamp="1597950504534">
+      <screen x="0" y="25" width="1280" height="728" />
+    </state>
+    <state width="1238" height="267" key="GridCell.Tab.0.right/0.25.1280.719@0.25.1280.719" timestamp="1594967153171" />
+    <state width="1238" height="94" key="GridCell.Tab.0.right/0.25.1280.720@0.25.1280.720" timestamp="1594268802341" />
+    <state width="1238" height="171" key="GridCell.Tab.0.right/0.25.1280.721@0.25.1280.721" timestamp="1595621267202" />
+    <state width="1238" height="132" key="GridCell.Tab.0.right/0.25.1280.722@0.25.1280.722" timestamp="1593888138967" />
+    <state width="1238" height="115" key="GridCell.Tab.0.right/0.25.1280.724@0.25.1280.724" timestamp="1594802082563" />
+    <state width="1238" height="101" key="GridCell.Tab.0.right/0.25.1280.725@0.25.1280.725" timestamp="1595318596216" />
+    <state width="1238" height="324" key="GridCell.Tab.0.right/0.25.1280.726@0.25.1280.726" timestamp="1594106095755" />
+    <state width="1238" height="189" key="GridCell.Tab.0.right/0.25.1280.727@0.25.1280.727" timestamp="1594116869659" />
+    <state width="1238" height="357" key="GridCell.Tab.0.right/0.25.1280.728@0.25.1280.728" timestamp="1597950504534" />
+    <state width="1238" height="118" key="GridCell.Tab.0.right/0.25.1280.729@0.25.1280.729" timestamp="1594021803272" />
+    <state width="1238" height="224" key="GridCell.Tab.0.right/0.25.1280.730@0.25.1280.730" timestamp="1595235581679" />
+    <state x="141" y="25" width="982" height="722" key="SettingsEditor" timestamp="1594890910615">
+      <screen x="0" y="25" width="1280" height="726" />
     </state>
     <state x="141" y="23" key="SettingsEditor/0.23.1280.732@0.23.1280.732" timestamp="1590078409558" />
-    <state x="342" y="154" width="596" height="470" key="find.popup" timestamp="1591018789365">
-      <screen x="0" y="23" width="1280" height="732" />
+    <state x="141" y="25" key="SettingsEditor/0.25.1280.709@0.25.1280.709" timestamp="1593436299778" />
+    <state x="141" y="25" width="982" height="718" key="SettingsEditor/0.25.1280.718@0.25.1280.718" timestamp="1593524824655" />
+    <state x="141" y="25" width="982" height="722" key="SettingsEditor/0.25.1280.722@0.25.1280.722" timestamp="1593887373037" />
+    <state x="141" y="25" key="SettingsEditor/0.25.1280.726@0.25.1280.726" timestamp="1594890910615" />
+    <state x="295" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1598515979665">
+      <screen x="0" y="25" width="1280" height="728" />
+    </state>
+    <state x="295" y="217" key="com.intellij.ide.util.TipDialog/0.25.1280.719@0.25.1280.719" timestamp="1594966963675" />
+    <state x="295" y="218" key="com.intellij.ide.util.TipDialog/0.25.1280.722@0.25.1280.722" timestamp="1594972537059" />
+    <state x="295" y="218" key="com.intellij.ide.util.TipDialog/0.25.1280.724@0.25.1280.724" timestamp="1595317501605" />
+    <state x="295" y="219" key="com.intellij.ide.util.TipDialog/0.25.1280.726@0.25.1280.726" timestamp="1594890687519" />
+    <state x="295" y="219" key="com.intellij.ide.util.TipDialog/0.25.1280.728@0.25.1280.728" timestamp="1598515979665" />
+    <state x="295" y="220" key="com.intellij.ide.util.TipDialog/0.25.1280.730@0.25.1280.730" timestamp="1595233136967" />
+    <state x="342" y="155" width="596" height="490" key="find.popup" timestamp="1594212080660">
+      <screen x="0" y="25" width="1280" height="725" />
     </state>
     <state x="342" y="154" width="596" height="470" key="find.popup/0.23.1280.732@0.23.1280.732" timestamp="1591018789365" />
+    <state x="342" y="155" width="596" height="490" key="find.popup/0.25.1280.725@0.25.1280.725" timestamp="1594212080660" />
     <state x="16" y="76" key="new project wizard" timestamp="1590078265917">
       <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="16" y="76" key="new project wizard/0.23.1280.732@0.23.1280.732" timestamp="1590078265917" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/qatestertool$Test_tingg.coverage" NAME="Test_tingg Coverage Results" MODIFIED="1592467757684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/templates/partials/_requests_table_no_wrapp.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QAhome/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/templates/partials/_requests_table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/templates/home/create_checkout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runtime.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QAhome/settings.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test_tingg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/static/images/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/serializers.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="125" column="15" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/templates/partials/_requests_modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/static/js/submit_json_request.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/static/js/submit_refunds_json.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
-          <caret line="704" column="28" selection-start-line="704" selection-start-column="28" selection-end-line="704" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autoapp_tingg/services.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="654" column="60" lean-forward="true" selection-start-line="654" selection-start-column="60" selection-end-line="654" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <SUITE FILE_PATH="coverage/qatestertool$Test_tingg.coverage" NAME="Test_tingg Coverage Results" MODIFIED="1593888138956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -4,7 +4,7 @@
         <div class="d-flex justify-content-between flex-wrap card-title">
             <div class="d-flex align-items-end flex-wrap">
                 <div class="mr-md-3 mr-xl-5">
-                    {% trans 'Checkout Status Codes' %}
+                    {% trans 'Checkout EndPoints' %}
                 </div>
             </div>
         </div>
@@ -14,16 +14,18 @@
                 <thead>
                 <tr>
                     <th>Url</th>
-                    <th>Port</th>
+{#                    <th>Port</th>#}
                     <th>Path</th>
+                    <th>Environment</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for i in object_list %}
                     <tr>
-                        <td>{{ i.url }}</td>
-                    <td>{{ i.port }}</td>
-                    <td>{{ i.path }}</td>
+                        <td><a href="{{ i.url }}">{{ i.url }}</a></td>
+{#                    <td>{{ i.port }}</td>#}
+                        <td><a href="{{ i.url }}{{ i.path }}">{{ i.path }}</a></td>
+                    <td>{{ i.environment }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>

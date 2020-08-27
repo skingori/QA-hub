@@ -18,7 +18,6 @@ from Crypto.Cipher import AES
 from .models import APISettings, WebHook, TestrailDetails
 from django.shortcuts import render, get_object_or_404
 
-
 # create logger
 appLogger = logging.getLogger('app-logger')
 
@@ -87,7 +86,8 @@ class QaOperations(object):
         return int(date_mill)
 
     @staticmethod
-    def create_req_context(payments, create_req_, username, first_name, last_name) -> Dict[str, Union[str, Dict[str, Union[Optional[str], Any]]]]:
+    def create_req_context(payments, create_req_, username, first_name, last_name) -> Dict[
+        str, Union[str, Dict[str, Union[Optional[str], Any]]]]:
         try:
             context = ({})
             context['total_requests'] = create_req_['DATA']['activeRequests']['currentTotal']
@@ -241,7 +241,7 @@ class QaOperations(object):
             return keys
 
     @staticmethod
-    def get_oauth_token(client_keys, _port):
+    def get_oauth_token(client_keys, _env):
         try:
 
             data = {
@@ -250,8 +250,8 @@ class QaOperations(object):
                 "client_secret": f'{client_keys.get("client_secret")}'
             }
 
-            get_request_url = APISettings.objects.get(unique_name="token")
-            url = f"{get_request_url.url + ':' + _port}"
+            get_request_url = APISettings.objects.get(unique_name="token", environment=_env, status=1)
+            url = f"{get_request_url.url}"
             path = f"{get_request_url.path}"
             response = requests.post(url=f"{url + path}",
                                      data=json.dumps(data), headers=header_with_no_token())
@@ -346,12 +346,12 @@ class QaOperations(object):
         except Exception as error:
             print(error)
 
-    def get_checkout_requests(self, _port, _service_code, _token):
+    def get_checkout_requests(self, _env, _service_code, _token):
         try:
             data = self.get_max_min_date(_service_code)
-            get_request_url = get_object_or_404(APISettings, unique_name="fetchCheckoutRequests")
+            get_request_url = get_object_or_404(APISettings, unique_name="fetchCheckoutRequests", environment=_env, status=1)
             path = f"{get_request_url.path}"
-            response = requests.post(url=f"{get_request_url.url + ':' + _port + path}",
+            response = requests.post(url=f"{get_request_url.url + path}",
                                      data=json.dumps(data), headers=header_with_token(_token))
 
             all_req_response = json.loads(response.text)
@@ -369,7 +369,7 @@ class QaOperations(object):
         except Exception as error:
             print(error)
 
-    def create_requests(self, _port, _service_code, _token):
+    def create_requests(self, _env, _service_code, _token):
         try:
 
             header = header_with_token(_token)
@@ -380,10 +380,11 @@ class QaOperations(object):
                         "max": self.max_date  # 1562597513
                     }
                     }
-            requests_totals = get_object_or_404(APISettings, unique_name="fetchCheckoutRequestTotals")
-            url = f"{requests_totals.url + ':' + _port}"
+            requests_totals = get_object_or_404(APISettings,
+                                                unique_name="fetchCheckoutRequestTotals", environment=_env, status=1)
+            url = f"{requests_totals.url}"
             path = f"{requests_totals.path}"
-            response = requests.post(url=f"{url + path}", data=json.dumps(data), headers= header)
+            response = requests.post(url=f"{url + path}", data=json.dumps(data), headers=header)
 
             req_response = json.loads(response.text)
             # self._write_requests(req_response)
@@ -400,7 +401,7 @@ class QaOperations(object):
         except Exception as error:
             print(error)
 
-    def fetch_payment_totals(self, _port, _service_code, _token):
+    def fetch_payment_totals(self, _env, _service_code, _token):
         try:
             data = {"serviceCode": f"{_service_code}",
                     "date": {
@@ -409,8 +410,9 @@ class QaOperations(object):
                         "max": self.max_date  # 1562597513
                     }
                     }
-            payments_totals = get_object_or_404(APISettings, unique_name="fetchPaymentTotals")
-            url = f"{payments_totals.url + ':' + _port}"
+            payments_totals = get_object_or_404(APISettings,
+                                                unique_name="fetchPaymentTotals", environment=_env, status=1)
+            url = f"{payments_totals.url}"
             path = f"{payments_totals.path}"
 
             response = requests.post(
@@ -431,7 +433,7 @@ class QaOperations(object):
         except Exception as error:
             print(error)
 
-    def fetch_payments(self, _port, _service_code, _token):
+    def fetch_payments(self, _env, _service_code, _token):
         try:
             header = {
                 'Content-Type': 'application/json',
@@ -444,10 +446,10 @@ class QaOperations(object):
                         "max": self.max_date  # 1562597513
                     }
                     }
-            fetch_payments = get_object_or_404(APISettings, unique_name="fetchPayments")
-            api = f"{fetch_payments.url + ':' + _port}"
-            path = f"{fetch_payments.path}"
-            response = requests.post(url=f"{api + path}", data=json.dumps(data), headers=header)
+            fetch_payments = get_object_or_404(APISettings, unique_name="fetchPayments", environment=_env, status=1)
+            post_pay_api = f"{fetch_payments.url}"
+            post_pay_path = f"{fetch_payments.path}"
+            response = requests.post(url=f"{post_pay_api + post_pay_path}", data=json.dumps(data), headers=header)
 
             all_payments = json.loads(response.text)
             return all_payments
@@ -486,12 +488,13 @@ class QaOperations(object):
                 "payerClientCode": f"{clientCode}"
             }
 
+            print(data)
             simulate_payment = APISettings.objects.get(unique_name="simulatePayment")
             endpoint = f"{simulate_payment.url + ':' + port}"
             path = f"{simulate_payment.path}"
-
             simulate = requests.post(url=endpoint + path, data=json.dumps(data), headers=header)
 
+            appLogger.debug(f"POST PAYMENT:{simulate.json()}")
             return json.loads(simulate.text)
 
         except KeyError:
@@ -506,7 +509,7 @@ class QaOperations(object):
             print(error)
 
     @staticmethod
-    def login(_port, username, password):
+    def login(_env, username, password):
         try:
 
             data = {
@@ -516,11 +519,12 @@ class QaOperations(object):
             header = {
                 'Content-Type': 'application/json',
             }
-            login = APISettings.objects.get(unique_name="login")
-            end_point = f"{login.url + ':' + _port}"
+            login = APISettings.objects.get(unique_name="login", environment=_env, status=1)
+            end_point = f"{login.url}"
             path = f"{login.path}"
             response = requests.post(url=f"{end_point + path}", headers=header, data=json.dumps(data))
             compare = json.loads(response.text)
+            appLogger.debug(response.json())
             return compare
 
         except KeyError:
@@ -648,7 +652,7 @@ class QaServices(object):
                             if post.status_code != 200:
                                 return json.loads(post.text).get("error", "null")
                             else:
-                                appLogger.error(post.text)
+                                appLogger.error(json.loads(post.text))
                         else:
                             pass
 
